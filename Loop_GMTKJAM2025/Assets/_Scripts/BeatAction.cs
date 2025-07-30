@@ -26,7 +26,6 @@ public class BeatAction : MonoBehaviour
 
     protected virtual void Activate()
     {
-
     }
 
 }

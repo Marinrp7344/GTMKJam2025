@@ -29,8 +29,8 @@ public class Metronome : MonoBehaviour
     public UnityEvent beat; // any time a beat event is fired
 
     // beat events
-    public UnityEvent quarter;
     public UnityEvent measure;
+    public UnityEvent quarter;
     public UnityEvent eighth;
 
     float beatDuration;
@@ -48,10 +48,6 @@ public class Metronome : MonoBehaviour
 
         beatDuration = 60 / bpm;
         eighthDuration = beatDuration / 2;
-
-        quarter.AddListener(beat.Invoke);
-        eighth.AddListener(beat.Invoke);
-        measure.AddListener(beat.Invoke);
     }
 
     [ContextMenu("start metronome")]
@@ -63,22 +59,21 @@ public class Metronome : MonoBehaviour
 
     void Quarter()
     {
-        quarter.Invoke();
-
-
-        Invoke(nameof(Quarter), beatDuration);
-
-        // invokes an eighth this beat, and queues the eighth
-        // that will play in between this quarter and the next quarter
-        Eighth();
-        Invoke(nameof(Eighth), eighthDuration);
-
         // increments measure if the measure ends
         quartersThisMeasure++;
         if (quartersThisMeasure >= quartersInMeasure)
         {
             Measure();
         }
+
+
+        quarter.Invoke();
+        Invoke(nameof(Quarter), beatDuration);
+
+        // invokes an eighth this beat, and queues the eighth
+        // that will play in between this quarter and the next quarter
+        Eighth();
+        Invoke(nameof(Eighth), eighthDuration);
 
     }
 
@@ -92,6 +87,7 @@ public class Metronome : MonoBehaviour
     void Eighth()
     {
         eighth.Invoke();
+        beat.Invoke(); // inboke beat event after SHORTEST LENGTH BEAT is done
     }
 
 }
