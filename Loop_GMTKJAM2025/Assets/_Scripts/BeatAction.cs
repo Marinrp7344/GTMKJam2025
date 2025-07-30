@@ -1,26 +1,26 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class BeatAction : MonoBehaviour
 {
-    Composer composer;
-    Beat firingBeat;
+    public Composer composer;
+    public List<Beat> firingBeats;
 
-    /// <summary>
-    /// sets the BeatAction's composer and firing beat, so it can fire on the right beat
-    /// </summary>
-    /// <param name="composer"></param>
-    /// <param name="firingBeat"></param>
-    public void Construct(Composer composer, Beat firingBeat)
+    private void Start()
     {
-        this.composer = composer;
-        this.firingBeat = firingBeat;
+        // tries to activate every beat. if is supposed to activate on current beat, activates
+        Metronome.Singleton.beat.AddListener(TryActivate);
     }
 
     public void TryActivate()
     {
-        if (composer.currentBeat.Equals(firingBeat))
+        foreach (Beat firingBeat in firingBeats)
         {
-            Activate();
+            if (firingBeat.Equals(composer.currentBeat))
+            {
+                Activate();
+                return; // stop processing once it activates
+            }
         }
     }
 
