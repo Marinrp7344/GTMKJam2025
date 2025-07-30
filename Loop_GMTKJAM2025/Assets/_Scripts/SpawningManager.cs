@@ -5,11 +5,11 @@ public class SpawningManager : MonoBehaviour
     
     public static SpawningManager Instance;
     private Collider2D worldBoundsCollider;
-
+    public bool spawn;
 
     [Space]
     [Header("Enemies")]
-    [SerializeField] private GameObject commmonEnemy;
+    [SerializeField] private GameObject commonEnemy;
     [SerializeField] private GameObject dashingEnemy;
 
     [Space]
@@ -29,6 +29,18 @@ public class SpawningManager : MonoBehaviour
     [Header("World Space Edit")]
     [Range(0, 1)]
     [SerializeField] private float unspawnableAreaPercentage;
+
+    [Space]
+    [Header("Enemy Spawn Rates")]
+    [Range(0, 100)]
+    [SerializeField] private float commonEnemyChances;
+    [Range(0, 100)]
+    [SerializeField] private float dashEnemyChances;
+    [Range(0, 100)]
+    [SerializeField] private float spawnerEnemyChances;
+    [SerializeField] private int amountofEnemiesPerSpawn;
+    
+
     private void Start()
     {
         SpawningManager.Instance = this;
@@ -44,6 +56,14 @@ public class SpawningManager : MonoBehaviour
         NSVerticalCenterDistance = unspawnableAreaPercentage * verticalCenterDistance;
     }
 
+    private void Update()
+    {
+        if(spawn)
+        {
+            SpawnEnemy();
+            spawn = false;
+        }
+    }
     /*
     public void StartWave()
     {
@@ -60,9 +80,34 @@ public class SpawningManager : MonoBehaviour
     /// </summary>
     public void SpawnEnemy()
     {
+        int spawnEnemy = Random.Range(0, 100);
+        GameObject decidedEnemy = DecideEnemy(spawnEnemy);
 
+        for (int i = 0; i < amountofEnemiesPerSpawn; i++)
+        {
+            Instantiate(decidedEnemy, ChooseSpawnLocation(), Quaternion.identity);
+        }
+        
     }
 
+    public GameObject DecideEnemy(int chosenEnemy)
+    {
+        GameObject decideEnemy = commonEnemy;
+        if(chosenEnemy >= 0 && chosenEnemy<=commonEnemyChances)
+        {
+            decideEnemy = commonEnemy;
+        }
+        else if (chosenEnemy > commonEnemyChances && chosenEnemy <= dashEnemyChances)
+        {
+            decideEnemy = dashingEnemy;
+        }
+        else if (chosenEnemy > dashEnemyChances && chosenEnemy <= spawnerEnemyChances)
+        {
+            Debug.Log("Spawner Enemy");
+        }
+
+        return decideEnemy;
+    }
     public Vector2 ChooseSpawnLocation()
     {
         float randomXLocation = Random.Range(-horizontalCenterDistance, horizontalCenterDistance);
