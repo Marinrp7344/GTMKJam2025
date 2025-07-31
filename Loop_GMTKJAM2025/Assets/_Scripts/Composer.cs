@@ -6,8 +6,6 @@ public class Composer : MonoBehaviour
     public uint measureCount;
     public Beat currentBeat;
 
-    public BeatAction selectedBeatAction;
-
     Metronome metronome;
 
     private void Start()
@@ -46,11 +44,6 @@ public class Composer : MonoBehaviour
     void PrintCurrentBeat()
     {
         Debug.Log($"measure {currentBeat.measure}, quarter {currentBeat.quarter}, eighth {currentBeat.eighth}");
-    }
-
-    public void SelectBeatAction(BeatAction action)
-    {
-        selectedBeatAction = action;
     }
 
 }

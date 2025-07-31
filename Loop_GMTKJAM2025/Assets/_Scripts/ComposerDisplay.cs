@@ -33,17 +33,17 @@ public class ComposerDisplay : MonoBehaviour
         }
     }
 
-    private void SpawnBeatIcon(Beat currentBeat)
+    private void SpawnBeatIcon(Beat beatToSpawn)
     {
         GameObject iconPrefabToSpawn = null;
 
         // figure out what icon to spawn
-        if (currentBeat.quarter == 1 &&
-            currentBeat.eighth == 1)
+        if (beatToSpawn.quarter == 1 &&
+            beatToSpawn.eighth == 1)
         {
             iconPrefabToSpawn = measureIconPrefab;
         }
-        else if (currentBeat.eighth % 2 == 0)
+        else if (beatToSpawn.eighth % 2 == 0)
         {
             iconPrefabToSpawn = eighthIconPrefab;
         }
@@ -54,6 +54,8 @@ public class ComposerDisplay : MonoBehaviour
         {
             GameObject newIcon = Instantiate(iconPrefabToSpawn, transform);
             beatIcons.Add(newIcon);
+
+            newIcon.GetComponent<BeatButton>().beat = beatToSpawn;
         }
     }
 
