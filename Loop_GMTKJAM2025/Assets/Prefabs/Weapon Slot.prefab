@@ -49,6 +49,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711c62218fc902d46bb17b990321e2b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponManager: {fileID: 0}
+  weaponType: 0
+  tiedWeapon: {fileID: 0}
+  spriteIcon: {fileID: 0}
+  weaponWheel: {fileID: 0}
+  slotImage: {fileID: 5753891467091841250}
+  weaponAngle: 0
 --- !u!1 &5703143102248519321
 GameObject:
   m_ObjectHideFlags: 0

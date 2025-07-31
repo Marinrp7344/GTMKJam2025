@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandler,IPointerUpHandler,IPointerExitHandler
 {
     public WeaponWheelUI weaponManager;
@@ -7,6 +8,7 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
     public GameObject tiedWeapon;
     public Sprite spriteIcon;
     public Transform weaponWheel;
+    public Image slotImage;
     public int weaponAngle;
     
     public void OnPointerDown(PointerEventData eventData)
@@ -53,6 +55,10 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
     {
         tiedWeapon.transform.localRotation = Quaternion.Euler(0, 0, weaponAngle);
     }
+    public void UpdateSprite()
+    {
+        slotImage.sprite = spriteIcon;
+    }
 
 
     public void AddWeapon(AvailableWeaponSlotUI weapon)
@@ -63,5 +69,9 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
         tiedWeapon = Instantiate(weapon.weapon, weaponWheel.position, Quaternion.identity);
         tiedWeapon.transform.SetParent(weaponWheel);
         UpdateTiedWeapon();
+        if (spriteIcon != null)
+        {
+            UpdateSprite();
+        }
     }
 }

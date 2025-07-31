@@ -858,7 +858,7 @@ MonoBehaviour:
   weaponType: 1
   weaponManager: {fileID: 1981348328}
   availableAmountOfWeapons: 3
-  weaponSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  weaponSprite: {fileID: 1288249151701940270, guid: 0fcf70a9a22068b4e97b2474e9b34725, type: 3}
   weapon: {fileID: 8515489949393860826, guid: 3f1f058799013b847836c6931ea3e92e, type: 3}
 --- !u!114 &1723231152
 MonoBehaviour:

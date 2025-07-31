@@ -37,6 +37,9 @@ public class WeaponWheelUI : MonoBehaviour
             heldSlot.SetWeaponSlot(hoveringSlot);
             hoveringSlot.SetWeaponSlot(tempSlot);
             Destroy(tempSlot);
+
+            heldSlot.UpdateSprite();
+            hoveringSlot.UpdateSprite();
         }
     }
 
