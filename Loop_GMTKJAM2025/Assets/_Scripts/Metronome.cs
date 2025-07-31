@@ -168,6 +168,7 @@ public class Metronome : MonoBehaviour
 
     void Eighth()
     {
+        eighthsThisMeasure++;
         eighth.Invoke();
         eighthLate.Invoke();
 
@@ -177,6 +178,7 @@ public class Metronome : MonoBehaviour
 
     void Sixteenth()
     {
+        sixteenthsThisMeasure++;
         sixteenth.Invoke();
         sixteenthLate.Invoke();
     }
