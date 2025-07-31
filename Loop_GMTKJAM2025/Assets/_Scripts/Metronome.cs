@@ -7,44 +7,63 @@ public struct Beat
     public int measure;
     public int quarter;
     public int eighth;
+    public int sixteenth;
 
+    /// <summary>
+    /// compares a source beat to an other beat.
+    /// if the source beat has a field that equals 0, it is ignored in the comparison
+    /// </summary>
+    /// <param name="other"></param>
+    /// <returns></returns>
     public bool Equals(Beat other)
     {
-        if (measure == other.measure &&
-            quarter == other.quarter &&
-            eighth == other.eighth)
+        if ((measure == other.measure || measure == 0) &&
+            (quarter == other.quarter || quarter == 0) &&
+            (eighth == other.eighth || eighth == 0) &&
+            (sixteenth == other.sixteenth || sixteenth == 0))
         {
             return true;
         }
         else { return false; }
     }
 
-    public Beat(int measure, int quarter, int eighth)
+    public Beat(int measure, int quarter, int eighth, int sixteenth)
     {
         this.measure = measure;
         this.quarter = quarter;
         this.eighth = eighth;
+        this.sixteenth = sixteenth;
     }
 
     public void Increment()
     {
-        eighth++;
+        sixteenth++;
 
-        // quarter note
-        if (eighth % 2 != 0 )
+        // enough sixteenths to make an eighth note
+        if (sixteenth % 2 != 0)
         {
-            quarter++;
-        }
+            eighth++;
 
-        // enough quarter notes to end measure
-        if (quarter > Metronome.Singleton.quartersInMeasure)
-        {
-            quarter = 1;
-            eighth = 1;
-            measure++;
+            // enough eighths to make a quarter note
+            if (eighth % 2 != 0)
+            {
+                quarter++;
+
+                // enough quarter notes to end measure
+                if (quarter > Metronome.Singleton.quartersInMeasure)
+                {
+                    quarter = 1;
+                    eighth = 1;
+                    sixteenth = 1;
+                    measure++;
+                }
+            }
         }
+        
     }
 }
+
+public enum Precision { measure, quarter, eighth, sixteenth }
 
 public class Metronome : MonoBehaviour
 {
@@ -52,15 +71,13 @@ public class Metronome : MonoBehaviour
     public float bpm = 150;
     public uint quartersInMeasure { get; private set; } = 4;
 
-    public UnityEvent beat; // any time a beat event is fired
-
     // beat events
     public UnityEvent measure;
     public UnityEvent quarter;
     public UnityEvent eighth;
+    public UnityEvent sixteenth;
 
     float beatDuration;
-    float eighthDuration;
 
     uint quartersThisMeasure = 0;
 
@@ -73,7 +90,6 @@ public class Metronome : MonoBehaviour
         else if (Singleton != this) { Destroy(this); }
 
         beatDuration = 60 / bpm;
-        eighthDuration = beatDuration / 2;
     }
 
     [ContextMenu("start metronome")]
@@ -103,7 +119,7 @@ public class Metronome : MonoBehaviour
         // invokes an eighth this beat, and queues the eighth
         // that will play in between this quarter and the next quarter
         Eighth();
-        Invoke(nameof(Eighth), eighthDuration);
+        Invoke(nameof(Eighth), beatDuration/2);
 
     }
 
@@ -117,7 +133,13 @@ public class Metronome : MonoBehaviour
     void Eighth()
     {
         eighth.Invoke();
-        beat.Invoke(); // inboke beat event after SHORTEST LENGTH BEAT is done
+
+        Invoke(nameof(Sixteenth), beatDuration/4);
+    }
+
+    void Sixteenth()
+    {
+        sixteenth.Invoke();
     }
 
 }

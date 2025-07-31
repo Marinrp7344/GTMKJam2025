@@ -2,29 +2,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(HorizontalLayoutGroup))]
+
 public class ComposerDisplay : MonoBehaviour
 {
     [SerializeField] Composer composer;
     [Space]
-    [SerializeField] GameObject measureIconPrefab;
-    [SerializeField] GameObject quarterIconPrefab;
-    [SerializeField] GameObject eighthIconPrefab;
+    [SerializeField] GameObject measurePrefab;
+    [SerializeField] GameObject quarterPrefab;
+    [SerializeField] GameObject eighthPrefab;
+    [SerializeField] GameObject sixteenthPrefab;
     [Space]
-    [SerializeField] float beatHighlightDuration = .1f;
+    [SerializeField] bool sixteenthsUnlocked = false;
+    [SerializeField] float sixteenthLayoutSpacing = 10;
+    [SerializeField] float beatHighlightDuration = .1f;// TODO: replace with animation call
 
 
     List<GameObject> beatIcons = new List<GameObject>();
 
     private void Start()
     {
-        CreateBeatIcons(composer.measureCount * Metronome.Singleton.quartersInMeasure * 2);
+        CreateBeatIcons(composer.measureCount * Metronome.Singleton.quartersInMeasure * 4);
 
-        Metronome.Singleton.beat.AddListener(HighlightCurrentBeat);
+        // highlight beat when lowest length beat goes off
+        Metronome.Singleton.sixteenth.AddListener(HighlightCurrentBeat);
     }
 
     void CreateBeatIcons(uint count)
     {
-        Beat beatToSpawn = new Beat(1,1,1);
+        Beat beatToSpawn = new Beat(1,1,1,1);
 
         for (uint i = 0; i < count; i++)
         {
@@ -38,16 +44,31 @@ public class ComposerDisplay : MonoBehaviour
         GameObject iconPrefabToSpawn = null;
 
         // figure out what icon to spawn
+
+        // start of new measure, spawn measure icon
         if (beatToSpawn.quarter == 1 &&
-            beatToSpawn.eighth == 1)
+            beatToSpawn.eighth == 1 &&
+            beatToSpawn.sixteenth == 1)
         {
-            iconPrefabToSpawn = measureIconPrefab;
+            iconPrefabToSpawn = measurePrefab;
         }
+
+        // if sixteenth is even, spawn sixteenth
+        else if (beatToSpawn.sixteenth % 2 == 0)
+        {
+            iconPrefabToSpawn = sixteenthPrefab;
+        }
+
+        // if eighth is even, spawn eighth
         else if (beatToSpawn.eighth % 2 == 0)
         {
-            iconPrefabToSpawn = eighthIconPrefab;
+            iconPrefabToSpawn = eighthPrefab;
         }
-        else { iconPrefabToSpawn = quarterIconPrefab; }
+
+        // if not a new mesure, and eighth and sixteenth are odd, spawn quarter
+        else { iconPrefabToSpawn = quarterPrefab; }
+
+
 
         // spawn icon
         if (iconPrefabToSpawn != null)
@@ -56,6 +77,14 @@ public class ComposerDisplay : MonoBehaviour
             beatIcons.Add(newIcon);
 
             newIcon.GetComponent<BeatButton>().beat = beatToSpawn;
+
+
+            // if its a sixteenth, disable icon if sixteenths are not unlocked
+            if (iconPrefabToSpawn == sixteenthPrefab &&
+                !sixteenthsUnlocked)
+            {
+                newIcon.gameObject.SetActive(false);
+            }
         }
     }
 
@@ -66,7 +95,11 @@ public class ComposerDisplay : MonoBehaviour
 
     void HighlightBeat(Beat beat)
     {
-        int indexOfBeat = 8 * (beat.measure - 1) + beat.eighth - 1;
+        int indexOfBeat = ((int)Metronome.Singleton.quartersInMeasure * 4) * (beat.measure - 1) + beat.sixteenth - 1;
+
+        // do nothing if beat icon is disabled
+        if (!beatIcons[indexOfBeat].gameObject.activeSelf) { return; }
+
         beatIcons[indexOfBeat].GetComponent<Image>().color = Color.green;
 
 
@@ -81,5 +114,18 @@ public class ComposerDisplay : MonoBehaviour
         }
     }
 
+    [ContextMenu("unlock sixteenths")]
+    void UnlockSixteenths()
+    {
+        sixteenthsUnlocked = true;
+
+        // set all icons as active (will need to change later IF we add even smaller notes... unlikely)
+        foreach(GameObject icon in beatIcons)
+        {
+            icon.gameObject.SetActive(true);
+        }
+
+        GetComponent<HorizontalLayoutGroup>().spacing = sixteenthLayoutSpacing;
+    }
 
 }

@@ -40,10 +40,16 @@ public class Composer : MonoBehaviour
 
         if (currentBeat.eighth > metronome.quartersInMeasure * 2) { currentBeat.eighth = 1; }
     }
+    void NextSixteenth()
+    {
+        currentBeat.sixteenth++;
+
+        if (currentBeat.sixteenth > metronome.quartersInMeasure * 4) { currentBeat.sixteenth = 1; }
+    }
 
     void PrintCurrentBeat()
     {
-        Debug.Log($"measure {currentBeat.measure}, quarter {currentBeat.quarter}, eighth {currentBeat.eighth}");
+        Debug.Log($"measure {currentBeat.measure}, quarter {currentBeat.quarter}, eighth {currentBeat.eighth}, sixteenth {currentBeat.sixteenth}");
     }
 
 }
