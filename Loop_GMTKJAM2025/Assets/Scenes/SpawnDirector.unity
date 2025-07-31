@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a182a62939dbe04eaafd9899f69f9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  credits: 100
+  credits: 1000
   wavesPerStage: 4
   allEnemies:
   - {fileID: 11400000, guid: c4a2720a33de74e458ec24e4f970cb97, type: 2}

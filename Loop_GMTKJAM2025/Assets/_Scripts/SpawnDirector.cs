@@ -198,6 +198,7 @@ public class SpawnDirector : MonoBehaviour
             }
 
             groupEnemyCounts.Add(enemiesInGroup);
+            ungroupedEnemies -= enemiesInGroup;
         }
 
         return groupEnemyCounts;
