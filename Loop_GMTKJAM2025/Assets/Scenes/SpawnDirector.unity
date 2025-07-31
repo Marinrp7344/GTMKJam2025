@@ -395,6 +395,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1158675011}
   - component: {fileID: 1158675010}
+  - component: {fileID: 1158675013}
+  - component: {fileID: 1158675012}
   m_Layer: 0
   m_Name: Spawn Director
   m_TagString: Untagged
@@ -416,12 +418,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   credits: 100
   wavesPerStage: 4
-  allEnemies: []
+  allEnemies:
+  - {fileID: 11400000, guid: c4a2720a33de74e458ec24e4f970cb97, type: 2}
+  - {fileID: 11400000, guid: c9c237bd9ed1b3b4a9d1383b6e2e9989, type: 2}
   waveSizeMultipliers:
   - 1.25
   - 1
   - 0.75
   - 0.5
+  composer: {fileID: 1158675013}
+  spawnBeatAction: {fileID: 1158675012}
 --- !u!4 &1158675011
 Transform:
   m_ObjectHideFlags: 0
@@ -437,6 +443,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1158675012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158675009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e89d944a24d1b847b1465b2506ae814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  composer: {fileID: 1158675013}
+  firingBeats: []
+  precision: 1
+  Activate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1158675010}
+        m_TargetAssemblyTypeName: SpawnDirector, Assembly-CSharp
+        m_MethodName: SpawnNextGroup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1158675013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158675009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f74c2d2a89ebf2418fb0d8bdcd7f3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  measureCount: 12
+  currentBeat:
+    measure: 0
+    quarter: 0
+    eighth: 0
+    sixteenth: 0
 --- !u!1 &1256151224
 GameObject:
   m_ObjectHideFlags: 0
