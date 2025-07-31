@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.Events;
 
 public class SpawnDirector : MonoBehaviour
 {
@@ -23,6 +24,17 @@ public class SpawnDirector : MonoBehaviour
 
     List<EnemySpawningData> enemySpawnOrder = new List<EnemySpawningData>();
     List<uint> groupSizes = new List<uint>();
+
+    public UnityEvent spawningComplete;
+
+
+    public static SpawnDirector Singleton;
+    private void Awake()
+    {
+        // singleton code
+        if (Singleton == null) { Singleton = this; }
+        else if (Singleton != this) { Destroy(this); }
+    }
 
 
     private void Start()
@@ -221,6 +233,7 @@ public class SpawnDirector : MonoBehaviour
         if (groupSizes.Count == 0 )
         {
             spawnBeatAction.firingBeats.Clear();
+            spawningComplete.Invoke();
         }
     }
 
