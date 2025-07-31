@@ -180,11 +180,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c44e2418643a9d4bab3012409f2784b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  enemySpeed: 5
-  canMove: 0
   dashing: 0
   dashSpeed: 0
+  direction: 0
+  dash: 0
   enemyRB: {fileID: 3389132219853862855}
   wheelController: {fileID: 0}
-  rotation: 0
+  player: {fileID: 0}
+  tiltAmount: 0
+  enemySpeed: 5
+  canMove: 0
