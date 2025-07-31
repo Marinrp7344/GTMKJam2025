@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   composer: {fileID: 0}
   firingBeats: []
+  precision: 3
   Activate:
     m_PersistentCalls:
       m_Calls:

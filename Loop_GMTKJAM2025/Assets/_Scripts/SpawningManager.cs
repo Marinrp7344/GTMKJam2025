@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class SpawningManager : MonoBehaviour
 {
-    
     public static SpawningManager Instance;
     private Collider2D worldBoundsCollider;
     public bool spawn;
@@ -59,11 +58,7 @@ public class SpawningManager : MonoBehaviour
 
     private void Update()
     {
-        if(spawn)
-        {
-            SpawnEnemy();
-            spawn = false;
-        }
+
     }
     /*
     public void StartWave()
@@ -79,7 +74,7 @@ public class SpawningManager : MonoBehaviour
     /// <summary>
     /// Spawns the enemy according to the bounding box of the world
     /// </summary>
-    public void SpawnEnemy()
+    public void SpawnEnemy(GameObject enemy)
     {
         int spawnEnemy = Random.Range(0, 100);
         GameObject decidedEnemy = DecideEnemy(spawnEnemy);
@@ -94,7 +89,7 @@ public class SpawningManager : MonoBehaviour
     public GameObject DecideEnemy(int chosenEnemy)
     {
         GameObject decideEnemy = commonEnemy;
-        if(chosenEnemy >= 0 && chosenEnemy<=commonEnemyChances)
+        if(chosenEnemy >= 0 && chosenEnemy <= commonEnemyChances)
         {
             decideEnemy = commonEnemy;
         }
