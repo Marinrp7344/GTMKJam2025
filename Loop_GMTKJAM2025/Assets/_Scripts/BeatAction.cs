@@ -1,10 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class BeatAction : MonoBehaviour
 {
     public Composer composer;
     public List<Beat> firingBeats;
+    [Space]
+    public UnityEvent Activate;
 
     private void Start()
     {
@@ -18,14 +21,10 @@ public class BeatAction : MonoBehaviour
         {
             if (firingBeat.Equals(composer.currentBeat))
             {
-                Activate();
+                Activate.Invoke();
                 return; // stop processing once it activates
             }
         }
-    }
-
-    protected virtual void Activate()
-    {
     }
 
 }
