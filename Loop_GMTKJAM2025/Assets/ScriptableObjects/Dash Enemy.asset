@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c629e66c4a60cd429e1e712aeebd6b4, type: 3}
   m_Name: Dash Enemy
   m_EditorClassIdentifier: 
-  weight: 0
-  cost: 0
+  weight: 3
+  cost: 8
   EnemyPrefab: {fileID: 4300627964147189450, guid: 11f02ec6972c7bb479234ee2464e38d4, type: 3}

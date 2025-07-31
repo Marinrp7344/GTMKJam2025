@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c629e66c4a60cd429e1e712aeebd6b4, type: 3}
   m_Name: Erradict Enemy
   m_EditorClassIdentifier: 
-  weight: 0
-  cost: 0
+  weight: 1
+  cost: 15
   EnemyPrefab: {fileID: 2627918511614043440, guid: b63cc191eba3a1d46a6e6dde472ea152, type: 3}
