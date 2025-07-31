@@ -7,6 +7,8 @@ public class WeaponWheelUI : MonoBehaviour
     public int slots;
     public GameObject weaponSlot;
     public Transform weaponParent;
+    public Transform physicalWeaponWheel;
+    public AvailableWeaponSlotUI heldAvailableWeapon;
     public void Start()
     {
         CreateWeaponSlots();
@@ -21,13 +23,29 @@ public class WeaponWheelUI : MonoBehaviour
             slot.transform.SetParent(weaponParent);
             RectTransform slotTransform = slot.GetComponent<RectTransform>();
             slotTransform.rotation = Quaternion.Euler(0, 0, rotationAmount * i);
+            slot.GetComponent<WeaponSlotUI>().weaponManager = this;
+            slot.GetComponent<WeaponSlotUI>().weaponAngle = rotationAmount * i;
+            slot.GetComponent<WeaponSlotUI>().weaponWheel = physicalWeaponWheel;
         }
     }
     public void SwapSlots()
     {
         if(heldSlot != null && hoveringSlot != null)
         {
+            WeaponSlotUI tempSlot = new WeaponSlotUI();
+            tempSlot.SetWeaponSlot(heldSlot);
+            heldSlot.SetWeaponSlot(hoveringSlot);
+            hoveringSlot.SetWeaponSlot(tempSlot);
+            Destroy(tempSlot);
+        }
+    }
 
+    public void AddWeaponToSlot()
+    {
+        if(hoveringSlot != null && hoveringSlot.weaponType == AvailableWeaponSlotUI.WeaponType.None)
+        {
+            hoveringSlot.AddWeapon(heldAvailableWeapon);
+            heldAvailableWeapon.AddedWeaponToInventory();
         }
     }
 }
