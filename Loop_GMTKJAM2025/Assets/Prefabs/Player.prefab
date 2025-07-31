@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponWheel: {fileID: 620922144795654220}
+  rotation: 0
 --- !u!1 &4760064169052278518
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,6 +254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01baa8a58253cb94280b30fbb075d7e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSlots: []
+  selectedSlot: {fileID: 0}
   heldSlot: {fileID: 0}
   hoveringSlot: {fileID: 0}
   slots: 15
