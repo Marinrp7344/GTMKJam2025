@@ -72,10 +72,22 @@ public class Metronome : MonoBehaviour
     public uint quartersInMeasure { get; private set; } = 4;
 
     // beat events
-    public UnityEvent measure;
-    public UnityEvent quarter;
-    public UnityEvent eighth;
-    public UnityEvent sixteenth;
+
+    // LATE events are triggered after beat events.
+    // useful for listeners that rely on updated info from other listeners of the same event
+    // (like beat actions relying on currentBeat info from composers)
+
+    public UnityEvent measure; // called first
+    public UnityEvent measureLate;
+
+    public UnityEvent quarter; // called second
+    public UnityEvent quarterLate;
+
+    public UnityEvent eighth; // called third by quarter
+    public UnityEvent eighthLate;
+
+    public UnityEvent sixteenth; // called fourth by eighth
+    public UnityEvent sixteenthLate; // triggers AFTER all other beat events
 
     float beatDuration;
 
@@ -113,6 +125,7 @@ public class Metronome : MonoBehaviour
 
 
         quarter.Invoke();
+        quarterLate.Invoke();
         Invoke(nameof(Quarter), beatDuration);
 
 
@@ -125,21 +138,25 @@ public class Metronome : MonoBehaviour
 
     void Measure()
     {
-        measure.Invoke();
-
         quartersThisMeasure = 1;
+
+        measure.Invoke();
+        measureLate.Invoke();
     }
 
     void Eighth()
     {
         eighth.Invoke();
+        eighthLate.Invoke();
 
+        Sixteenth();
         Invoke(nameof(Sixteenth), beatDuration/4);
     }
 
     void Sixteenth()
     {
         sixteenth.Invoke();
+        sixteenthLate.Invoke();
     }
 
 }

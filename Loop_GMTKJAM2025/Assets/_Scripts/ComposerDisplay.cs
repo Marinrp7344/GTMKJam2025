@@ -13,7 +13,7 @@ public class ComposerDisplay : MonoBehaviour
     [SerializeField] GameObject eighthPrefab;
     [SerializeField] GameObject sixteenthPrefab;
     [Space]
-    [SerializeField] bool sixteenthsUnlocked = false;
+    bool sixteenthsUnlocked = false;
     [SerializeField] float sixteenthLayoutSpacing = 10;
     [SerializeField] float beatHighlightDuration = .1f;// TODO: replace with animation call
 
@@ -24,8 +24,8 @@ public class ComposerDisplay : MonoBehaviour
     {
         CreateBeatIcons(composer.measureCount * Metronome.Singleton.quartersInMeasure * 4);
 
-        // highlight beat when lowest length beat goes off
-        Metronome.Singleton.sixteenth.AddListener(HighlightCurrentBeat);
+        // highlight beat after lowest length beat goes off (to ensure up-to-date information)
+        Metronome.Singleton.sixteenthLate.AddListener(HighlightCurrentBeat);
     }
 
     void CreateBeatIcons(uint count)

@@ -21,34 +21,38 @@ public class BeatAction : MonoBehaviour
         precision = newPrecision;
 
         // clear any beat events
-        Metronome.Singleton.measure.RemoveListener(TryActivate);
-        Metronome.Singleton.quarter.RemoveListener(TryActivate);
-        Metronome.Singleton.eighth.RemoveListener(TryActivate);
-        Metronome.Singleton.sixteenth.RemoveListener(TryActivate);
+        Metronome.Singleton.measureLate.RemoveListener(TryActivate);
+        Metronome.Singleton.quarterLate.RemoveListener(TryActivate);
+        Metronome.Singleton.eighthLate.RemoveListener(TryActivate);
+        Metronome.Singleton.sixteenthLate.RemoveListener(TryActivate);
 
-        // subscribe to beat events according to precision value
+        // subscribe to late beat events according to precision value
+        // using LATE events to ensure composer has correct info when the beat action is checking current beat
         switch (precision)
         {
             case Precision.measure:
-                Metronome.Singleton.measure.AddListener(TryActivate);
+                Metronome.Singleton.measureLate.AddListener(TryActivate);
                 break;
 
             case Precision.quarter:
-                Metronome.Singleton.quarter.AddListener(TryActivate);
+                Metronome.Singleton.quarterLate.AddListener(TryActivate);
                 break;
 
             case Precision.eighth:
-                Metronome.Singleton.eighth.AddListener(TryActivate);
+                Metronome.Singleton.eighthLate.AddListener(TryActivate);
                 break;
 
             case Precision.sixteenth:
-                Metronome.Singleton.sixteenth.AddListener(TryActivate);
+                Metronome.Singleton.sixteenthLate.AddListener(TryActivate);
                 break;
         }
     }
 
     public void TryActivate()
     {
+        // do nothing if linked composer is not running
+        if (!composer.running) { return; }
+
         foreach (Beat firingBeat in firingBeats)
         {
             if (firingBeat.Equals(composer.currentBeat))
