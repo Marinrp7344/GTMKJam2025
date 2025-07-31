@@ -22,7 +22,7 @@ public class ComposerDisplay : MonoBehaviour
 
     private void Start()
     {
-        CreateBeatIcons(composer.measureCount * Metronome.Singleton.quartersInMeasure * 4);
+        CreateBeatIcons(composer.measureCount * Metronome.Singleton.quartersPerMeasure * 4);
 
         // highlight beat after lowest length beat goes off (to ensure up-to-date information)
         Metronome.Singleton.sixteenthLate.AddListener(HighlightCurrentBeat);
@@ -98,7 +98,7 @@ public class ComposerDisplay : MonoBehaviour
         // do nothing if measure is not valid
         if (beat.measure < 1) { return; }
 
-        int indexOfBeat = ((int)Metronome.Singleton.quartersInMeasure * 4) * (beat.measure - 1) + beat.sixteenth - 1;
+        int indexOfBeat = ((int)Metronome.Singleton.quartersPerMeasure * 4) * (beat.measure - 1) + beat.sixteenth - 1;
 
         // do nothing if beat icon is disabled
         if (!beatIcons[indexOfBeat].gameObject.activeSelf) { return; }

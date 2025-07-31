@@ -32,20 +32,20 @@ public class Composer : MonoBehaviour
     {
         currentBeat.quarter++;
 
-        if (currentBeat.quarter > metronome.quartersInMeasure) { currentBeat.quarter = 1; }
+        if (currentBeat.quarter > metronome.quartersPerMeasure) { currentBeat.quarter = 1; }
     }
 
     void NextEighth()
     {
         currentBeat.eighth++;
 
-        if (currentBeat.eighth > metronome.quartersInMeasure * 2) { currentBeat.eighth = 1; }
+        if (currentBeat.eighth > metronome.quartersPerMeasure * 2) { currentBeat.eighth = 1; }
     }
     void NextSixteenth()
     {
         currentBeat.sixteenth++;
 
-        if (currentBeat.sixteenth > metronome.quartersInMeasure * 4) { currentBeat.sixteenth = 1; }
+        if (currentBeat.sixteenth > metronome.quartersPerMeasure * 4) { currentBeat.sixteenth = 1; }
     }
 
     void PrintCurrentBeat()

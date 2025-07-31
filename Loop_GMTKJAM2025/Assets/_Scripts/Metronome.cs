@@ -50,7 +50,7 @@ public struct Beat
                 quarter++;
 
                 // enough quarter notes to end measure
-                if (quarter > Metronome.Singleton.quartersInMeasure)
+                if (quarter > Metronome.Singleton.quartersPerMeasure)
                 {
                     quarter = 1;
                     eighth = 1;
@@ -84,7 +84,7 @@ public class Metronome : MonoBehaviour
 {
 
     public float bpm = 150;
-    public uint quartersInMeasure { get; private set; } = 4;
+    public uint quartersPerMeasure { get; private set; } = 4;
 
     // beat events
 
@@ -135,7 +135,7 @@ public class Metronome : MonoBehaviour
     {
         // increments measure if the measure ends
         quartersThisMeasure++;
-        if (quartersThisMeasure > quartersInMeasure)
+        if (quartersThisMeasure > quartersPerMeasure)
         {
             Measure();
         }
