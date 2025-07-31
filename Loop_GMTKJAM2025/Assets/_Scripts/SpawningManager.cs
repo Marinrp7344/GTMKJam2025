@@ -6,7 +6,7 @@ public class SpawningManager : MonoBehaviour
     public static SpawningManager Instance;
     private Collider2D worldBoundsCollider;
     public bool spawn;
-
+    [SerializeField] private Transform player;
     [Space]
     [Header("Enemies")]
     [SerializeField] private GameObject commonEnemy;
@@ -44,6 +44,7 @@ public class SpawningManager : MonoBehaviour
     private void Start()
     {
         SpawningManager.Instance = this;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         worldBoundsCollider = GetComponent<Collider2D>();
         SetSpawnableBounds();
     }

@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System.Collections.Generic;
 public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandler,IPointerUpHandler,IPointerExitHandler
 {
+
     public WeaponWheelUI weaponManager;
     public AvailableWeaponSlotUI.WeaponType weaponType;
     public GameObject tiedWeapon;
@@ -10,33 +12,41 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
     public Transform weaponWheel;
     public Image slotImage;
     public int weaponAngle;
-    
+    public bool hovering;
+    public bool clicked;
+    public bool selected;
     public void OnPointerDown(PointerEventData eventData)
     {
+        if(hovering)
+        {
+            clicked = true;
+        }
         weaponManager.heldSlot = this;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        hovering = true;
         weaponManager.hoveringSlot = this;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        hovering = false;
         weaponManager.hoveringSlot = null;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        if(hovering && clicked && weaponType != AvailableWeaponSlotUI.WeaponType.None)
+        {
+            weaponManager.SelectSlot(this);
+            selected = true;
+            weaponManager.UnselectWeapons(this);
+        }
         weaponManager.SwapSlots();
         weaponManager.heldSlot = null;
         
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
     }
 
 
@@ -45,10 +55,20 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
         weaponType = weaponSlot.weaponType;
         tiedWeapon = weaponSlot.tiedWeapon;
         spriteIcon = weaponSlot.spriteIcon;
+        selected = weaponSlot.selected;
+
+        if (selected && weaponManager != null) 
+        {
+            weaponManager.SelectSlot(this);
+            weaponManager.UnselectWeapons(this);
+        }
+
+
         if (tiedWeapon != null)
         {
             UpdateTiedWeapon();
         }
+        
     }
 
     public void UpdateTiedWeapon()

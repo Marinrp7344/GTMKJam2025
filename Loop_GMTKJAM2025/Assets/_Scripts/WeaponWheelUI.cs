@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponWheelUI : MonoBehaviour
 {
+    public List<WeaponSlotUI> weaponSlots;
+    public WeaponSlotUI selectedSlot;
     public WeaponSlotUI heldSlot;
     public WeaponSlotUI hoveringSlot;
     public int slots;
@@ -28,18 +31,43 @@ public class WeaponWheelUI : MonoBehaviour
             slot.GetComponent<WeaponSlotUI>().weaponWheel = physicalWeaponWheel;
         }
     }
+
+    public void UnselectWeapons(WeaponSlotUI selectedWeapon)
+    {
+        foreach(WeaponSlotUI slot in weaponSlots)
+        {
+            if(selectedWeapon != selectedSlot)
+            {
+                slot.selected = false;
+            }
+        }
+    }
+
+    public void SelectSlot(WeaponSlotUI weaponSlot)
+    {
+        selectedSlot = weaponSlot;
+        WeaponManager.Singleton.SelectWeapon(selectedSlot.tiedWeapon.GetComponent<PlayerWeapon>());
+    }
     public void SwapSlots()
     {
-        if(heldSlot != null && hoveringSlot != null)
+        if (hoveringSlot != heldSlot)
         {
-            WeaponSlotUI tempSlot = new WeaponSlotUI();
-            tempSlot.SetWeaponSlot(heldSlot);
-            heldSlot.SetWeaponSlot(hoveringSlot);
-            hoveringSlot.SetWeaponSlot(tempSlot);
-            Destroy(tempSlot);
 
-            heldSlot.UpdateSprite();
-            hoveringSlot.UpdateSprite();
+
+            if (heldSlot != null && hoveringSlot != null)
+            {
+                GameObject tempGO = new GameObject("TempSlot");
+                WeaponSlotUI tempSlot = tempGO.AddComponent<WeaponSlotUI>();
+                tempSlot.weaponManager = this;
+                tempSlot.SetWeaponSlot(heldSlot);
+                heldSlot.SetWeaponSlot(hoveringSlot);
+                hoveringSlot.SetWeaponSlot(tempSlot);
+                Destroy(tempGO);
+
+                heldSlot.UpdateSprite();
+                hoveringSlot.UpdateSprite();
+
+            }
         }
     }
 

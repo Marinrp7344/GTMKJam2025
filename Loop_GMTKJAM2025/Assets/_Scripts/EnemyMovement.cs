@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField]private GameObject player;
+    [SerializeField]public GameObject player;
     public float enemySpeed;
     public bool canMove;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-    }
+    } 
     private void FixedUpdate()
     {
         if(player != null && canMove)
