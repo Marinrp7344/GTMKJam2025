@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class AvailableWeaponSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    public enum WeaponType { None, RocketLauncher, MachineGun }
+    public enum WeaponType { None, RocketLauncher, MachineGun, Shotgun }
     public WeaponType weaponType;
     public WeaponWheelUI weaponManager;
     public int availableAmountOfWeapons;

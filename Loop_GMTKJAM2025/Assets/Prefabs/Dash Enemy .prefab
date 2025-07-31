@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2627918511614043440
+--- !u!1 &174193431293882240
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,93 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3247473501567332529}
-  - component: {fileID: 8905930965641480033}
-  - component: {fileID: 3908900629189195175}
-  - component: {fileID: 4860839213934535106}
-  - component: {fileID: 3389132219853862855}
-  - component: {fileID: 5186845885200718997}
-  - component: {fileID: 2324722817129578733}
+  - component: {fileID: 43186921850664787}
+  - component: {fileID: 1983756971163570923}
   m_Layer: 0
-  m_Name: Erattic Dash Enemy
+  m_Name: Composer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3247473501567332529
+--- !u!4 &43186921850664787
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2627918511614043440}
+  m_GameObject: {fileID: 174193431293882240}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7566731763219527098}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1983756971163570923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174193431293882240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f74c2d2a89ebf2418fb0d8bdcd7f3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  measureCount: 1
+  currentBeat:
+    measure: 0
+    quarter: 0
+    eighth: 0
+    sixteenth: 0
+--- !u!1 &4300627964147189450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7566731763219527098}
+  - component: {fileID: 400221022696338443}
+  - component: {fileID: 3170236898168582601}
+  - component: {fileID: 7114901142732194196}
+  - component: {fileID: 4953142198388611889}
+  - component: {fileID: 2549689260671417158}
+  - component: {fileID: 119204404388664848}
+  m_Layer: 0
+  m_Name: 'Dash Enemy '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7566731763219527098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4300627964147189450}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.1405908, y: -11.779834, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5328508003130318455}
+  - {fileID: 43186921850664787}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8905930965641480033
+--- !u!212 &400221022696338443
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2627918511614043440}
+  m_GameObject: {fileID: 4300627964147189450}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -83,7 +133,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.22545159, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.9190924, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -93,13 +143,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3908900629189195175
+--- !u!114 &3170236898168582601
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2627918511614043440}
+  m_GameObject: {fileID: 4300627964147189450}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75f3fefc6ed58f349ae35eac7c41ba0e, type: 3}
@@ -107,13 +157,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: 0
   health: 0
---- !u!58 &4860839213934535106
+--- !u!58 &7114901142732194196
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2627918511614043440}
+  m_GameObject: {fileID: 4300627964147189450}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -143,14 +193,14 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!50 &3389132219853862855
+--- !u!50 &4953142198388611889
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2627918511614043440}
+  m_GameObject: {fileID: 4300627964147189450}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -170,55 +220,63 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &5186845885200718997
+--- !u!114 &2549689260671417158
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2627918511614043440}
+  m_GameObject: {fileID: 4300627964147189450}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c44e2418643a9d4bab3012409f2784b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dashing: 0
-  dashSpeed: 20
+  dashSpeed: 12
   direction: 0
   dash: 0
-  enemyRB: {fileID: 3389132219853862855}
+  enemyRB: {fileID: 4953142198388611889}
   wheelController: {fileID: 0}
   player: {fileID: 0}
-  tiltAmount: 0.75
+  tiltAmount: 1
   enemySpeed: 5
   canMove: 0
---- !u!114 &2324722817129578733
+--- !u!114 &119204404388664848
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2627918511614043440}
+  m_GameObject: {fileID: 4300627964147189450}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e89d944a24d1b847b1465b2506ae814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  composer: {fileID: 5092278009964987292}
+  composer: {fileID: 1983756971163570923}
   firingBeats:
-  - measure: 1
-    quarter: 1
-    eighth: 1
+  - measure: 0
+    quarter: 0
+    eighth: 2
     sixteenth: 0
-  - measure: 1
-    quarter: 2
+  - measure: 0
+    quarter: 0
     eighth: 3
+    sixteenth: 0
+  - measure: 0
+    quarter: 0
+    eighth: 6
+    sixteenth: 0
+  - measure: 0
+    quarter: 0
+    eighth: 7
     sixteenth: 0
   precision: 2
   Activate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5186845885200718997}
+      - m_Target: {fileID: 2549689260671417158}
         m_TargetAssemblyTypeName: DashEnemyMovement, Assembly-CSharp
         m_MethodName: Dash
         m_Mode: 1
@@ -230,53 +288,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &3427120500203181888
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5328508003130318455}
-  - component: {fileID: 5092278009964987292}
-  m_Layer: 0
-  m_Name: Composer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5328508003130318455
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427120500203181888}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3247473501567332529}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5092278009964987292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427120500203181888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f74c2d2a89ebf2418fb0d8bdcd7f3a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  measureCount: 1
-  currentBeat:
-    measure: 0
-    quarter: 0
-    eighth: 0
-    sixteenth: 0

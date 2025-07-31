@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 0
   cost: 0
-  EnemyPrefab: {fileID: 0}
+  EnemyPrefab: {fileID: 4300627964147189450, guid: 11f02ec6972c7bb479234ee2464e38d4, type: 3}

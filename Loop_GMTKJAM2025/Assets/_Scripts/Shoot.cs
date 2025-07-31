@@ -8,10 +8,11 @@ public class Shoot : MonoBehaviour
 
     [Header("Gun Editable Fields")]
     [SerializeField] private GameObject bulletType;
-    [Range(0, 15)]
+    [Range(0, 45)]
     [SerializeField] private float spread;
     [SerializeField] private float bulletSpeed;
     [SerializeField] private int bulletsPerShot;
+    [SerializeField] private int damagePerBullet;
 
     [Header("Gun Debug")]
     [SerializeField] private float xDirection;
@@ -36,9 +37,9 @@ public class Shoot : MonoBehaviour
     public Vector2 CalculateBulletDirection()
     {
         //Find Pointer Direction
-        Vector2 mousePos = Camera.main.WorldToScreenPoint(Input.mousePosition);
-        Vector2 shootDirection = mousePos - (Vector2)player.position;
-        float cursorDirection = Mathf.Atan2(shootDirection.x, shootDirection.y) * Mathf.Rad2Deg + 180;
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = (shootingPoint.position - player.position).normalized;
+        float cursorDirection = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         //Math for limiting the angles between shots
         float angleDifference = spread / 2;
@@ -47,10 +48,8 @@ public class Shoot : MonoBehaviour
 
         //Chose from the provided angles
         float chosenAngle = UnityEngine.Random.Range((int)outerAngle, (int)innerAngle);
-        xDirection = (float)(Math.Cos((Math.PI / 180) * chosenAngle));
-        yDirection = (float)(Math.Sin((Math.PI / 180) * chosenAngle));
-
-        Vector2 chosenDirection = new Vector2(xDirection, yDirection);
+        float chosenAngleToRandian = chosenAngle * Mathf.Deg2Rad;
+        Vector2 chosenDirection = new Vector2(Mathf.Cos(chosenAngleToRandian), Mathf.Sin(chosenAngleToRandian));
         return chosenDirection;
     }
 
