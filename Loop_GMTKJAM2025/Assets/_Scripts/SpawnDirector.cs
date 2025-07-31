@@ -217,6 +217,11 @@ public class SpawnDirector : MonoBehaviour
     {
         SpawnGroupOfEnemies(enemySpawnOrder, groupSizes.First());
         groupSizes.Remove(groupSizes.First());
+
+        if (groupSizes.Count == 0 )
+        {
+            spawnBeatAction.firingBeats.Clear();
+        }
     }
 
     void AddSpawnBeat(uint groupIndex)
