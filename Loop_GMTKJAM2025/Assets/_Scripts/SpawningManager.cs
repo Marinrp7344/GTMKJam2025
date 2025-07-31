@@ -78,12 +78,9 @@ public class SpawningManager : MonoBehaviour
     {
         int spawnEnemy = Random.Range(0, 100);
         GameObject decidedEnemy = enemy;
+        Instantiate(decidedEnemy, ChooseSpawnLocation(), Quaternion.identity);
 
-        for (int i = 0; i < amountofEnemiesPerSpawn; i++)
-        {
-            Instantiate(decidedEnemy, ChooseSpawnLocation(), Quaternion.identity);
-        }
-        
+
     }
 
     public GameObject DecideEnemy(int chosenEnemy)
