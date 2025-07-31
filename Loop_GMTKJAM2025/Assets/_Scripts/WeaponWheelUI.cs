@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class WeaponWheelUI : MonoBehaviour
 {
+    public Transform player;
     public List<WeaponSlotUI> weaponSlots;
     public WeaponSlotUI selectedSlot;
     public WeaponSlotUI heldSlot;
@@ -12,10 +13,11 @@ public class WeaponWheelUI : MonoBehaviour
     public Transform weaponParent;
     public Transform physicalWeaponWheel;
     public AvailableWeaponSlotUI heldAvailableWeapon;
+    public Composer composer;
     public void Start()
     {
         CreateWeaponSlots();
-
+        player = gameObject.transform.parent.gameObject.transform;
     }
     public void CreateWeaponSlots()
     {
@@ -26,6 +28,7 @@ public class WeaponWheelUI : MonoBehaviour
             slot.transform.SetParent(weaponParent);
             RectTransform slotTransform = slot.GetComponent<RectTransform>();
             slotTransform.rotation = Quaternion.Euler(0, 0, rotationAmount * i);
+            slotTransform.localPosition = Vector2.zero;
             slot.GetComponent<WeaponSlotUI>().weaponManager = this;
             slot.GetComponent<WeaponSlotUI>().weaponAngle = rotationAmount * i;
             slot.GetComponent<WeaponSlotUI>().weaponWheel = physicalWeaponWheel;

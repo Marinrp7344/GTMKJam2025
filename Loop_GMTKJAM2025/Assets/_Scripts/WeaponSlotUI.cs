@@ -87,6 +87,10 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
         weaponType = weapon.weaponType;
         spriteIcon = weapon.weaponSprite;
         tiedWeapon = Instantiate(weapon.weapon, weaponWheel.position, Quaternion.identity);
+        PlayerWeapon tiedWeaponBeatAction = tiedWeapon.GetComponent<PlayerWeapon>();
+        tiedWeaponBeatAction.composer = weaponManager.composer;
+        Shoot tiedWeaponShoot = tiedWeapon.GetComponent<Shoot>();
+        tiedWeaponShoot.player = weaponManager.player;
         tiedWeapon.transform.SetParent(weaponWheel);
         UpdateTiedWeapon();
         if (spriteIcon != null)

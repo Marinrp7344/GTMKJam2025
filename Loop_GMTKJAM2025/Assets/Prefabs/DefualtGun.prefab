@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: -8889409912860207763}
   - component: {fileID: -5910764541809034165}
   m_Layer: 0
-  m_Name: Test Weapon
+  m_Name: DefualtGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,5 +196,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27bf89e7b8d94049b633af2e17a4650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  shootingPoint: {fileID: 0}
+  player: {fileID: 0}
+  shootingPoint: {fileID: 6620408439735168103}
+  bulletType: {fileID: 4517094820462903936, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
+  spread: 0
+  bulletSpeed: 10
+  bulletsPerShot: 1
+  xDirection: 0
+  yDirection: 0

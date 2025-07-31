@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 4860839213934535106}
   - component: {fileID: 3389132219853862855}
   - component: {fileID: 5186845885200718997}
+  - component: {fileID: 2324722817129578733}
   m_Layer: 0
-  m_Name: Dash Enemy
+  m_Name: Erattic Dash Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +34,8 @@ Transform:
   m_LocalPosition: {x: 1.1405908, y: -11.779834, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5328508003130318455}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8905930965641480033
@@ -181,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashing: 0
-  dashSpeed: 0
+  dashSpeed: 20
   direction: 0
   dash: 0
   enemyRB: {fileID: 3389132219853862855}
@@ -190,3 +192,91 @@ MonoBehaviour:
   tiltAmount: 0.75
   enemySpeed: 5
   canMove: 0
+--- !u!114 &2324722817129578733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2627918511614043440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e89d944a24d1b847b1465b2506ae814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  composer: {fileID: 5092278009964987292}
+  firingBeats:
+  - measure: 1
+    quarter: 1
+    eighth: 1
+    sixteenth: 0
+  - measure: 1
+    quarter: 2
+    eighth: 3
+    sixteenth: 0
+  precision: 2
+  Activate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5186845885200718997}
+        m_TargetAssemblyTypeName: DashEnemyMovement, Assembly-CSharp
+        m_MethodName: Dash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &3427120500203181888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5328508003130318455}
+  - component: {fileID: 5092278009964987292}
+  m_Layer: 0
+  m_Name: Composer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5328508003130318455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3427120500203181888}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3247473501567332529}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5092278009964987292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3427120500203181888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f74c2d2a89ebf2418fb0d8bdcd7f3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  measureCount: 1
+  currentBeat:
+    measure: 0
+    quarter: 0
+    eighth: 0
+    sixteenth: 0

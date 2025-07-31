@@ -77,7 +77,7 @@ public class SpawningManager : MonoBehaviour
     public void SpawnEnemy(GameObject enemy)
     {
         int spawnEnemy = Random.Range(0, 100);
-        GameObject decidedEnemy = DecideEnemy(spawnEnemy);
+        GameObject decidedEnemy = enemy;
 
         for (int i = 0; i < amountofEnemiesPerSpawn; i++)
         {
