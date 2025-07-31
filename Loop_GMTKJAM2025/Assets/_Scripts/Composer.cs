@@ -9,13 +9,13 @@ public class Composer : MonoBehaviour
 
     Metronome metronome;
 
-    public bool running = false;
+    public bool running { get; private set; } = false;
 
     private void Start()
     {
         metronome = Metronome.Singleton;
 
-        StartRunningOnNextMeasure();
+        StartRunning(); // temporary
 
         // for debugging
         // metronome.beat.AddListener(PrintCurrentBeat);
@@ -54,33 +54,32 @@ public class Composer : MonoBehaviour
     }
 
     /// <summary>
-    /// sets composer to begin running at the start of next measure
+    /// starts composer. measure will be zero until the next measure begins,
+    /// but all other beat trackers are accurate and current
     /// </summary>
-    /// <param name="isRunning"></param>
-    public void StartRunningOnNextMeasure()
+    public void StartRunning()
     {
-        currentBeat = new Beat(0, 0, 0, 0);
+        // if new measure is starting, set the measure to 1.
+        // if new measure is NOT starting, then the metronome is currently mid-measure. so measure is 0
+        int currentMeasure = 0;
+        if (metronome.quartersThisMeasure <= 1 &&
+            metronome.eighthsThisMeasure <= 1 &&
+            metronome.sixteenthsThisMeasure <= 1)
+        {
+            currentMeasure = 1;
+        }
 
-        // listener added now because otherwise it would not trigger until the measure AFTER the composer starts tracking
-        // adding it now makes sure all nextBeat methods trigger appropriately on the beat that the composer starts on
+        // fetch current beat information
+        currentBeat = new Beat(currentMeasure, metronome.quartersThisMeasure, metronome.eighthsThisMeasure, metronome.sixteenthsThisMeasure);
+
+        // subscribe to all beat events
         metronome.measure.AddListener(NextMeasure);
-
-        metronome.measure.AddListener(TryStartComposer);
-    }
-
-    /// <summary>
-    /// to be subscribed to measure event.
-    /// starts the composer's beat tracking.
-    /// </summary>
-    public void TryStartComposer()
-    {
-        // does not add nextMeasure as listener because that was done in StartRunningOnNextMeasure
-
         metronome.quarter.AddListener(NextQuarter);
         metronome.eighth.AddListener(NextEighth);
         metronome.sixteenth.AddListener(NextSixteenth);
 
-        metronome.measure.RemoveListener(TryStartComposer);
+        running = true;
     }
+
 
 }

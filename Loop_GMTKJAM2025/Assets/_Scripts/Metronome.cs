@@ -63,6 +63,21 @@ public struct Beat
     }
 }
 
+[System.Serializable]
+public struct BeatBasedDuration
+{
+    public int quarter;
+    public int eighth;
+    public int sixteenth;
+
+    public BeatBasedDuration(int quarter, int eighth, int sixteenth)
+    {
+        this.quarter = quarter;
+        this.eighth = eighth;
+        this.sixteenth = sixteenth;
+    }
+}
+
 public enum Precision { measure, quarter, eighth, sixteenth }
 
 public class Metronome : MonoBehaviour
@@ -91,7 +106,9 @@ public class Metronome : MonoBehaviour
 
     float beatDuration;
 
-    uint quartersThisMeasure = 0;
+    public int quartersThisMeasure { get; private set; } = 0;
+    public int eighthsThisMeasure { get; private set; } = 0;
+    public int sixteenthsThisMeasure { get; private set; } = 0;
 
 
     public static Metronome Singleton;
@@ -139,6 +156,11 @@ public class Metronome : MonoBehaviour
     void Measure()
     {
         quartersThisMeasure = 1;
+
+        // these are zero bc quarters are processed before measure end logic,
+        // while eighths and sixteenths are processed after
+        eighthsThisMeasure = 0;
+        sixteenthsThisMeasure = 0;
 
         measure.Invoke();
         measureLate.Invoke();

@@ -95,6 +95,9 @@ public class ComposerDisplay : MonoBehaviour
 
     void HighlightBeat(Beat beat)
     {
+        // do nothing if measure is not valid
+        if (beat.measure < 1) { return; }
+
         int indexOfBeat = ((int)Metronome.Singleton.quartersInMeasure * 4) * (beat.measure - 1) + beat.sixteenth - 1;
 
         // do nothing if beat icon is disabled
