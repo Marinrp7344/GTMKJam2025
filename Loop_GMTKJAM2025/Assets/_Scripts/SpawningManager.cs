@@ -43,9 +43,10 @@ public class SpawningManager : MonoBehaviour
     private void Start()
     {
         SpawningManager.Instance = this;
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         worldBoundsCollider = GetComponent<Collider2D>();
         SetSpawnableBounds();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        
     }
 
     private void SetSpawnableBounds()
