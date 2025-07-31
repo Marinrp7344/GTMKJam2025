@@ -16,6 +16,9 @@ public class Composer : MonoBehaviour
         metronome.measure.AddListener(NextMeasure);
         metronome.quarter.AddListener(NextQuarter);
         metronome.eighth.AddListener(NextEighth);
+
+        // for debugging
+        // metronome.beat.AddListener(PrintCurrentBeat);
     }
 
     void NextMeasure()
@@ -37,6 +40,11 @@ public class Composer : MonoBehaviour
         currentBeat.eighth++;
 
         if (currentBeat.eighth > metronome.quartersInMeasure * 2) { currentBeat.eighth = 1; }
+    }
+
+    void PrintCurrentBeat()
+    {
+        Debug.Log($"measure {currentBeat.measure}, quarter {currentBeat.quarter}, eighth {currentBeat.eighth}");
     }
 
 }

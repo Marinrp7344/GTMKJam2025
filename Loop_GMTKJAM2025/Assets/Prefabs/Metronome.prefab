@@ -45,11 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bpm: 150
-  beatsInMeasure: 4
   beat:
     m_PersistentCalls:
       m_Calls: []
   measure:
+    m_PersistentCalls:
+      m_Calls: []
+  quarter:
     m_PersistentCalls:
       m_Calls: []
   eighth:

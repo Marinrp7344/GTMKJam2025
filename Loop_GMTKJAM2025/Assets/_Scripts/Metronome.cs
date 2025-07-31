@@ -18,6 +18,32 @@ public struct Beat
         }
         else { return false; }
     }
+
+    public Beat(int measure, int quarter, int eighth)
+    {
+        this.measure = measure;
+        this.quarter = quarter;
+        this.eighth = eighth;
+    }
+
+    public void Increment()
+    {
+        eighth++;
+
+        // quarter note
+        if (eighth % 2 != 0 )
+        {
+            quarter++;
+        }
+
+        // enough quarter notes to end measure
+        if (quarter > Metronome.Singleton.quartersInMeasure)
+        {
+            quarter = 1;
+            eighth = 1;
+            measure++;
+        }
+    }
 }
 
 public class Metronome : MonoBehaviour
@@ -53,15 +79,18 @@ public class Metronome : MonoBehaviour
     [ContextMenu("start metronome")]
     void StartMetronome()
     {
+        // send measure event without calling measure method
+        // sets measure to 1 to match with the rest of the notes
+        measure.Invoke();
+
         Quarter();
-        Measure();
     }
 
     void Quarter()
     {
         // increments measure if the measure ends
         quartersThisMeasure++;
-        if (quartersThisMeasure >= quartersInMeasure)
+        if (quartersThisMeasure > quartersInMeasure)
         {
             Measure();
         }
@@ -69,6 +98,7 @@ public class Metronome : MonoBehaviour
 
         quarter.Invoke();
         Invoke(nameof(Quarter), beatDuration);
+
 
         // invokes an eighth this beat, and queues the eighth
         // that will play in between this quarter and the next quarter
@@ -81,7 +111,7 @@ public class Metronome : MonoBehaviour
     {
         measure.Invoke();
 
-        quartersThisMeasure = 0;
+        quartersThisMeasure = 1;
     }
 
     void Eighth()
