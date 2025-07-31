@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3389132219853862855}
   - component: {fileID: 5186845885200718997}
   - component: {fileID: 2324722817129578733}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Erattic Dash Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ MonoBehaviour:
   player: {fileID: 0}
   tiltAmount: 0.75
   enemySpeed: 5
-  canMove: 0
+  canMove: 1
 --- !u!114 &2324722817129578733
 MonoBehaviour:
   m_ObjectHideFlags: 0

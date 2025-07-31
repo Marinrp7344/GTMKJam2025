@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 4953142198388611889}
   - component: {fileID: 2549689260671417158}
   - component: {fileID: 119204404388664848}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'Dash Enemy '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ MonoBehaviour:
   player: {fileID: 0}
   tiltAmount: 1
   enemySpeed: 5
-  canMove: 0
+  canMove: 1
 --- !u!114 &119204404388664848
 MonoBehaviour:
   m_ObjectHideFlags: 0
