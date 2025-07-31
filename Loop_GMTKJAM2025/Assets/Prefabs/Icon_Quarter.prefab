@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9215490652788980263}
   - component: {fileID: 7114431639736847842}
   m_Layer: 0
-  m_Name: Icon_Beat
+  m_Name: Icon_Quarter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
