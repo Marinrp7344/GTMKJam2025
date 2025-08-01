@@ -48,8 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawn: 0
   player: {fileID: 0}
-  commonEnemy: {fileID: 9181963049842762565, guid: aa9985c0c4887fa4899c67775d8f2e6c, type: 3}
-  dashingEnemy: {fileID: 1443478989164101784, guid: b63cc191eba3a1d46a6e6dde472ea152, type: 3}
+  wallObject: {fileID: 2290425599916957546, guid: 5c3c1ebf62fdeb648993233b3f22d8ad, type: 3}
+  wallToBoundOffset: 0
   currentWave: 0
   maxSpawnableEnemies: 0
   currentlySpawnedEnemyTotal: 0

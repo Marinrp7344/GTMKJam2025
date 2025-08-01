@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public enum EntityType { Player, CommonEnemy, Dasher }
+    public enum EntityType { Player, CommonEnemy, Dasher, Crazy }
     public EntityType entityType;
     [SerializeField] private int health;
     
@@ -23,6 +23,6 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Die");
+        Destroy(gameObject);
     }
 }

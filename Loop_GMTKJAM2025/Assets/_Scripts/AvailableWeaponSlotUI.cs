@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 public class AvailableWeaponSlotUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public enum WeaponType { None, RocketLauncher, MachineGun, Shotgun }
@@ -8,6 +9,12 @@ public class AvailableWeaponSlotUI : MonoBehaviour, IPointerDownHandler, IPointe
     public int availableAmountOfWeapons;
     public Sprite weaponSprite;
     public GameObject weapon;
+    public TextMeshProUGUI amountText;
+
+    private void Start()
+    {
+        UpdateText();
+    }
     public void OnPointerDown(PointerEventData eventData)
     {
         if (availableAmountOfWeapons > 0)
@@ -28,10 +35,17 @@ public class AvailableWeaponSlotUI : MonoBehaviour, IPointerDownHandler, IPointe
     public void AddedWeaponToInventory()
     {
         availableAmountOfWeapons -= 1;
+        UpdateText();
     }
 
     public void AddWeapon()
     {
         availableAmountOfWeapons += 1;
+        UpdateText();
+    }
+
+    public void UpdateText()
+    {
+        amountText.text = availableAmountOfWeapons.ToString();
     }
 }

@@ -31,6 +31,7 @@ public class Shoot : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletType, shootingPoint.position, Quaternion.identity);
         Bullet bulletScript = bullet.GetComponent<Bullet>();
+        bulletScript.damage = damagePerBullet;
         bulletScript.ShootDirection(CalculateBulletDirection(), bulletSpeed);
     }
 

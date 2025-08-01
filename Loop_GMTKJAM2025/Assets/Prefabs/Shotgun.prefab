@@ -202,5 +202,6 @@ MonoBehaviour:
   spread: 30
   bulletSpeed: 30
   bulletsPerShot: 10
+  damagePerBullet: 1
   xDirection: 0
   yDirection: 0

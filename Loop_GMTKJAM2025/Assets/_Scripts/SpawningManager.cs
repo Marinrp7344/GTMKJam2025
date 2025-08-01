@@ -7,10 +7,8 @@ public class SpawningManager : MonoBehaviour
     public bool spawn;
     [SerializeField] private Transform player;
     [Space]
-    [Header("Enemies")]
-    [SerializeField] private GameObject commonEnemy;
-    [SerializeField] private GameObject dashingEnemy;
-
+    [SerializeField] private GameObject wallObject;
+    [SerializeField] private float wallToBoundOffset;
     [Space]
     [Header("Debug")]
     [SerializeField] private int currentWave;
@@ -45,6 +43,7 @@ public class SpawningManager : MonoBehaviour
         SpawningManager.Instance = this;
         worldBoundsCollider = GetComponent<Collider2D>();
         SetSpawnableBounds();
+        SetUpWalls();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         
     }
@@ -55,6 +54,34 @@ public class SpawningManager : MonoBehaviour
         verticalCenterDistance = worldBoundsCollider.bounds.max.y;
         NSHorizontalCenterDistance = unspawnableAreaPercentage * horizontalCenterDistance;
         NSVerticalCenterDistance = unspawnableAreaPercentage * verticalCenterDistance;
+    }
+
+    private void SetUpWalls()
+    {
+        //Upper wall
+        Vector2 upperWallSpawnPoint = new Vector2(0, verticalCenterDistance + wallToBoundOffset);
+        GameObject upperWall = Instantiate(wallObject, upperWallSpawnPoint, Quaternion.identity);
+        BoxCollider2D upperWallBoxCollider = upperWall.GetComponent<BoxCollider2D>();
+        upperWallBoxCollider.size = new Vector2(horizontalCenterDistance * 2, upperWallBoxCollider.size.y);
+
+        //down wall
+        Vector2 downWallSpawnPoint = new Vector2(0, -verticalCenterDistance - wallToBoundOffset);
+        GameObject downWall = Instantiate(wallObject, downWallSpawnPoint, Quaternion.identity);
+        BoxCollider2D downWallBoxCollider = downWall.GetComponent<BoxCollider2D>();
+        downWallBoxCollider.size = new Vector2(horizontalCenterDistance * 2, downWallBoxCollider.size.y);
+
+        //Right wall
+        Vector2 rightWallSpawnPoint = new Vector2(horizontalCenterDistance + wallToBoundOffset, 0);
+        GameObject rightWall = Instantiate(wallObject, rightWallSpawnPoint, Quaternion.identity);
+        BoxCollider2D rightWallBoxCollider = rightWall.GetComponent<BoxCollider2D>();
+        rightWallBoxCollider.size = new Vector2(rightWallBoxCollider.size.x, verticalCenterDistance * 2);
+
+        //Left wall
+        Vector2 leftWallSpawnPoint = new Vector2(-horizontalCenterDistance - wallToBoundOffset, 0);
+        GameObject leftWall = Instantiate(wallObject, leftWallSpawnPoint, Quaternion.identity);
+        BoxCollider2D leftWallBoxCollider = leftWall.GetComponent<BoxCollider2D>();
+        leftWallBoxCollider.size = new Vector2(leftWallBoxCollider.size.x, verticalCenterDistance * 2);
+
     }
 
     private void Update()
@@ -84,6 +111,7 @@ public class SpawningManager : MonoBehaviour
 
     }
 
+    /*
     public GameObject DecideEnemy(int chosenEnemy)
     {
         GameObject decideEnemy = commonEnemy;
@@ -102,6 +130,7 @@ public class SpawningManager : MonoBehaviour
 
         return decideEnemy;
     }
+    */
     public Vector2 ChooseSpawnLocation()
     {
         float randomXLocation = Random.Range(-horizontalCenterDistance, horizontalCenterDistance);
