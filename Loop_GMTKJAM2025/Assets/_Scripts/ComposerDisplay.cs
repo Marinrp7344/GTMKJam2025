@@ -103,10 +103,7 @@ public class ComposerDisplay : MonoBehaviour
         // do nothing if beat icon is disabled
         if (!beatIcons[indexOfBeat].gameObject.activeSelf) { return; }
 
-        beatIcons[indexOfBeat].GetComponent<Image>().color = Color.green;
-
-
-        Invoke(nameof(ClearBeatHighlight), beatHighlightDuration);
+        beatIcons[indexOfBeat].GetComponent<Animator>().Play("Pulse");
     }
 
     void ClearBeatHighlight()
