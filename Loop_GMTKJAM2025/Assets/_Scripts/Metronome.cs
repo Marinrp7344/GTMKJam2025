@@ -122,7 +122,7 @@ public class Metronome : MonoBehaviour
     }
 
     [ContextMenu("start metronome")]
-    void StartMetronome()
+    public void StartMetronome()
     {
         // send measure event without calling measure method
         // sets measure to 1 to match with the rest of the notes
