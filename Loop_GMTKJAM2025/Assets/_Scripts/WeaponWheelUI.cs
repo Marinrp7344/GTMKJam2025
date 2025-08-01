@@ -66,7 +66,6 @@ public class WeaponWheelUI : MonoBehaviour
     public void SelectSlot(WeaponSlotUI weaponSlot)
     {
         selectedSlot = weaponSlot;
-        WeaponManager.Singleton.SelectWeapon(selectedSlot.tiedWeapon.GetComponent<PlayerWeapon>());
     }
     public void SwapSlots()
     {

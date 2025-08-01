@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BeatButton : MonoBehaviour
 {
+    [SerializeField] Toggle toggle;
 
-    public Beat beat;
+    Beat beat;
+    PlayerWeapon weapon;
 
     WeaponManager weaponManager;
 
@@ -13,9 +16,27 @@ public class BeatButton : MonoBehaviour
         weaponManager = WeaponManager.Singleton;
     }
 
-    public void BeatButtonPress()
+    public void Initialize(Beat beat, PlayerWeapon weapon)
     {
-        weaponManager.ProcessBeatButtonPress(beat);
+        this.beat = beat;
+        this.weapon = weapon;
+
+        toggle.isOn = weapon.HasFiringBeat(this.beat);
+    }
+
+
+    public void ToggleFiringBeat(bool on)
+    {
+        // toggle on, add firing beat
+        if (on && !weapon.HasFiringBeat(beat))
+        {
+            weaponManager.TryAddFiringBeat(beat, weapon);
+        }
+        // toggle off, remove firing beat
+        else if (!on && weapon.HasFiringBeat(beat))
+        {
+            weaponManager.TryRemoveFiringBeat(beat, weapon);
+        }
     }
 
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 24b913eea8ae65c44b9f774f2ce7506c
+guid: d3d2593675d55b04ea24d5c82c0fa9eb
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -74,7 +74,7 @@ ScriptedImporter:
     fileImportMode: 0
     importHiddenLayers: 0
     layerImportMode: 1
-    defaultPivotSpace: 1
+    defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
@@ -87,7 +87,7 @@ ScriptedImporter:
     fileImportMode: 0
     importHiddenLayers: 0
     layerImportMode: 1
-    defaultPivotSpace: 1
+    defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
     mosaicPadding: 4
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638896559984741710
+  platformSettingsDirtyTick: 638896558994176518
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -122,19 +122,19 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: bullet
+  - name: autogun_icon
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 7
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 10
-      height: 10
-    spriteID: 6d0742caee55a2749aef74f3a1c3ff33
+      width: 14
+      height: 4
+    spriteID: f519fd2661d02234e8edeea6edcac592
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,7 +144,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData:
-  - name: bullet
+  - name: autogun_icon
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -154,9 +154,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 10
-      height: 10
-    spriteID: 727f0310d16f3c449b78290e3399121a
+      width: 14
+      height: 4
+    spriteID: 0ff6efbfc2144e5449491714158b6997
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -167,21 +167,21 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: -1244910274
-    name: bullet
+    guid: 1658471243
+    name: autogun_icon
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: bullet
+    - name: autogun_icon
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
-        width: 10
-        height: 10
-      spriteId: 6d0742caee55a2749aef74f3a1c3ff33
+        width: 14
+        height: 4
+      spriteId: f519fd2661d02234e8edeea6edcac592
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -203,7 +203,7 @@ ScriptedImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     forceMaximumCompressionQuality_BC6H_BC7: 0
     crunchedCompression: 0
@@ -224,4 +224,4 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 10, y: 10}
+  canvasSize: {x: 14, y: 4}

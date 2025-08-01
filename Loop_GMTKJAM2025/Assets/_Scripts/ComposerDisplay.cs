@@ -13,9 +13,8 @@ public class ComposerDisplay : MonoBehaviour
     [SerializeField] GameObject eighthPrefab;
     [SerializeField] GameObject sixteenthPrefab;
     [Space]
-    bool sixteenthsUnlocked = false;
+    public bool sixteenthsUnlocked = false;
     [SerializeField] float sixteenthLayoutSpacing = 10;
-    [SerializeField] float beatHighlightDuration = .1f;// TODO: replace with animation call
 
 
     List<GameObject> beatIcons = new List<GameObject>();
@@ -76,9 +75,6 @@ public class ComposerDisplay : MonoBehaviour
             GameObject newIcon = Instantiate(iconPrefabToSpawn, transform);
             beatIcons.Add(newIcon);
 
-            newIcon.GetComponent<BeatButton>().beat = beatToSpawn;
-
-
             // if its a sixteenth, disable icon if sixteenths are not unlocked
             if (iconPrefabToSpawn == sixteenthPrefab &&
                 !sixteenthsUnlocked)
@@ -106,13 +102,6 @@ public class ComposerDisplay : MonoBehaviour
         beatIcons[indexOfBeat].GetComponent<Animator>().Play("Pulse");
     }
 
-    void ClearBeatHighlight()
-    {
-        foreach (GameObject icon in beatIcons)
-        {
-            icon.GetComponent<Image>().color = Color.white;
-        }
-    }
 
     [ContextMenu("unlock sixteenths")]
     void UnlockSixteenths()

@@ -184,6 +184,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   cost: 10
+  weaponName: Spreadgun
+  icon: {fileID: -7343184963638687663, guid: e4a819a88be49404a8910c71d49f8b37, type: 3}
 --- !u!114 &-5910764541809034165
 MonoBehaviour:
   m_ObjectHideFlags: 0

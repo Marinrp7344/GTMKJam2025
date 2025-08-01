@@ -232,7 +232,7 @@ public class SpawnDirector : MonoBehaviour
 
         if (groupSizes.Count == 0 )
         {
-            spawnBeatAction.firingBeats.Clear();
+            spawnBeatAction.ClearFiringBeats();
             spawningComplete.Invoke();
         }
     }
@@ -242,7 +242,7 @@ public class SpawnDirector : MonoBehaviour
         uint measure = ((groupIndex / groupsPerWave) + 1 ) * (composer.measureCount / wavesPerStage);
         uint quarter = groupIndex - ( (groupIndex / groupsPerWave) * groupsPerWave);
 
-        spawnBeatAction.firingBeats.Add(new Beat((int)measure, (int)quarter, 0, 0));
+        spawnBeatAction.AddFiringBeat(new Beat((int)measure, (int)quarter, 0, 0));
     }
 
     [ContextMenu("Set Up Stage")]
@@ -250,7 +250,7 @@ public class SpawnDirector : MonoBehaviour
     {
         enemySpawnOrder.Clear();
         groupSizes.Clear();
-        spawnBeatAction.firingBeats.Clear();
+        spawnBeatAction.ClearFiringBeats();
 
 
 

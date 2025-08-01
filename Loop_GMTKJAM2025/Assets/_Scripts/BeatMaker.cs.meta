@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: be94fd0835574c8449e29fc5dbff09a2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - weapon: {instanceID: 0}
+  - beatButtonPrefab: {fileID: 8380945353267046682, guid: 4629133aec9c9f243a4d33e47431e864, type: 3}
+  - composer: {instanceID: 0}
+  - composerDisplay: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

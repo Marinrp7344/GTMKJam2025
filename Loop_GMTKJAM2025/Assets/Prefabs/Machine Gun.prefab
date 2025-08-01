@@ -184,6 +184,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   cost: 2
+  weaponName: Autogun
+  icon: {fileID: 1065637552156602326, guid: d3d2593675d55b04ea24d5c82c0fa9eb, type: 3}
 --- !u!114 &-5910764541809034165
 MonoBehaviour:
   m_ObjectHideFlags: 0

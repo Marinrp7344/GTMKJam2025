@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3044887492694321725, guid: 496009a4a390b8e49b54d3ce98dfe446, type: 3}
       propertyPath: m_Name
-      value: BeatB_Eighth
+      value: Icon_Quarter
       objectReference: {fileID: 0}
     - target: {fileID: 3335839869310874559, guid: 496009a4a390b8e49b54d3ce98dfe446, type: 3}
       propertyPath: m_Pivot.x

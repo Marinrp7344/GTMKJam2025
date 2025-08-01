@@ -60,15 +60,15 @@ RectTransform:
   m_GameObject: {fileID: 1131558732729114597}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6769162732272249119}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -22.5}
-  m_SizeDelta: {x: 0, y: 150}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6237407125431641592
 MonoBehaviour:
@@ -87,8 +87,8 @@ MonoBehaviour:
   quarterPrefab: {fileID: 8131466292590221931, guid: cbe0935e2b738364abbb992e8db40572, type: 3}
   eighthPrefab: {fileID: 8131466292590221931, guid: 468997df7ab47484d9cbdbcb88b9fae3, type: 3}
   sixteenthPrefab: {fileID: 8131466292590221931, guid: 0af04eac9ffbaad4e8796c2d1ef57903, type: 3}
-  sixteenthLayoutSpacing: 10
-  beatHighlightDuration: 0.1
+  sixteenthsUnlocked: 0
+  sixteenthLayoutSpacing: 0
 --- !u!114 &8088450579198135092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 40
+  m_Spacing: 2
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0

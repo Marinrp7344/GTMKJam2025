@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    PlayerWeapon selectedWeapon;
 
     [SerializeField] int budget = 100;
 
@@ -14,46 +13,31 @@ public class WeaponManager : MonoBehaviour
         else if (Singleton != this) { Destroy(this); }
     }
 
-    public void SelectWeapon(PlayerWeapon weapon)
+    public void TryAddFiringBeat(Beat beat, PlayerWeapon weapon)
     {
-        selectedWeapon = weapon;
-    }
+        if (weapon == null) { return; }
 
-    public void ProcessBeatButtonPress(Beat beat)
-    {
-        //Debug.Log($"beat button pressed with beat {beat}");
-
-        if (selectedWeapon == null) { return; }
-
-        // tries to remove the beat if its already registered to that weapon
-        // tries to add the beat if it's not registered as a firingbeat for that weapon
-        if (selectedWeapon.firingBeats.Contains(beat))
+        if (CanAfford(weapon.cost) && !weapon.HasFiringBeat(beat))
         {
-            TryRemoveFiringBeat(beat);
-        }
-        else { TryAddFiringBeat(beat); }
-
-    }
-
-    public void TryAddFiringBeat(Beat beat)
-    {
-        if (selectedWeapon == null) { return; }
-
-        if (CanAfford(selectedWeapon.cost) && !selectedWeapon.firingBeats.Contains(beat))
-        {
-            selectedWeapon.firingBeats.Add(beat);
-            budget -= selectedWeapon.cost;
+            if (weapon.AddFiringBeat(beat) == true)
+            {
+                // deduct from budget if successfully added
+                budget -= weapon.cost;
+            }
         }
     }
 
-    public void TryRemoveFiringBeat(Beat beat)
+    public void TryRemoveFiringBeat(Beat beat, PlayerWeapon weapon)
     {
-        if (selectedWeapon == null) { return; }
+        if (weapon == null) { return; }
 
-        if (selectedWeapon.firingBeats.Contains(beat))
+        if (weapon.HasFiringBeat(beat))
         {
-            selectedWeapon.firingBeats.Remove(beat);
-            budget += selectedWeapon.cost;
+            if (weapon.RemoveFiringBeat(beat) == true)
+            {
+                // refund to budget if successfully removed
+                budget += weapon.cost;
+            }
         }
 
     }
