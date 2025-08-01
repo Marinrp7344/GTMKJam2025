@@ -4,7 +4,6 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D bulletRB;
     [SerializeField] public int damage;
-
     public void ShootDirection(Vector2 bulletDirection, float bulletSpeed)
     {
         bulletRB.linearVelocity = bulletDirection * bulletSpeed;

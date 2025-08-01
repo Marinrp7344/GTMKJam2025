@@ -176,3 +176,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletRB: {fileID: 1417933298277149003}
+  damage: 0
+  clip: {fileID: 8300000, guid: 5f97009cb492c4f408784d487cb2a9da, type: 3}
