@@ -21,7 +21,7 @@ public class WeaponManager : MonoBehaviour
 
     public void ProcessBeatButtonPress(Beat beat)
     {
-        Debug.Log($"beat button pressed with beat {beat}");
+        //Debug.Log($"beat button pressed with beat {beat}");
 
         if (selectedWeapon == null) { return; }
 

@@ -83,11 +83,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   composer: {fileID: 0}
-  measurePrefab: {fileID: 6987298678673218563, guid: 7e3a1731f96076744aad7f89b39b8d20, type: 3}
-  quarterPrefab: {fileID: 8733664235682880268, guid: 35eb5df25d0c3f040b78acad7eb4ffa8, type: 3}
-  eighthPrefab: {fileID: 3044887492694321725, guid: 23f33f9c76c791c48ab72620c2d92493, type: 3}
-  sixteenthPrefab: {fileID: 3044887492694321725, guid: e8089488526cecc43a5883959080922d, type: 3}
-  sixteenthsUnlocked: 0
+  measurePrefab: {fileID: 8131466292590221931, guid: 98bfc3d469fc3744598ecaae62711dc7, type: 3}
+  quarterPrefab: {fileID: 8131466292590221931, guid: cbe0935e2b738364abbb992e8db40572, type: 3}
+  eighthPrefab: {fileID: 8131466292590221931, guid: 468997df7ab47484d9cbdbcb88b9fae3, type: 3}
+  sixteenthPrefab: {fileID: 8131466292590221931, guid: 0af04eac9ffbaad4e8796c2d1ef57903, type: 3}
   sixteenthLayoutSpacing: 10
   beatHighlightDuration: 0.1
 --- !u!114 &8088450579198135092
