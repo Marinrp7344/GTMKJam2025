@@ -239,6 +239,7 @@ MonoBehaviour:
   enemyRB: {fileID: 4953142198388611889}
   wheelController: {fileID: 0}
   player: {fileID: 0}
+  damage: 1
   tiltAmount: 0
   enemySpeed: 5
   canMove: 1

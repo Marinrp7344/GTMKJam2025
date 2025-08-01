@@ -23,6 +23,11 @@ public class Health : MonoBehaviour
 
     public void Die()
     {
+        if(entityType == EntityType.Player)
+        {
+            RestartMenu.Instance.gameObject.SetActive(true);
+        }
+        
         Destroy(gameObject);
     }
 }

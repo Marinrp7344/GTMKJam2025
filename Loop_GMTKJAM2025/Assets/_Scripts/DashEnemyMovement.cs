@@ -9,7 +9,7 @@ public class DashEnemyMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D enemyRB;
     [SerializeField] private WheelController wheelController;
     [SerializeField] public GameObject player;
-
+    public int damage;
     [Range(0, 1)]
     [SerializeField] private float tiltAmount;
     public float enemySpeed;
@@ -21,16 +21,19 @@ public class DashEnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        CalculateAngle();
-        if (dash)
+        if (player != null)
         {
-            Dash();
-            dash = false;
-        }
+            CalculateAngle();
+            if (dash)
+            {
+                Dash();
+                dash = false;
+            }
 
-        if (player != null && canMove)
-        {
-            ChasePlayer();
+            if (canMove)
+            {
+                ChasePlayer();
+            }
         }
     }
 
@@ -41,18 +44,23 @@ public class DashEnemyMovement : MonoBehaviour
 
     public void Dash()
     {
-        if(!dashing)
+        if (player != null)
         {
-            
-            DashPerpendicular();
-            dashing = true;
-            canMove = false;
-        }
-        else
-        {
-            canMove = true;
-            dashing = false;
-            enemyRB.linearVelocity = Vector2.zero;
+
+
+            if (!dashing)
+            {
+
+                DashPerpendicular();
+                dashing = true;
+                canMove = false;
+            }
+            else
+            {
+                canMove = true;
+                dashing = false;
+                enemyRB.linearVelocity = Vector2.zero;
+            }
         }
     }
 
@@ -88,6 +96,16 @@ public class DashEnemyMovement : MonoBehaviour
         else
         {
             direction = -1;
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            Health playerHealth = collision.gameObject.GetComponent<Health>();
+            playerHealth.TakeDamage(damage);
+            Destroy(gameObject);
         }
     }
 }

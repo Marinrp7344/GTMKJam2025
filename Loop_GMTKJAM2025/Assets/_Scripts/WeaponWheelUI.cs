@@ -19,6 +19,12 @@ public class WeaponWheelUI : MonoBehaviour
         CreateWeaponSlots();
         player = gameObject.transform.parent.gameObject.transform;
     }
+
+    public void StartGame()
+    {
+        gameObject.SetActive(false);
+        SpawnDirector.Singleton.SetUpNewStage();
+    }
     public void CreateWeaponSlots()
     {
         int rotationAmount = 360 / slots;

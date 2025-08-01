@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float xDirection;
     [SerializeField] private float yDirection;
     private Rigidbody2D playerRB;
+    public Menu menu;
     private void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
@@ -44,5 +45,13 @@ public class Movement : MonoBehaviour
         }
 
         
+    }
+
+    public void OnToggleMenu(InputValue value)
+    {
+        if(value.isPressed)
+        {
+            menu.ToggleMenu();
+        }
     }
 }
