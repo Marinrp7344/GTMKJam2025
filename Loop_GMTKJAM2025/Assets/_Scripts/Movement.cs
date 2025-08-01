@@ -24,25 +24,11 @@ public class Movement : MonoBehaviour
 
     public void OnMove(InputValue value)
     {
-        Vector2 movementDirections = value.Get<Vector2>();
+        Vector2 inputVector = value.Get<Vector2>();
 
-        if(movementDirections.x != 0)
-        {
-            xDirection = Mathf.Sign(movementDirections.x);
-        }
-        else
-        {
-            xDirection = 0;
-        }
+        xDirection = inputVector.x;
+        yDirection = inputVector.y;
 
-        if (movementDirections.y != 0)
-        {
-            yDirection = Mathf.Sign(movementDirections.y);  
-        }
-        else
-        {
-            yDirection = 0;
-        }
 
         
     }
