@@ -124,7 +124,7 @@ public class SpawnDirector : MonoBehaviour
             }
             else
             {
-                randomNum -= enemy.cost;
+                randomNum -= enemy.weight;
             }
         }
 

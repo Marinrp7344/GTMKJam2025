@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c629e66c4a60cd429e1e712aeebd6b4, type: 3}
   m_Name: Common Enemy
   m_EditorClassIdentifier: 
-  weight: 10
+  weight: 100
   cost: 5
   EnemyPrefab: {fileID: 4300627964147189450, guid: 90bd6501555046141baaf9023f9e83f5, type: 3}
