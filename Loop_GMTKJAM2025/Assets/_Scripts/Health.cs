@@ -5,7 +5,7 @@ public class Health : MonoBehaviour
     public enum EntityType { Player, CommonEnemy, Dasher, Crazy }
     public EntityType entityType;
     [SerializeField] private int health;
-    
+    public int scoreWorth;
 
     public void TakeDamage(int damage)
     {

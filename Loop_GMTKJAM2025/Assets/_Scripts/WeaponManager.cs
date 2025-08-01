@@ -65,4 +65,9 @@ public class WeaponManager : MonoBehaviour
         else { return false; }
     }
 
+    public int GetBudget()
+    {
+        return budget;
+    }
+
 }

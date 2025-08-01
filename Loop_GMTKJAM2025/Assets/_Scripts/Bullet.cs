@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour
         {
             Health enemyHealth = collision.gameObject.GetComponent<Health>();
             enemyHealth.TakeDamage(damage);
+            PlayerStats.Instance.IncreaseScore(enemyHealth.scoreWorth);
             Destroy(gameObject);
         }
         else if(collision.gameObject.layer == LayerMask.NameToLayer("Wall"))

@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: 2
   health: 2
+  scoreWorth: 20
 --- !u!58 &7114901142732194196
 CircleCollider2D:
   m_ObjectHideFlags: 0
