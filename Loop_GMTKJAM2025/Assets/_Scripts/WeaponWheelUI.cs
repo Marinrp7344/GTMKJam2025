@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class WeaponWheelUI : MonoBehaviour
 {
+    public static WeaponWheelUI Instance;
     public Transform player;
     public List<WeaponSlotUI> weaponSlots;
     public WeaponSlotUI selectedSlot;
@@ -14,10 +15,20 @@ public class WeaponWheelUI : MonoBehaviour
     public Transform physicalWeaponWheel;
     public AvailableWeaponSlotUI heldAvailableWeapon;
     public Composer composer;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     public void Start()
     {
+        gameObject.SetActive(false);
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        composer = PlayerComponents.Instance.playerComposer;
+        physicalWeaponWheel = PlayerComponents.Instance.wheel.transform;
+
         CreateWeaponSlots();
-        player = gameObject.transform.parent.gameObject.transform;
     }
 
     public void StartGame()

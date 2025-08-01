@@ -5,6 +5,7 @@ public class SpawningManager : MonoBehaviour
     public static SpawningManager Instance;
     private Collider2D worldBoundsCollider;
     public bool spawn;
+    [SerializeField] private bool spawningEnded;
     [SerializeField] private Transform player;
     [Space]
     [SerializeField] private GameObject wallObject;
@@ -38,6 +39,7 @@ public class SpawningManager : MonoBehaviour
     [SerializeField] private int amountofEnemiesPerSpawn;
     
 
+
     private void Start()
     {
         SpawningManager.Instance = this;
@@ -48,6 +50,7 @@ public class SpawningManager : MonoBehaviour
         
     }
 
+    
     private void SetSpawnableBounds()
     {
         horizontalCenterDistance = worldBoundsCollider.bounds.max.x;
@@ -84,9 +87,29 @@ public class SpawningManager : MonoBehaviour
 
     }
 
+
+    public void SpawningEnded()
+    {
+        spawningEnded = true;
+    }
+
+
+    public void CheckEnemiesStillOnStage()
+    {
+        GameObject[] enemiesRemaining = GameObject.FindGameObjectsWithTag("Enemy");
+        if (enemiesRemaining.Length <= 0)
+        {
+            UpdgradeMenu.Instance.StartNewRound();
+            spawningEnded = false;
+        }
+    }
+
     private void Update()
     {
-
+        if (spawningEnded)
+        {
+            CheckEnemiesStillOnStage();
+        }
     }
     /*
     public void StartWave()

@@ -2,12 +2,18 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class Menu : MonoBehaviour
 {
+    public static Menu Instance;
     public GameObject fullMenu;
     public GameObject mainMenu;
     public GameObject soundMenu;
     public GameObject gameplayMenu;
     public bool onMainMenu;
 
+    private void Start()
+    {
+        Instance = this;
+        fullMenu.SetActive(false);
+    }
     public void Exit()
     {
         if(onMainMenu)

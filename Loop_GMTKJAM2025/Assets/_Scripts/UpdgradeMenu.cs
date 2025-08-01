@@ -2,13 +2,20 @@ using UnityEngine;
 using System.Collections.Generic;
 public class UpdgradeMenu : MonoBehaviour
 {
+    public static UpdgradeMenu Instance;
     [SerializeField] private List<Upgrade> upgrades;
     [SerializeField] private List<UpgradeSlot> upgradeSlots;
     public bool updateSlots;
-    public AvailableWeaponsManager availableWeaponsManager;
-    public GameObject weaponsUI;
     private void Start()
     {
+        ShowNewUpgrades();
+        Instance = this;
+    }
+
+
+    public void StartNewRound()
+    {
+        gameObject.SetActive(true);
         ShowNewUpgrades();
     }
 
@@ -28,10 +35,10 @@ public class UpdgradeMenu : MonoBehaviour
 
     public void ChooseUpgrade(int slotIndex)
     {
-        availableWeaponsManager.AddWeapon(upgradeSlots[slotIndex].currentUpgrade);
+        AvailableWeaponsManager.Instance.AddWeapon(upgradeSlots[slotIndex].currentUpgrade);
 
         gameObject.SetActive(false);
-        weaponsUI.SetActive(true);
+        WeaponWheelUI.Instance.gameObject.SetActive(true);
     }
 
     public void FillWithRandomUpgrades()
@@ -58,6 +65,8 @@ public class UpdgradeMenu : MonoBehaviour
             }
         }
     }
+
+
 }
 
 [System.Serializable]

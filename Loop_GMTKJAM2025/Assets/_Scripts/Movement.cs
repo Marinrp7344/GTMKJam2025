@@ -51,7 +51,7 @@ public class Movement : MonoBehaviour
     {
         if(value.isPressed)
         {
-            menu.ToggleMenu();
+            Menu.Instance.ToggleMenu();
         }
     }
 }
