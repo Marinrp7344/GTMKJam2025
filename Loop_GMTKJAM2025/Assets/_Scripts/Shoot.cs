@@ -13,6 +13,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private float bulletSpeed;
     [SerializeField] private int bulletsPerShot;
     [SerializeField] private int damagePerBullet;
+    [SerializeField] private int distanceTilBulletDisappear;
 
     [Header("Gun Debug")]
     [SerializeField] private float xDirection;
@@ -32,6 +33,7 @@ public class Shoot : MonoBehaviour
         GameObject bullet = Instantiate(bulletType, shootingPoint.position, Quaternion.identity);
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         bulletScript.damage = damagePerBullet;
+        bulletScript.distanceToDisappear = distanceTilBulletDisappear;
         bulletScript.ShootDirection(CalculateBulletDirection(), bulletSpeed);
     }
 

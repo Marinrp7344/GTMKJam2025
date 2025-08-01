@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 1610303523601181406}
   - component: {fileID: 4147961074101423089}
   - component: {fileID: 4600506594086923296}
+  - component: {fileID: 7701183892411673338}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -317,6 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: 0
   health: 10
+  scoreWorth: 0
 --- !u!114 &1610303523601181406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponWheel: {fileID: 620922144795654220}
   rotation: 0
+  controllerDeadzone: 0.1
 --- !u!58 &4147961074101423089
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -381,6 +384,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerComposer: {fileID: 2601468530959179885}
   wheel: {fileID: 8066236525468293398}
+--- !u!114 &7701183892411673338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4182176407549833283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78ecf085214f6146b0fe917b8e39611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
 --- !u!1 &8066236525468293398
 GameObject:
   m_ObjectHideFlags: 0

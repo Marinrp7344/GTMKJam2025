@@ -46,11 +46,8 @@ public class DashEnemyMovement : MonoBehaviour
     {
         if (player != null)
         {
-
-
             if (!dashing)
             {
-
                 DashPerpendicular();
                 dashing = true;
                 canMove = false;
@@ -64,6 +61,27 @@ public class DashEnemyMovement : MonoBehaviour
         }
     }
 
+    public void StartDash()
+    {
+        if (player != null)
+        {
+
+            DashPerpendicular();
+            dashing = true;
+            canMove = false;
+
+        }
+    }
+
+    public void EndDash()
+    {
+        if (player != null)
+        {
+            canMove = true;
+            dashing = false;
+            enemyRB.linearVelocity = Vector2.zero;
+        }
+    }
     private void DashPerpendicular()
     {
         Vector2 enemyDir = (transform.position - player.transform.position).normalized;

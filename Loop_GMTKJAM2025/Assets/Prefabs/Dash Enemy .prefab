@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 4953142198388611889}
   - component: {fileID: 2549689260671417158}
   - component: {fileID: 119204404388664848}
+  - component: {fileID: 6400226752673644449}
   m_Layer: 7
   m_Name: 'Dash Enemy '
   m_TagString: Enemy
@@ -264,11 +265,41 @@ MonoBehaviour:
     sixteenth: 0
   - measure: 0
     quarter: 0
-    eighth: 3
+    eighth: 6
     sixteenth: 0
+  precision: 2
+  Activate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2549689260671417158}
+        m_TargetAssemblyTypeName: DashEnemyMovement, Assembly-CSharp
+        m_MethodName: StartDash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6400226752673644449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4300627964147189450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e89d944a24d1b847b1465b2506ae814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  composer: {fileID: 1983756971163570923}
+  firingBeats:
   - measure: 0
     quarter: 0
-    eighth: 6
+    eighth: 3
     sixteenth: 0
   - measure: 0
     quarter: 0
@@ -280,7 +311,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2549689260671417158}
         m_TargetAssemblyTypeName: DashEnemyMovement, Assembly-CSharp
-        m_MethodName: Dash
+        m_MethodName: EndDash
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -203,5 +203,6 @@ MonoBehaviour:
   bulletSpeed: 30
   bulletsPerShot: 10
   damagePerBullet: 1
+  distanceTilBulletDisappear: 15
   xDirection: 0
   yDirection: 0
