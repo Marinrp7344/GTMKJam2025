@@ -15,6 +15,7 @@ public class WeaponWheelUI : MonoBehaviour
     public Transform physicalWeaponWheel;
     public AvailableWeaponSlotUI heldAvailableWeapon;
     public Composer composer;
+    public List<PlayerWeapon> spawnedWeapons;
 
     private void Awake()
     {

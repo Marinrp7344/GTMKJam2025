@@ -93,6 +93,8 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
         tiedWeaponShoot.player = weaponManager.player;
         tiedWeapon.transform.SetParent(weaponWheel);
         UpdateTiedWeapon();
+
+        weaponManager.spawnedWeapons.Add(tiedWeaponBeatAction);
         if (spriteIcon != null)
         {
             UpdateSprite();
