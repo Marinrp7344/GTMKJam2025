@@ -55,14 +55,15 @@ public class WheelController : MonoBehaviour
             if (Mathf.Abs(aimInput.x) > controllerDeadzone || Mathf.Abs(aimInput.y) > controllerDeadzone)
             {
                 aimDirection = aimInput;
+                FollowCursor(aimDirection);
             }
         }
         else
         {
             aimDirection = GetVectorToMousePos();
+            FollowCursor(aimDirection);
         }
 
-        FollowCursor(aimDirection);
     }
 
     private Vector2 GetVectorToMousePos()
