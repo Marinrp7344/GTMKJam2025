@@ -27,7 +27,7 @@ public class AvailableWeaponSlotUI : MonoBehaviour, IPointerDownHandler, IPointe
     {
         if (availableAmountOfWeapons > 0)
         {
-            weaponManager.AddWeaponToSlot();
+            //weaponManager.AddWeaponToSlot();
             weaponManager.heldAvailableWeapon = null;
         }
     }

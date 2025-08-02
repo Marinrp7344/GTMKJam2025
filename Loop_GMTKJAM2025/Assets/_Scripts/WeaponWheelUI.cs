@@ -16,7 +16,7 @@ public class WeaponWheelUI : MonoBehaviour
     public AvailableWeaponSlotUI heldAvailableWeapon;
     public Composer composer;
     public List<PlayerWeapon> spawnedWeapons;
-
+    public WeaponSlotUI trashWeaponSlot;
     private void Awake()
     {
         Instance = this;
@@ -89,14 +89,36 @@ public class WeaponWheelUI : MonoBehaviour
 
             }
         }
+        UpdateWeaponList();
+    }
+    public void UpdateWeaponList()
+    {
+        spawnedWeapons = new List<PlayerWeapon>();
+       
+        for (int i = 0; i < weaponSlots.Count; i++)
+        {
+            spawnedWeapons.Add(weaponSlots[i].tiedWeapon.GetComponent<PlayerWeapon>());
+
+        }
     }
 
-    public void AddWeaponToSlot()
+    public void AddWeaponToSlot(Upgrade upgrade)
     {
-        if(hoveringSlot != null && hoveringSlot.weaponType == AvailableWeaponSlotUI.WeaponType.None)
+        bool foundSlot = false;
+        for (int i = 0; i < weaponSlots.Count; i++)
         {
-            hoveringSlot.AddWeapon(heldAvailableWeapon);
-            heldAvailableWeapon.AddedWeaponToInventory();
+            if(weaponSlots[i].weaponType == AvailableWeaponSlotUI.WeaponType.None)
+            {
+                hoveringSlot.AddWeapon(upgrade);
+                foundSlot = true;
+                break;
+            }
         }
+
+        if (!foundSlot)
+        {
+            trashWeaponSlot.AddWeapon(upgrade);
+        }
+        UpdateWeaponList();
     }
 }

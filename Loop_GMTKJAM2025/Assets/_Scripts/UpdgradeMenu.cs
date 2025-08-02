@@ -35,10 +35,11 @@ public class UpdgradeMenu : MonoBehaviour
 
     public void ChooseUpgrade(int slotIndex)
     {
-        AvailableWeaponsManager.Instance.AddWeapon(upgradeSlots[slotIndex].currentUpgrade);
 
         gameObject.SetActive(false);
         WeaponWheelUI.Instance.gameObject.SetActive(true);
+        WeaponWheelUI.Instance.AddWeaponToSlot(upgradeSlots[slotIndex].currentUpgrade);
+
     }
 
     public void FillWithRandomUpgrades()

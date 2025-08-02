@@ -15,6 +15,8 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
     public bool hovering;
     public bool clicked;
     public bool selected;
+
+
     public void OnPointerDown(PointerEventData eventData)
     {
         if(hovering)
@@ -81,12 +83,12 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
     }
 
 
-    public void AddWeapon(AvailableWeaponSlotUI weapon)
+    public void AddWeapon(Upgrade weapon)
     {
         Debug.Log("Adding Weapon");
         weaponType = weapon.weaponType;
-        spriteIcon = weapon.weaponSprite;
-        tiedWeapon = Instantiate(weapon.weapon, weaponWheel.position, Quaternion.identity);
+        spriteIcon = weapon.icon;
+        tiedWeapon = Instantiate(weapon.weaponPrefab, weaponManager.physicalWeaponWheel.position, Quaternion.identity);
         PlayerWeapon tiedWeaponBeatAction = tiedWeapon.GetComponent<PlayerWeapon>();
         tiedWeaponBeatAction.composer = weaponManager.composer;
         Shoot tiedWeaponShoot = tiedWeapon.GetComponent<Shoot>();
@@ -94,7 +96,6 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
         tiedWeapon.transform.SetParent(weaponWheel);
         UpdateTiedWeapon();
 
-        weaponManager.spawnedWeapons.Add(tiedWeaponBeatAction);
         if (spriteIcon != null)
         {
             UpdateSprite();
