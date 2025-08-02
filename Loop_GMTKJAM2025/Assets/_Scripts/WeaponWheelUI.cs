@@ -35,12 +35,8 @@ public class WeaponWheelUI : MonoBehaviour
     public void StartGame()
     {
         gameObject.SetActive(false);
-<<<<<<< Updated upstream
-=======
-        SpawnDirector.Singleton.SetUpNewStage();
         BeatMakerManager.Singleton.ClearBeatMakerMenu();
         trashWeaponSlot.ClearSlot();
->>>>>>> Stashed changes
     }
     public void CreateWeaponSlots()
     {
