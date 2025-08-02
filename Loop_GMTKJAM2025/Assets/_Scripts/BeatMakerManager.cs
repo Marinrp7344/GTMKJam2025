@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System.Linq;
 
 public class BeatMakerManager : MonoBehaviour
 {
@@ -20,10 +22,14 @@ public class BeatMakerManager : MonoBehaviour
 
     public void ClearBeatMakerMenu()
     {
+        List<BeatMaker> beatMakers = GetComponentsInChildren<BeatMaker>().ToList();
+
         // clear all beat makers
-        while (GetComponentsInChildren<BeatMaker>().Length > 0)
+        while (beatMakers.Any())
         {
-            Destroy(GetComponentInChildren<BeatMaker>().gameObject);
+            BeatMaker beatMakerToDelete = beatMakers.First();
+            beatMakers.Remove(beatMakerToDelete);
+            Destroy(beatMakerToDelete.gameObject);
         }
     }
 
