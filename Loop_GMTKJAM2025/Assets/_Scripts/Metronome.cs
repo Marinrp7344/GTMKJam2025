@@ -59,7 +59,7 @@ public struct Beat
                 }
             }
         }
-        
+
     }
 }
 
@@ -80,11 +80,21 @@ public struct BeatBasedDuration
 
 public enum Precision { measure, quarter, eighth, sixteenth }
 
+
 public class Metronome : MonoBehaviour
 {
+    [SerializeField] AudioSource musicSource;
+    [SerializeField] AudioClip song;
 
     public float bpm = 150;
     public uint quartersPerMeasure { get; private set; } = 4;
+
+    bool metronomeStarted = false;
+    double songStartTime;
+    double beatDuration;
+    uint lastBeatObserved;
+
+
 
     // beat events
 
@@ -104,7 +114,6 @@ public class Metronome : MonoBehaviour
     public UnityEvent sixteenth; // called fourth by eighth
     public UnityEvent sixteenthLate; // triggers AFTER all other beat events
 
-    float beatDuration;
 
     public int quartersThisMeasure { get; private set; } = 0;
     public int eighthsThisMeasure { get; private set; } = 0;
@@ -123,12 +132,46 @@ public class Metronome : MonoBehaviour
 
     private void Start()
     {
+        //StartMusic(song);
+    }
+
+    [ContextMenu("Start Music")]
+    void Debug_StartMusic()
+    {
+        StartMusic(song);
+    }
+
+    void StartMusic(AudioClip song)
+    {
+        musicSource.clip = song;
+        songStartTime = AudioSettings.dspTime;
+        musicSource.Play();
+
         StartMetronome();
     }
 
-    [ContextMenu("start metronome")]
+    private void FixedUpdate()
+    {
+        // dont do any processing if metronome hasnt started
+        if (!metronomeStarted) { return; }
+
+        // determine if a beat has occurred between the last check and this check
+        // if a beat occured, trigger a quarter note
+        double songTimeElapsed = AudioSettings.dspTime - songStartTime;
+        uint songBeatsElapsed = (uint)(songTimeElapsed / beatDuration);
+
+        if (songBeatsElapsed > lastBeatObserved)
+        {
+            lastBeatObserved = songBeatsElapsed;
+            Quarter();
+        }
+
+    }
+
     public void StartMetronome()
     {
+        metronomeStarted = true;
+
         // send measure event without calling measure method
         // sets measure to 1 to match with the rest of the notes
         measure.Invoke();
@@ -138,6 +181,8 @@ public class Metronome : MonoBehaviour
 
     void Quarter()
     {
+        Debug.Log($"quarter {lastBeatObserved}");
+
         // increments measure if the measure ends
         quartersThisMeasure++;
         if (quartersThisMeasure > quartersPerMeasure)
@@ -148,13 +193,12 @@ public class Metronome : MonoBehaviour
 
         quarter.Invoke();
         quarterLate.Invoke();
-        Invoke(nameof(Quarter), beatDuration);
 
 
         // invokes an eighth this beat, and queues the eighth
         // that will play in between this quarter and the next quarter
         Eighth();
-        Invoke(nameof(Eighth), beatDuration/2);
+        Invoke(nameof(Eighth), (float)(beatDuration / 2));
 
     }
 
@@ -177,8 +221,10 @@ public class Metronome : MonoBehaviour
         eighth.Invoke();
         eighthLate.Invoke();
 
+        // call sixteenth for this beat
         Sixteenth();
-        Invoke(nameof(Sixteenth), beatDuration/4);
+        // call next sixteenth
+        Invoke(nameof(Sixteenth), (float)(beatDuration / 4));
     }
 
     void Sixteenth()

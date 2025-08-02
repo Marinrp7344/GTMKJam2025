@@ -277,22 +277,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sound
       objectReference: {fileID: 0}
-    - target: {fileID: 709284029756488246, guid: fdb6a0e28cf5480459cce1bd29a114e2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2060894405978119456, guid: fdb6a0e28cf5480459cce1bd29a114e2, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: 198ec87bc0181f64e9376afc19dc09d4, type: 3}
-    - target: {fileID: 2060894405978119456, guid: fdb6a0e28cf5480459cce1bd29a114e2, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 198ec87bc0181f64e9376afc19dc09d4, type: 3}
-    - target: {fileID: 2060894405978119456, guid: fdb6a0e28cf5480459cce1bd29a114e2, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2429885777983671836, guid: fdb6a0e28cf5480459cce1bd29a114e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 396.5
@@ -338,11 +322,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdb6a0e28cf5480459cce1bd29a114e2, type: 3}
---- !u!82 &398080882 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2060894405978119456, guid: fdb6a0e28cf5480459cce1bd29a114e2, type: 3}
-  m_PrefabInstance: {fileID: 398080881}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &536689855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1462,9 +1441,13 @@ PrefabInstance:
       value: Metronome
       objectReference: {fileID: 0}
     - target: {fileID: 3677558561476054635, guid: 19ba5256e54721b47a183723aa6d3e87, type: 3}
-      propertyPath: bpm
-      value: 165
-      objectReference: {fileID: 0}
+      propertyPath: song
+      value: 
+      objectReference: {fileID: 8300000, guid: 198ec87bc0181f64e9376afc19dc09d4, type: 3}
+    - target: {fileID: 3677558561476054635, guid: 19ba5256e54721b47a183723aa6d3e87, type: 3}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 1824406494}
     - target: {fileID: 8798284295552180299, guid: 19ba5256e54721b47a183723aa6d3e87, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1510,6 +1493,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19ba5256e54721b47a183723aa6d3e87, type: 3}
+--- !u!82 &1824406494 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2423257372170407666, guid: 19ba5256e54721b47a183723aa6d3e87, type: 3}
+  m_PrefabInstance: {fileID: 1824406492}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1907567667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1919,7 +1907,7 @@ PrefabInstance:
     - target: {fileID: 2089348325472768612, guid: 5240385500ba93d4fa0e41f534b7e669, type: 3}
       propertyPath: delayComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 398080882}
+      objectReference: {fileID: 0}
     - target: {fileID: 4565516245489642592, guid: 5240385500ba93d4fa0e41f534b7e669, type: 3}
       propertyPath: m_Name
       value: CountdownFinished Delay
@@ -1935,7 +1923,7 @@ PrefabInstance:
     - target: {fileID: 6231839307582167574, guid: 5240385500ba93d4fa0e41f534b7e669, type: 3}
       propertyPath: delayComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 398080882}
+      objectReference: {fileID: 0}
     - target: {fileID: 6231839307582167574, guid: 5240385500ba93d4fa0e41f534b7e669, type: 3}
       propertyPath: delayComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
