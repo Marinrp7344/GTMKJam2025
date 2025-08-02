@@ -7,6 +7,7 @@ public class SpawnDirector : MonoBehaviour
 {
 
     public uint credits = 100;
+    [SerializeField] float budgetMultiplier = 1.2f;
 
     [SerializeField] uint wavesPerStage = 4;
     uint groupsPerWave;
@@ -34,6 +35,8 @@ public class SpawnDirector : MonoBehaviour
         // singleton code
         if (Singleton == null) { Singleton = this; }
         else if (Singleton != this) { Destroy(this); }
+
+        spawningComplete.AddListener(IncreaseBudget);
     }
 
 
@@ -276,6 +279,11 @@ public class SpawnDirector : MonoBehaviour
                 AddSpawnBeat((uint)(groupSizes.Count - 1));
             }
         }
+    }
+
+    void IncreaseBudget()
+    {
+        credits = (uint)((float)credits * budgetMultiplier);
     }
 
 }
