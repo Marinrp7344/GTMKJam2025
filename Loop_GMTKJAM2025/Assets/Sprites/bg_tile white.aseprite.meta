@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bf21c446e428aaf45a5d9073ebdb2f15
+guid: 6ec4735c22e1b77489d02f75d681c67d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 40
+    spritePixelsToUnits: 64
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -53,9 +53,9 @@ ScriptedImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
     normalMap: 0
     textureFormat: 0
     maxTextureSize: 0
@@ -77,7 +77,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
-    mosaicPadding: 4
+    mosaicPadding: 0
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -90,14 +90,14 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
-    mosaicPadding: 4
+    mosaicPadding: 0
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638896779946917163
+  platformSettingsDirtyTick: 638897202001052378
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -122,9 +122,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: particle_large
+  - name: bg_tile
     originalName: 
-    pivot: {x: 0.5, y: -1.1}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -132,9 +132,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 4
-      height: 20
-    spriteID: 4477e062fbe21a04ab892560070fef2a
+      width: 16
+      height: 16
+    spriteID: 5729014b1d261114d9bd8ca448f28f14
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,7 +144,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData:
-  - name: particle_large
+  - name: bg_tile
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -152,11 +152,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4
-      width: 4
-      height: 28
-    spriteID: 335e749fc0f423747a6426685c1b19ba
+      x: 0
+      y: 0
+      width: 64
+      height: 64
+    spriteID: 7bac74170c7b55b47a11f97b23bacc7f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -167,21 +167,21 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: 658406252
-    name: particle_large
+    guid: 1387818846
+    name: bg_tile
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: particle_large
+    - name: bg_tile white
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 30
-        y: 18
-        width: 4
-        height: 28
-      spriteId: 4477e062fbe21a04ab892560070fef2a
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      spriteId: 5729014b1d261114d9bd8ca448f28f14
     linkedCells: []
     parentIndex: -1
   platformSettings:

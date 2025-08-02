@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Bullet : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class Bullet : MonoBehaviour
     public float distanceToDisappear;
     public bool startedBullet;
     public Vector2 startingPosition;
+
+    public UnityEvent impact;
 
     private void Update()
     {
@@ -38,10 +41,12 @@ public class Bullet : MonoBehaviour
             Health enemyHealth = collision.gameObject.GetComponent<Health>();
             enemyHealth.TakeDamage(damage);
             PlayerStats.Instance.IncreaseScore(enemyHealth.scoreWorth);
+            impact.Invoke();
             Destroy(gameObject);
         }
         else if(collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
+            impact.Invoke();
             Destroy(gameObject);
         }
     }

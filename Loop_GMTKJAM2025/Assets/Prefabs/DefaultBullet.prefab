@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1417933298277149003}
   - component: {fileID: 6274470937159634489}
   - component: {fileID: 2138430975470125803}
+  - component: {fileID: 1967932269206534146}
   m_Layer: 8
   m_Name: DefaultBullet
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.7826662, y: -28.208927, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -8080977947159672904, guid: 416757ba7b0ddc24b829fd05ede95167, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -161,7 +162,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &2138430975470125803
 MonoBehaviour:
@@ -180,3 +181,35 @@ MonoBehaviour:
   distanceToDisappear: 0
   startedBullet: 0
   startingPosition: {x: 0, y: 0}
+  impact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1967932269206534146}
+        m_TargetAssemblyTypeName: ParticleSpawner, Assembly-CSharp
+        m_MethodName: SpawnParticles
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1967932269206534146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4517094820462903936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed2bac1c42e8544d9caa4719f05cc84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles:
+  - particlePrefab: {fileID: 4756395655300046563, guid: b85daf0791cecfa459ddd5693867e94a, type: 3}
+    spawnCountMin: 3
+    spawnCountMax: 8
+  color: {r: 0, g: 1, b: 1, a: 1}
