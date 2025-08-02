@@ -150,7 +150,7 @@ public class Metronome : MonoBehaviour
         StartMetronome();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         // dont do any processing if metronome hasnt started
         if (!metronomeStarted) { return; }
@@ -181,7 +181,7 @@ public class Metronome : MonoBehaviour
 
     void Quarter()
     {
-        Debug.Log($"quarter {lastBeatObserved}");
+        //Debug.Log($"quarter {lastBeatObserved}");
 
         // increments measure if the measure ends
         quartersThisMeasure++;
