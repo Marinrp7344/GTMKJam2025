@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 5675413474740255686}
   - component: {fileID: 2200620207830530959}
   - component: {fileID: 4264408177231344012}
-  m_Layer: 14
+  m_Layer: 15
   m_Name: FarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 746564473725501205}
   - component: {fileID: 7185872438548171321}
   - component: {fileID: 8969151677660292707}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: LevelBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
