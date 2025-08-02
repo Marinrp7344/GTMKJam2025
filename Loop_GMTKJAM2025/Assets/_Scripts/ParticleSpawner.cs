@@ -24,6 +24,7 @@ public class ParticleSpawner : MonoBehaviour
             for (int i = 0; i < particlesToSpawn; i++)
             {
                 GameObject particleObject = ObjectPool.Singleton.GetPooledParticle(particleSpawnData.particlePrefab, transform.position);
+                if (particleObject == null) { Debug.Log("POOL EMPTY"); return; } // no objects left in pool, return
                 Particle particleScript = particleObject.GetComponent<Particle>();
                 particleScript.SetColor(color);
                 particleScript.Activate();

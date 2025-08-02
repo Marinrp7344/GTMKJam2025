@@ -2784,9 +2784,8 @@ MonoBehaviour:
   - {fileID: 284844481224049647, guid: d213a8da71a10b94aab80bf2e10f3410, type: 3}
   - {fileID: 2049309626989233680, guid: 7b2535286bec2154fa18651563c6b3f5, type: 3}
   - {fileID: 4756395655300046563, guid: b85daf0791cecfa459ddd5693867e94a, type: 3}
-  - {fileID: 2438970953098543012, guid: f4c05a2f87eadac458ee1e6fcf9b8c43, type: 3}
   particlePool: []
-  amountToPool: 2000
+  amountToPool: 500
 --- !u!4 &1859358351
 Transform:
   m_ObjectHideFlags: 0
