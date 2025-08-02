@@ -35,7 +35,6 @@ public class WeaponWheelUI : MonoBehaviour
     public void StartGame()
     {
         gameObject.SetActive(false);
-        SpawnDirector.Singleton.SetUpNewStage();
     }
     public void CreateWeaponSlots()
     {

@@ -121,6 +121,11 @@ public class Metronome : MonoBehaviour
         beatDuration = 60 / bpm;
     }
 
+    private void Start()
+    {
+        StartMetronome();
+    }
+
     [ContextMenu("start metronome")]
     public void StartMetronome()
     {
