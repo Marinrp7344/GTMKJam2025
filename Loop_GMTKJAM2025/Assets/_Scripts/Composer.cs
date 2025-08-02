@@ -81,5 +81,17 @@ public class Composer : MonoBehaviour
         running = true;
     }
 
+    public void StopRunning() 
+    {
+
+        // unsubscribe to all beat events
+        metronome.measure.RemoveListener(NextMeasure);
+        metronome.quarter.RemoveListener(NextQuarter);
+        metronome.eighth.RemoveListener(NextEighth);
+        metronome.sixteenth.RemoveListener(NextSixteenth);
+
+        running = false; 
+    }
+
 
 }

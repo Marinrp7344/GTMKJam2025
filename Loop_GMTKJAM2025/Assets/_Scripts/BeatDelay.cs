@@ -5,6 +5,8 @@ public class BeatDelay : MonoBehaviour
 {
     [SerializeField] BeatBasedDuration delay;
 
+
+    bool running = false;
     public UnityEvent delayComplete;
 
     private void Start()
@@ -16,9 +18,10 @@ public class BeatDelay : MonoBehaviour
         metronome.sixteenth.AddListener(ProcessSixteenth);
     }
 
-    public void SetDelay(BeatBasedDuration delay)
+    public void StartDelay(BeatBasedDuration delay)
     {
         this.delay = delay;
+        running = true;
     }
 
     void ProcessQuarter()
@@ -44,11 +47,13 @@ public class BeatDelay : MonoBehaviour
     /// </summary>
     void CheckDelayComplete()
     {
-        if (delay.quarter <= 0 &&
+        if (running &&
+            delay.quarter <= 0 &&
             delay.eighth <= 0 &&
             delay.sixteenth <= 0)
         {
             delayComplete.Invoke();
+            running = false;
         }
     }
 }
