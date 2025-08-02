@@ -15,7 +15,7 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
     public bool hovering;
     public bool clicked;
     public bool selected;
-
+    public bool isTrashSlot;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -70,18 +70,37 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
         {
             UpdateTiedWeapon();
         }
+
+        
         
     }
 
     public void UpdateTiedWeapon()
     {
         tiedWeapon.transform.localRotation = Quaternion.Euler(0, 0, weaponAngle);
+        if (isTrashSlot)
+        {
+            tiedWeapon.SetActive(false);
+        }
+        else
+        {
+            tiedWeapon.SetActive(true);
+        }
     }
     public void UpdateSprite()
     {
         slotImage.sprite = spriteIcon;
     }
 
+    public void ClearSlot()
+    {
+        weaponType = AvailableWeaponSlotUI.WeaponType.None;
+        spriteIcon = null;
+        if(tiedWeapon != null)
+        {
+            Destroy(tiedWeapon);
+        }
+    }
 
     public void AddWeapon(Upgrade weapon)
     {
@@ -93,12 +112,14 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
         tiedWeaponBeatAction.composer = weaponManager.composer;
         Shoot tiedWeaponShoot = tiedWeapon.GetComponent<Shoot>();
         tiedWeaponShoot.player = weaponManager.player;
-        tiedWeapon.transform.SetParent(weaponWheel);
+        tiedWeapon.transform.SetParent(weaponManager.physicalWeaponWheel);
         UpdateTiedWeapon();
 
         if (spriteIcon != null)
         {
             UpdateSprite();
         }
+
+        weaponManager.UpdateWeaponList();
     }
 }

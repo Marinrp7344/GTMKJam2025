@@ -1284,6 +1284,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8872515759647767974, guid: db14e5e4f3e82e54e9b26e36f97b60ae, type: 3}
+      propertyPath: isTrashSlot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872515759647767974, guid: db14e5e4f3e82e54e9b26e36f97b60ae, type: 3}
       propertyPath: weaponManager
       value: 
       objectReference: {fileID: 1309512267}

@@ -35,6 +35,12 @@ public class WeaponWheelUI : MonoBehaviour
     public void StartGame()
     {
         gameObject.SetActive(false);
+<<<<<<< Updated upstream
+=======
+        SpawnDirector.Singleton.SetUpNewStage();
+        BeatMakerManager.Singleton.ClearBeatMakerMenu();
+        trashWeaponSlot.ClearSlot();
+>>>>>>> Stashed changes
     }
     public void CreateWeaponSlots()
     {
@@ -49,6 +55,7 @@ public class WeaponWheelUI : MonoBehaviour
             slot.GetComponent<WeaponSlotUI>().weaponManager = this;
             slot.GetComponent<WeaponSlotUI>().weaponAngle = rotationAmount * i;
             slot.GetComponent<WeaponSlotUI>().weaponWheel = physicalWeaponWheel;
+            weaponSlots.Add(slot.GetComponent<WeaponSlotUI>());
         }
     }
 
@@ -96,9 +103,13 @@ public class WeaponWheelUI : MonoBehaviour
        
         for (int i = 0; i < weaponSlots.Count; i++)
         {
-            spawnedWeapons.Add(weaponSlots[i].tiedWeapon.GetComponent<PlayerWeapon>());
+            if (weaponSlots[i].tiedWeapon != null)
+            {
+                spawnedWeapons.Add(weaponSlots[i].tiedWeapon.GetComponent<PlayerWeapon>());
+            }
 
         }
+        BeatMakerManager.Singleton.SpawnBeatMakerMenu();
     }
 
     public void AddWeaponToSlot(Upgrade upgrade)
@@ -108,7 +119,8 @@ public class WeaponWheelUI : MonoBehaviour
         {
             if(weaponSlots[i].weaponType == AvailableWeaponSlotUI.WeaponType.None)
             {
-                hoveringSlot.AddWeapon(upgrade);
+                Debug.Log("Found a normal Slot");
+                weaponSlots[i].AddWeapon(upgrade);
                 foundSlot = true;
                 break;
             }
@@ -116,8 +128,9 @@ public class WeaponWheelUI : MonoBehaviour
 
         if (!foundSlot)
         {
+            Debug.Log("Sent to trash");
             trashWeaponSlot.AddWeapon(upgrade);
         }
-        UpdateWeaponList();
+        
     }
 }

@@ -5,9 +5,15 @@ using System.Linq;
 
 public class BeatMakerManager : MonoBehaviour
 {
+    public static BeatMakerManager Singleton;
     [SerializeField] LayoutGroup layout;
     [SerializeField] GameObject beatMakerPrefab;
-    
+
+    private void Awake()
+    {
+        Singleton = this;    
+    }
+
     [ContextMenu("spawn beat maker menu")]
     public void SpawnBeatMakerMenu()
     {
