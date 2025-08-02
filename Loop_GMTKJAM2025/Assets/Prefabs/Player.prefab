@@ -319,6 +319,9 @@ MonoBehaviour:
   entityType: 0
   health: 10
   scoreWorth: 0
+  death:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1610303523601181406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,7 +507,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 30
-  m_Sprite: {fileID: -4158781084015559879, guid: 519499b8fe93c8446b461ce255690523, type: 3}
+  m_Sprite: {fileID: -8338256603294622673, guid: e998ecfe3269ed7488aae9de8e7f98c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

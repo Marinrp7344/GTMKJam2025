@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class Health : MonoBehaviour
     public EntityType entityType;
     [SerializeField] private int health;
     public int scoreWorth;
+
+    public UnityEvent death;
 
     public void TakeDamage(int damage)
     {
@@ -27,7 +30,8 @@ public class Health : MonoBehaviour
         {
             RestartMenu.Instance.gameObject.SetActive(true);
         }
-        
+        death.Invoke();
+
         Destroy(gameObject);
     }
 }

@@ -65,9 +65,10 @@ GameObject:
   - component: {fileID: 4953142198388611889}
   - component: {fileID: 2549689260671417158}
   - component: {fileID: 119204404388664848}
+  - component: {fileID: 6400226752673644449}
   m_Layer: 7
-  m_Name: Common Enemy Redone
-  m_TagString: Untagged
+  m_Name: 'Dash Enemy '
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,6 +87,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 43186921850664787}
+  - {fileID: 7538997601717629274}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &400221022696338443
@@ -132,7 +134,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 7663398257291959440, guid: 56df6ee909add9b4da12c1219c97197e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -155,9 +157,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f3fefc6ed58f349ae35eac7c41ba0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityType: 1
-  health: 1
-  scoreWorth: 0
+  entityType: 2
+  health: 2
+  scoreWorth: 20
+  death:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7506055449286807831}
+        m_TargetAssemblyTypeName: ParticleSpawner, Assembly-CSharp
+        m_MethodName: SpawnParticles
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!58 &7114901142732194196
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -234,14 +251,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashing: 0
-  dashSpeed: 10
+  dashSpeed: 12
   direction: 0
   dash: 0
   enemyRB: {fileID: 4953142198388611889}
   wheelController: {fileID: 0}
   player: {fileID: 0}
   damage: 1
-  tiltAmount: 0
+  tiltAmount: 1
   enemySpeed: 5
   canMove: 1
 --- !u!114 &119204404388664848
@@ -264,11 +281,41 @@ MonoBehaviour:
     sixteenth: 0
   - measure: 0
     quarter: 0
-    eighth: 3
+    eighth: 6
     sixteenth: 0
+  precision: 2
+  Activate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2549689260671417158}
+        m_TargetAssemblyTypeName: DashEnemyMovement, Assembly-CSharp
+        m_MethodName: StartDash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6400226752673644449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4300627964147189450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e89d944a24d1b847b1465b2506ae814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  composer: {fileID: 1983756971163570923}
+  firingBeats:
   - measure: 0
     quarter: 0
-    eighth: 6
+    eighth: 3
     sixteenth: 0
   - measure: 0
     quarter: 0
@@ -280,7 +327,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2549689260671417158}
         m_TargetAssemblyTypeName: DashEnemyMovement, Assembly-CSharp
-        m_MethodName: Dash
+        m_MethodName: EndDash
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -290,3 +337,76 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1001 &398082141950402489
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7566731763219527098}
+    m_Modifications:
+    - target: {fileID: 2024213484313041465, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
+      propertyPath: m_Name
+      value: EnemyDeathParticleSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861494915644518115, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861494915644518115, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861494915644518115, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861494915644518115, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861494915644518115, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861494915644518115, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861494915644518115, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861494915644518115, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861494915644518115, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861494915644518115, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
+--- !u!114 &7506055449286807831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7902858781699165870, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
+  m_PrefabInstance: {fileID: 398082141950402489}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed2bac1c42e8544d9caa4719f05cc84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &7538997601717629274 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7861494915644518115, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
+  m_PrefabInstance: {fileID: 398082141950402489}
+  m_PrefabAsset: {fileID: 0}
