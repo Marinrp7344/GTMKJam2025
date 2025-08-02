@@ -1486,9 +1486,13 @@ PrefabInstance:
       value: Metronome
       objectReference: {fileID: 0}
     - target: {fileID: 3677558561476054635, guid: 19ba5256e54721b47a183723aa6d3e87, type: 3}
+      propertyPath: bpm
+      value: 210
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677558561476054635, guid: 19ba5256e54721b47a183723aa6d3e87, type: 3}
       propertyPath: song
       value: 
-      objectReference: {fileID: 8300000, guid: 198ec87bc0181f64e9376afc19dc09d4, type: 3}
+      objectReference: {fileID: 8300000, guid: b39a63c23b7d5e142bb88d0ccef33b7b, type: 3}
     - target: {fileID: 3677558561476054635, guid: 19ba5256e54721b47a183723aa6d3e87, type: 3}
       propertyPath: musicSource
       value: 
