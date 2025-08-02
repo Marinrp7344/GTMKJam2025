@@ -110,8 +110,13 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
         tiedWeapon = Instantiate(weapon.weaponPrefab, weaponManager.physicalWeaponWheel.position, Quaternion.identity);
         PlayerWeapon tiedWeaponBeatAction = tiedWeapon.GetComponent<PlayerWeapon>();
         tiedWeaponBeatAction.composer = weaponManager.composer;
-        Shoot tiedWeaponShoot = tiedWeapon.GetComponent<Shoot>();
-        tiedWeaponShoot.player = weaponManager.player;
+
+        if (weaponType != AvailableWeaponSlotUI.WeaponType.Laser)
+        {
+            Shoot tiedWeaponShoot = tiedWeapon.GetComponent<Shoot>();
+            tiedWeaponShoot.player = weaponManager.player;
+        }
+
         tiedWeapon.transform.SetParent(weaponManager.physicalWeaponWheel);
         UpdateTiedWeapon();
 
