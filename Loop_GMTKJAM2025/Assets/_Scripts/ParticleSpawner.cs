@@ -23,8 +23,10 @@ public class ParticleSpawner : MonoBehaviour
             int particlesToSpawn = Random.Range(particleSpawnData.spawnCountMin, particleSpawnData.spawnCountMax);
             for (int i = 0; i < particlesToSpawn; i++)
             {
-                GameObject particle = Instantiate(particleSpawnData.particlePrefab, transform.position, Quaternion.identity);
-                particle.GetComponent<Particle>().SetColor(color);
+                GameObject particleObject = ObjectPool.Singleton.GetPooledParticle(particleSpawnData.particlePrefab, transform.position);
+                Particle particleScript = particleObject.GetComponent<Particle>();
+                particleScript.SetColor(color);
+                particleScript.Activate();
             }
         }
 

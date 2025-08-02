@@ -277,7 +277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6188971868361635859, guid: 70fc34dc1cfe61e46b4ad2103fdc6faa, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7444377387326485313, guid: 70fc34dc1cfe61e46b4ad2103fdc6faa, type: 3}
       propertyPath: m_Color.b
@@ -884,7 +884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3559117979362607348, guid: d5d187fc047e55b488178598552a6767, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4176538307213123370, guid: d5d187fc047e55b488178598552a6767, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2020,7 +2020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3704646876251816869, guid: b42c3623bda0f1c4da1781026072539d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4032073228693656322, guid: b42c3623bda0f1c4da1781026072539d, type: 3}
       propertyPath: m_Color.a
@@ -2750,6 +2750,58 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 2423257372170407666, guid: 19ba5256e54721b47a183723aa6d3e87, type: 3}
   m_PrefabInstance: {fileID: 1824406492}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1859358349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1859358351}
+  - component: {fileID: 1859358350}
+  m_Layer: 0
+  m_Name: ParticlePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1859358350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859358349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2116738e6dc25664d8b695d8e7891507, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles:
+  - {fileID: 4756395655300046563, guid: d3799e875bdbb60419c07401eda0c333, type: 3}
+  - {fileID: 284844481224049647, guid: d213a8da71a10b94aab80bf2e10f3410, type: 3}
+  - {fileID: 2049309626989233680, guid: 7b2535286bec2154fa18651563c6b3f5, type: 3}
+  - {fileID: 4756395655300046563, guid: b85daf0791cecfa459ddd5693867e94a, type: 3}
+  - {fileID: 2438970953098543012, guid: f4c05a2f87eadac458ee1e6fcf9b8c43, type: 3}
+  particlePool: []
+  amountToPool: 2000
+--- !u!4 &1859358351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859358349}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -100, z: 9.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1893960353
 GameObject:
   m_ObjectHideFlags: 0
@@ -3074,7 +3126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2158815935306783946, guid: 06e050a2c74d8094890d6f24c1a336dd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2516485059568018163, guid: 06e050a2c74d8094890d6f24c1a336dd, type: 3}
       propertyPath: m_Color.b
@@ -4894,3 +4946,4 @@ SceneRoots:
   - {fileID: 398080881}
   - {fileID: 1271301473}
   - {fileID: 1238533119}
+  - {fileID: 1859358351}

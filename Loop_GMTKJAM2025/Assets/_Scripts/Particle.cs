@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 
@@ -26,7 +27,7 @@ public class Particle : MonoBehaviour
         GetComponent<SpriteRenderer>().color = color;
     }
 
-    private void Start()
+    public void Activate()
     {
         transform.rotation = Random.rotation;
 
@@ -49,6 +50,6 @@ public class Particle : MonoBehaviour
 
     void DestroyParticle()
     {
-        Destroy(this.gameObject);
+        gameObject.SetActive(false);
     }
 }

@@ -49,8 +49,8 @@ MonoBehaviour:
     spawnCountMin: 3
     spawnCountMax: 5
   - particlePrefab: {fileID: 2049309626989233680, guid: 7b2535286bec2154fa18651563c6b3f5, type: 3}
-    spawnCountMin: 30
-    spawnCountMax: 50
+    spawnCountMin: 15
+    spawnCountMax: 25
   - particlePrefab: {fileID: 4756395655300046563, guid: d3799e875bdbb60419c07401eda0c333, type: 3}
     spawnCountMin: 10
     spawnCountMax: 15
