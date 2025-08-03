@@ -16,6 +16,29 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
     public bool clicked;
     public bool selected;
     public bool isTrashSlot;
+    public RectTransform rectTransform;
+    public Vector2 startingPosition;
+    public Image weaponImage;
+    public Color selectedColor;
+    public Color startingColor;
+    private void Start()
+    {
+        startingPosition = transform.position;
+        startingColor = weaponImage.color;
+    }
+
+    private void Update()
+    {
+        if(weaponManager.heldSlot == this)
+        {
+            weaponImage.color = selectedColor;
+        }
+        else
+        {
+            weaponImage.color = startingColor;
+        }
+
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -81,10 +104,12 @@ public class WeaponSlotUI : MonoBehaviour,IPointerDownHandler,IPointerEnterHandl
         if (isTrashSlot)
         {
             tiedWeapon.SetActive(false);
+            tiedWeapon.GetComponent<PlayerWeapon>().enabled = false;
         }
         else
         {
             tiedWeapon.SetActive(true);
+            tiedWeapon.GetComponent<PlayerWeapon>().enabled = true;
         }
     }
     public void UpdateSprite()

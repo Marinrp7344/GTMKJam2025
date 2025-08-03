@@ -294,7 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityType: 2
-  health: 2
+  health: 1
   scoreWorth: 20
   death:
     m_PersistentCalls:
