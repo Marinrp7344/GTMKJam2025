@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5186845885200718997}
   - component: {fileID: 2324722817129578733}
   - component: {fileID: -4445377355378030234}
+  - component: {fileID: 3241697998581209931}
   m_Layer: 7
   m_Name: Erattic Dash Enemy
   m_TagString: Enemy
@@ -209,7 +210,7 @@ MonoBehaviour:
   player: {fileID: 0}
   damage: 1
   tiltAmount: 0.75
-  enemySpeed: 5
+  enemySpeed: 200
   canMove: 1
 --- !u!114 &2324722817129578733
 MonoBehaviour:
@@ -279,6 +280,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3241697998581209931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2627918511614043440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1755b30cd99dd04a8e4c85fb030a9fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  rotationObj: {fileID: 2627918511614043440}
 --- !u!1 &3427120500203181888
 GameObject:
   m_ObjectHideFlags: 0

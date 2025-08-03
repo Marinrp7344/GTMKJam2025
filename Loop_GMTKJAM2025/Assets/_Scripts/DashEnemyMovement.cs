@@ -39,7 +39,8 @@ public class DashEnemyMovement : MonoBehaviour
 
     private void ChasePlayer()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * enemySpeed);
+        Vector2 currentDirection = (player.transform.position- transform.position).normalized;
+        enemyRB.linearVelocity = currentDirection * enemySpeed * Time.deltaTime;
     } 
 
     public void Dash()

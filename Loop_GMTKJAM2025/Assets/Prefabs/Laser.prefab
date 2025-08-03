@@ -188,6 +188,8 @@ MonoBehaviour:
   weaponName: weapon
   icon: {fileID: 0}
   sound: {fileID: 0}
+  maxBeats: 0
+  availableBeats: 0
 --- !u!114 &9214043429418651299
 MonoBehaviour:
   m_ObjectHideFlags: 0

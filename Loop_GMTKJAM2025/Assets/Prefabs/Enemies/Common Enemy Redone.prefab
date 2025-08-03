@@ -66,6 +66,7 @@ GameObject:
   - component: {fileID: 2549689260671417158}
   - component: {fileID: 119204404388664848}
   - component: {fileID: 6629585192112833587}
+  - component: {fileID: -280153358676205396}
   m_Layer: 7
   m_Name: Common Enemy Redone
   m_TagString: Enemy
@@ -259,7 +260,7 @@ MonoBehaviour:
   player: {fileID: 0}
   damage: 1
   tiltAmount: 0
-  enemySpeed: 5
+  enemySpeed: 200
   canMove: 1
 --- !u!114 &119204404388664848
 MonoBehaviour:
@@ -337,6 +338,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-280153358676205396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4300627964147189450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1755b30cd99dd04a8e4c85fb030a9fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  rotationObj: {fileID: 4300627964147189450}
 --- !u!1001 &8784051256967704893
 PrefabInstance:
   m_ObjectHideFlags: 0
