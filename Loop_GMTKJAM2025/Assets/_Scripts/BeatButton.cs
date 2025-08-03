@@ -30,12 +30,20 @@ public class BeatButton : MonoBehaviour
         // toggle on, add firing beat
         if (on && !weapon.HasFiringBeat(beat))
         {
-            weaponManager.TryAddFiringBeat(beat, weapon);
+            // if not successfully added, dont let toggle flip
+            if (weaponManager.TryAddFiringBeat(beat, weapon) == false)
+            {
+                toggle.isOn = false;
+            }
         }
         // toggle off, remove firing beat
         else if (!on && weapon.HasFiringBeat(beat))
         {
-            weaponManager.TryRemoveFiringBeat(beat, weapon);
+            // if not successfully removed, dont let toggle flip
+            if (weaponManager.TryRemoveFiringBeat(beat, weapon) == false)
+            {
+                toggle.isOn = true;
+            }
         }
     }
 

@@ -13,9 +13,10 @@ public class WeaponManager : MonoBehaviour
         else if (Singleton != this) { Destroy(this); }
     }
 
-    public void TryAddFiringBeat(Beat beat, PlayerWeapon weapon)
+    public bool TryAddFiringBeat(Beat beat, PlayerWeapon weapon)
     {
-        if (weapon == null) { return; }
+        bool success = false;
+        if (weapon == null) { return success; }
 
         if (CanAfford(weapon.cost) && !weapon.HasFiringBeat(beat))
         {
@@ -23,13 +24,17 @@ public class WeaponManager : MonoBehaviour
             {
                 // deduct from budget if successfully added
                 budget -= weapon.cost;
+                success = true;
             }
         }
+
+        return success;
     }
 
-    public void TryRemoveFiringBeat(Beat beat, PlayerWeapon weapon)
+    public bool TryRemoveFiringBeat(Beat beat, PlayerWeapon weapon)
     {
-        if (weapon == null) { return; }
+        bool success = false;
+        if (weapon == null) { return success; }
 
         if (weapon.HasFiringBeat(beat))
         {
@@ -37,8 +42,11 @@ public class WeaponManager : MonoBehaviour
             {
                 // refund to budget if successfully removed
                 budget += weapon.cost;
+                success = true;
             }
         }
+
+        return success;
 
     }
 
