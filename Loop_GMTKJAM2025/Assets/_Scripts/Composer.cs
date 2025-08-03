@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class Composer : MonoBehaviour
 {
+    [SerializeField] bool startOnStart = true;
 
     public uint measureCount;
     public Beat currentBeat;
@@ -15,6 +16,7 @@ public class Composer : MonoBehaviour
     {
         metronome = Metronome.Singleton;
 
+        if (startOnStart) { StartRunning(); }
     }
 
     void NextMeasure()

@@ -32,8 +32,6 @@ public class MusicManager : MonoBehaviour
     void StartRandomSong()
     {
         StartSong(PickRandomSong());
-
-        StageController.Instance.ReadyNextStage();
     }
 
 }
