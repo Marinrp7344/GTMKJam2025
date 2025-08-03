@@ -8,6 +8,15 @@ public class PlayerWeapon : BeatAction
     public Sprite icon;
     public AudioClip sound;
 
+    public uint maxBeats;
+    public uint availableBeats;
+
+    protected override void Start()
+    {
+        base.Start();
+        availableBeats = maxBeats;
+    }
+
     public void PlayFiringSound()
     {
         SoundFXManager.Instance.PlaySoundFXClip(sound, transform, 1f);

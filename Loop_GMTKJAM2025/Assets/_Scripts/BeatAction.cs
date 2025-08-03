@@ -10,7 +10,7 @@ public class BeatAction : MonoBehaviour
     [Space]
     public UnityEvent Activate;
 
-    private void Start()
+    protected virtual void Start()
     {
         // configure precision event logic
         SetPrecision(precision);
