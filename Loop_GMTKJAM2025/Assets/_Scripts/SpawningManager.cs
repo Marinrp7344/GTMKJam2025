@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpawningManager : MonoBehaviour
 {
@@ -37,8 +38,8 @@ public class SpawningManager : MonoBehaviour
     [Range(0, 100)]
     [SerializeField] private float spawnerEnemyChances;
     [SerializeField] private int amountofEnemiesPerSpawn;
-    
 
+    public UnityEvent stageClear;
 
     private void Start()
     {
@@ -101,6 +102,7 @@ public class SpawningManager : MonoBehaviour
         {
             UpdgradeMenu.Instance.StartNewRound();
             spawningEnded = false;
+            stageClear.Invoke();
         }
     }
 
