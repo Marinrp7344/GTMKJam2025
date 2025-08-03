@@ -197,7 +197,10 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   isBlastBullet: 0
+  isMine: 0
+  isCannon: 0
   blastRadius: {fileID: 0}
+  beatDelay: {fileID: 0}
 --- !u!114 &1967932269206534146
 MonoBehaviour:
   m_ObjectHideFlags: 0

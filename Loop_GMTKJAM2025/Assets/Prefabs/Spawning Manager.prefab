@@ -66,6 +66,7 @@ MonoBehaviour:
   stageClear:
     m_PersistentCalls:
       m_Calls: []
+  areaToSpawn: 0
 --- !u!61 &2082155996840983032
 BoxCollider2D:
   m_ObjectHideFlags: 0
