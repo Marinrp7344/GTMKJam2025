@@ -2769,6 +2769,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1587981924}
   m_SourcePrefab: {fileID: 100100000, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
+--- !u!114 &1713066494 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2601468530959179885, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
+  m_PrefabInstance: {fileID: 1713066493}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f74c2d2a89ebf2418fb0d8bdcd7f3a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1713647813
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,6 +2930,10 @@ PrefabInstance:
       propertyPath: musicSource
       value: 
       objectReference: {fileID: 1824406494}
+    - target: {fileID: 3677558561476054635, guid: 19ba5256e54721b47a183723aa6d3e87, type: 3}
+      propertyPath: playerComposer
+      value: 
+      objectReference: {fileID: 1713066494}
     - target: {fileID: 8798284295552180299, guid: 19ba5256e54721b47a183723aa6d3e87, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
