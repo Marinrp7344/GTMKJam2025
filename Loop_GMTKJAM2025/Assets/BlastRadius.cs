@@ -4,6 +4,8 @@ using System.Collections;
 public class BlastRadius : MonoBehaviour
 {
     [SerializeField] private float disappearTime;
+    [SerializeField] AudioClip explosionSound;
+
     private void Awake()
     {
         StartCoroutine(TimeTilDeletion());
@@ -12,6 +14,7 @@ public class BlastRadius : MonoBehaviour
     private IEnumerator TimeTilDeletion()
     {
         yield return new WaitForSeconds(disappearTime);
+        SoundFXManager.Instance.PlaySoundFXClip(explosionSound, transform, 1f);
         Destroy(gameObject);
     }
 

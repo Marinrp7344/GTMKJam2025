@@ -197,7 +197,7 @@ MonoBehaviour:
         m_CallState: 2
   weaponName: Cannon
   icon: {fileID: 1065637552156602326, guid: d3d2593675d55b04ea24d5c82c0fa9eb, type: 3}
-  sound: {fileID: 8300000, guid: 5ef7466c92c8a9b438ff2eb267715e19, type: 3}
+  sound: {fileID: 8300000, guid: fa590a14ff587e54bbd9a409e4ebb604, type: 3}
   maxBeats: 5
   availableBeats: 0
 --- !u!114 &-5910764541809034165

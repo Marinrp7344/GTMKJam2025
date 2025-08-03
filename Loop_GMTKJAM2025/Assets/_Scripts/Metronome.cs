@@ -120,6 +120,8 @@ public class Metronome : MonoBehaviour
 
 
     public static Metronome Singleton;
+
+    [SerializeField] Composer playerComposer;
     private void Awake()
     {
         // singleton code
@@ -167,6 +169,7 @@ public class Metronome : MonoBehaviour
         // send measure event without calling measure method
         // sets measure to 1 to match with the rest of the notes
         measure.Invoke();
+        playerComposer.StartRunning();
 
         Quarter();
     }

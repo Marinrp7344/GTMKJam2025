@@ -19,7 +19,7 @@ PrefabInstance:
     - target: {fileID: 2138430975470125803, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
       propertyPath: blastRadius
       value: 
-      objectReference: {fileID: 2003292374936013024, guid: 8bfb9a318435c2d4d8a1d74b1fbc54f4, type: 3}
+      objectReference: {fileID: 2003292374936013024, guid: 0879cf047df2f8e4d943a93ed1cd55f7, type: 3}
     - target: {fileID: 4517094820462903936, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
       propertyPath: m_Name
       value: Gernade

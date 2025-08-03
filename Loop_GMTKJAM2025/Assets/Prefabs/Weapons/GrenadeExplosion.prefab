@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1542817172999269224}
   - component: {fileID: 7270672471007815013}
   m_Layer: 0
-  m_Name: Blast Radius
+  m_Name: GrenadeExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,4 +138,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disappearTime: 0.1
-  explosionSound: {fileID: 8300000, guid: bf1d0acaf4adf1547b7035e0d4060b95, type: 3}
+  explosionSound: {fileID: 8300000, guid: b9efbb131e37cbe41b06b3867ac7ac00, type: 3}
