@@ -282,6 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f74c2d2a89ebf2418fb0d8bdcd7f3a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startOnStart: 1
   measureCount: 1
   currentBeat:
     measure: 0
@@ -342,11 +343,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7902858781699165870, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
       propertyPath: color.b
-      value: 0.1764706
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902858781699165870, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
+      propertyPath: color.g
+      value: 0.50980395
       objectReference: {fileID: 0}
     - target: {fileID: 7902858781699165870, guid: c3a9626e1dfc1f34b9c1d1348824ee98, type: 3}
       propertyPath: color.r
-      value: 0.28627452
+      value: 0.27058825
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

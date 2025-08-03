@@ -169,7 +169,8 @@ public class Metronome : MonoBehaviour
         // send measure event without calling measure method
         // sets measure to 1 to match with the rest of the notes
         measure.Invoke();
-        playerComposer.StartRunning();
+        if (!playerComposer.running)
+        { playerComposer.StartRunning(); }
 
         Quarter();
     }

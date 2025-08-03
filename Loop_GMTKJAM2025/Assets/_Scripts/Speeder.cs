@@ -3,9 +3,10 @@ using UnityEngine;
 public class Speeder : MonoBehaviour
 {
     [SerializeField] DashEnemyMovement movement;
+    [SerializeField] float speedMult = 1.1f;
 
     public void SpeedUp()
     {
-        movement.enemySpeed *= 1.5f;
+        movement.enemySpeed *= speedMult;
     }
 }
