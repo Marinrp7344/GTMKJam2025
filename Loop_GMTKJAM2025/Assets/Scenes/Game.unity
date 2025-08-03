@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Choose Your Weapon
+  m_text: Choose New Weapon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a591002250db56441b14a093c3375bbe, type: 2}
   m_sharedMaterial: {fileID: 7318249276913768687, guid: a591002250db56441b14a093c3375bbe, type: 2}
@@ -2574,6 +2574,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 210614290700783307, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210614290700783307, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 210614290700783307, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 409096941504613261, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -2.25
@@ -2623,6 +2635,18 @@ PrefabInstance:
     - target: {fileID: 2626697399876112623, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -25.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863096146924241485, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863096146924241485, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863096146924241485, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3138030402970380572, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2750,6 +2774,18 @@ PrefabInstance:
       propertyPath: highscoreText
       value: 
       objectReference: {fileID: 1811256605}
+    - target: {fileID: 7436178782480467173, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7436178782480467173, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7436178782480467173, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7436193875806952910, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
       propertyPath: m_Name
       value: Highscore Text
