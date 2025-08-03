@@ -41,9 +41,13 @@ public class SpawningManager : MonoBehaviour
 
     public UnityEvent stageClear;
 
-    private void Start()
+    private void Awake()
     {
         SpawningManager.Instance = this;
+    }
+
+    private void Start()
+    {
         worldBoundsCollider = GetComponent<Collider2D>();
         SetSpawnableBounds();
         SetUpWalls();

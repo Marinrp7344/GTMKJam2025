@@ -15,10 +15,6 @@ public class Composer : MonoBehaviour
     {
         metronome = Metronome.Singleton;
 
-        StartRunning(); // temporary
-
-        // for debugging
-        // metronome.beat.AddListener(PrintCurrentBeat);
     }
 
     void NextMeasure()
@@ -83,6 +79,7 @@ public class Composer : MonoBehaviour
 
     public void StopRunning() 
     {
+        if (metronome == null) { return; }
 
         // unsubscribe to all beat events
         metronome.measure.RemoveListener(NextMeasure);

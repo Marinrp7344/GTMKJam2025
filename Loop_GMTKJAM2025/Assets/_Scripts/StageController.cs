@@ -5,6 +5,12 @@ public class StageController : MonoBehaviour
     [SerializeField] Countdown countdown;
     [SerializeField] BeatDelay countdownFinish;
 
+    public static StageController Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     public void ReadyNextStage()
     {
         foreach (Composer composer in FindObjectsByType<Composer>(FindObjectsSortMode.None))

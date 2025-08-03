@@ -84,7 +84,6 @@ public enum Precision { measure, quarter, eighth, sixteenth }
 public class Metronome : MonoBehaviour
 {
     [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioClip song;
 
     public float bpm = 150;
     public uint quartersPerMeasure { get; private set; } = 4;
@@ -127,22 +126,15 @@ public class Metronome : MonoBehaviour
         if (Singleton == null) { Singleton = this; }
         else if (Singleton != this) { Destroy(this); }
 
-        beatDuration = 60 / bpm;
     }
 
-    private void Start()
+    public void StartMusic(AudioClip song, float bpm)
     {
-        //StartMusic(song);
-    }
+        this.bpm = bpm;
+        beatDuration = 60 / this.bpm;
 
-    [ContextMenu("Start Music")]
-    void Debug_StartMusic()
-    {
-        StartMusic(song);
-    }
+        lastBeatObserved = 1;
 
-    void StartMusic(AudioClip song)
-    {
         musicSource.clip = song;
         songStartTime = AudioSettings.dspTime;
         musicSource.Play();
@@ -158,7 +150,7 @@ public class Metronome : MonoBehaviour
         // determine if a beat has occurred between the last check and this check
         // if a beat occured, trigger a quarter note
         double songTimeElapsed = AudioSettings.dspTime - songStartTime;
-        uint songBeatsElapsed = (uint)(songTimeElapsed / beatDuration);
+        uint songBeatsElapsed = (uint)(songTimeElapsed / beatDuration) + 1;
 
         if (songBeatsElapsed > lastBeatObserved)
         {
