@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 4092695147391979910}
-  speedMult: 1.1
+  speedMult: 1.2
 --- !u!1001 &4647109113041168412
 PrefabInstance:
   m_ObjectHideFlags: 0
