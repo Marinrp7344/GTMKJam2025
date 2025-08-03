@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private GameObject shield;
+    [SerializeField] private float rotationValue;
+
+    public void ShowShield()
     {
-        
+        shield.transform.rotation = Quaternion.Euler(0, 0, rotationValue);
+        shield.SetActive(true);
+        rotationValue += 90;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void HideShield()
     {
-        
+        shield.SetActive(false);
     }
 }
