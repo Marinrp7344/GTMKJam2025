@@ -46,12 +46,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a182a62939dbe04eaafd9899f69f9ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  credits: 500
+  credits: 250
+  budgetMultiplier: 1.2
   wavesPerStage: 4
   allEnemies:
   - {fileID: 11400000, guid: c4a2720a33de74e458ec24e4f970cb97, type: 2}
   - {fileID: 11400000, guid: c9c237bd9ed1b3b4a9d1383b6e2e9989, type: 2}
   - {fileID: 11400000, guid: c469516dda1f89343b68a7d878e8eb47, type: 2}
+  - {fileID: 11400000, guid: 9c6717769b97c3f4a92bc0eeaf939c2c, type: 2}
+  - {fileID: 11400000, guid: 735e70caaafe88a4a979ff2ba6d73e3f, type: 2}
+  - {fileID: 11400000, guid: b72688b64d56cf549ac684b74b675264, type: 2}
   waveSizeMultipliers:
   - 1.25
   - 1
@@ -74,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f74c2d2a89ebf2418fb0d8bdcd7f3a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startOnStart: 1
   measureCount: 12
   currentBeat:
     measure: 0
