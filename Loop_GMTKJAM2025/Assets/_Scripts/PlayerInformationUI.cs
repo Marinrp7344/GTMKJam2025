@@ -8,13 +8,7 @@ public class PlayerInformationUI : MonoBehaviour
 
     public void Update()
     {
-        UpdateBudgetText();
         UpdateScoreText();
-    }
-
-    private void UpdateBudgetText()
-    {
-        budgetText.text = "Budget\n" + WeaponManager.Singleton.GetBudget();
     }
 
     private void UpdateScoreText()

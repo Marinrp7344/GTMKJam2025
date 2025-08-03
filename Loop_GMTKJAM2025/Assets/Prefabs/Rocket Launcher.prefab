@@ -183,7 +183,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  cost: 10
   weaponName: weapon
   icon: {fileID: 0}
   sound: {fileID: 0}

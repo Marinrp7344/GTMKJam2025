@@ -195,11 +195,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  cost: 10
   weaponName: Spreadgun
   icon: {fileID: -7343184963638687663, guid: e4a819a88be49404a8910c71d49f8b37, type: 3}
   sound: {fileID: 8300000, guid: 4a3f54fe818c7eb40a46e567ad5d3a11, type: 3}
-  maxBeats: 0
+  maxBeats: 6
   availableBeats: 0
 --- !u!114 &-5910764541809034165
 MonoBehaviour:

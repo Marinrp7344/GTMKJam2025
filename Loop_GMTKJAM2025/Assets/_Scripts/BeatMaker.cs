@@ -8,7 +8,8 @@ public class BeatMaker : MonoBehaviour
     [SerializeField] GameObject beatButtonPrefab;
     [SerializeField] LayoutGroup layout;
     [SerializeField] Image icon;
-    [SerializeField] TextMeshProUGUI costText;
+    [SerializeField] GameObject beatCheckmarkPrefab;
+    [SerializeField] GridLayoutGroup availableBeatsLayout;
 
     bool sixteenthsUnlocked = false;
 
@@ -19,9 +20,27 @@ public class BeatMaker : MonoBehaviour
         this.weapon = weapon;
 
         icon.sprite = weapon.icon;
-        costText.text = $"{weapon.cost}";
 
         CreateBeatButtons(this.weapon.composer.measureCount * Metronome.Singleton.quartersPerMeasure * 4);
+
+        UpdateAvailableBeats(true);
+    }
+
+    // bool is only here because you cant listen to the toggle without it
+    void UpdateAvailableBeats(bool toggleResult)
+    {
+        foreach (Transform transform in availableBeatsLayout.GetComponentsInChildren<Transform>())
+        {
+            if (transform != availableBeatsLayout.transform)
+            {
+                Destroy(transform.gameObject);
+            }
+        }
+
+        for (int i = 0; i < weapon.availableBeats; i++)
+        {
+            Instantiate(beatCheckmarkPrefab, availableBeatsLayout.transform);
+        }
     }
 
     /// <summary>
@@ -54,5 +73,7 @@ public class BeatMaker : MonoBehaviour
             // disable sixteenth button
             newButton.SetActive(false);
         }
+
+        newButton.GetComponentInChildren<Toggle>().onValueChanged.AddListener(UpdateAvailableBeats);
     }
 }

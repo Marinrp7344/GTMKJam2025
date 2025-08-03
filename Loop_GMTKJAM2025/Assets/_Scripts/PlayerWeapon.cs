@@ -3,17 +3,16 @@ using UnityEngine;
 public class PlayerWeapon : BeatAction
 {
     [Space]
-    public int cost = 10;
     public string weaponName = "weapon";
     public Sprite icon;
     public AudioClip sound;
 
     public uint maxBeats;
+    [HideInInspector]
     public uint availableBeats;
 
-    protected override void Start()
+    private void Awake()
     {
-        base.Start();
         availableBeats = maxBeats;
     }
 

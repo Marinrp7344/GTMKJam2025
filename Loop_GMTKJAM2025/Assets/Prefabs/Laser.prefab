@@ -184,11 +184,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  cost: 10
   weaponName: weapon
   icon: {fileID: 0}
   sound: {fileID: 0}
-  maxBeats: 0
+  maxBeats: 5
   availableBeats: 0
 --- !u!114 &9214043429418651299
 MonoBehaviour:

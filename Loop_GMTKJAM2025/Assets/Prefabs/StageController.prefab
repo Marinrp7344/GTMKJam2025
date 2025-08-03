@@ -116,7 +116,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SpawnDirector, Assembly-CSharp
-        m_MethodName: SetUpNewStage
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -174,8 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdown: {fileID: 8500154086439961407}
-  spawnDelay: {fileID: 6231839307582167574}
-  musicDelay: {fileID: 2089348325472768612}
+  countdownFinish: {fileID: 0}
 --- !u!1001 &2430005121975557665
 PrefabInstance:
   m_ObjectHideFlags: 0
