@@ -383,6 +383,7 @@ MonoBehaviour:
   xDirection: 0
   yDirection: 0
   menu: {fileID: 0}
+  canMove: 0
 --- !u!114 &8041714213366662483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1274,7 +1275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
       propertyPath: upgrades.Array.data[6].title
-      value: Wrecking Ball
+      value: The Biggest Boy
       objectReference: {fileID: 0}
     - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
       propertyPath: upgrades.Array.data[0].desciption

@@ -2738,50 +2738,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1587981932}
-    - target: {fileID: 6287018577795669805, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
-      propertyPath: upgrades.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6287018577795669805, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
-      propertyPath: upgrades.Array.data[5].icon
-      value: 
-      objectReference: {fileID: 90860360543094506, guid: cb4cbce30e27e3241bf04b7e2887bed8, type: 3}
-    - target: {fileID: 6287018577795669805, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
-      propertyPath: upgrades.Array.data[6].icon
-      value: 
-      objectReference: {fileID: 90860360543094506, guid: cb4cbce30e27e3241bf04b7e2887bed8, type: 3}
-    - target: {fileID: 6287018577795669805, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
-      propertyPath: upgrades.Array.data[5].title
-      value: The Big Boy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6287018577795669805, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
-      propertyPath: upgrades.Array.data[6].title
-      value: Gernader
-      objectReference: {fileID: 0}
-    - target: {fileID: 6287018577795669805, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
-      propertyPath: upgrades.Array.data[5].desciption
-      value: Shoot a slow but durable canon ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 6287018577795669805, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
-      propertyPath: upgrades.Array.data[5].weaponType
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6287018577795669805, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
-      propertyPath: upgrades.Array.data[6].desciption
-      value: A blast on a timer
-      objectReference: {fileID: 0}
-    - target: {fileID: 6287018577795669805, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
-      propertyPath: upgrades.Array.data[6].weaponType
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6287018577795669805, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
-      propertyPath: upgrades.Array.data[5].weaponPrefab
-      value: 
-      objectReference: {fileID: 8515489949393860826, guid: 42064650efabfa542b57e4fbc34eeb24, type: 3}
-    - target: {fileID: 6287018577795669805, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
-      propertyPath: upgrades.Array.data[6].weaponPrefab
-      value: 
-      objectReference: {fileID: 8515489949393860826, guid: e41c10d2d215aa74ab5554ca5e5ab42b, type: 3}
     - target: {fileID: 6486529611856531071, guid: f6240ba046ba16c42b3c67ae6a95114d, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -287.5
