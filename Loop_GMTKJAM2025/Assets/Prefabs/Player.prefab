@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f74c2d2a89ebf2418fb0d8bdcd7f3a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startOnStart: 1
   measureCount: 4
   currentBeat:
     measure: 0
@@ -1217,8 +1218,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
       propertyPath: upgrades.Array.size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
+      propertyPath: upgrades.Array.data[0].icon
+      value: 
+      objectReference: {fileID: 4016800900175450464, guid: 9f2c2b40bb717d842bd3c74e555d7a58, type: 3}
     - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
       propertyPath: upgrades.Array.data[1].icon
       value: 
@@ -1230,11 +1235,23 @@ PrefabInstance:
     - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
       propertyPath: upgrades.Array.data[3].icon
       value: 
-      objectReference: {fileID: 90860360543094506, guid: cb4cbce30e27e3241bf04b7e2887bed8, type: 3}
+      objectReference: {fileID: -7782089725783006063, guid: 4056142bc1c9d6e4c9fa8d50d341b30f, type: 3}
     - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
       propertyPath: upgrades.Array.data[4].icon
       value: 
-      objectReference: {fileID: 90860360543094506, guid: cb4cbce30e27e3241bf04b7e2887bed8, type: 3}
+      objectReference: {fileID: -2072273206272510246, guid: a1e72c231e1f878408d00bfd3d1399e5, type: 3}
+    - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
+      propertyPath: upgrades.Array.data[5].icon
+      value: 
+      objectReference: {fileID: 3371457753791698260, guid: 584062305186b8847bf7b0069af1a40a, type: 3}
+    - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
+      propertyPath: upgrades.Array.data[6].icon
+      value: 
+      objectReference: {fileID: -5217698746638967335, guid: 9e2489effe6be2b47b0565a37d2999d4, type: 3}
+    - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
+      propertyPath: upgrades.Array.data[0].title
+      value: Boomer
+      objectReference: {fileID: 0}
     - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
       propertyPath: upgrades.Array.data[1].title
       value: Autogun
@@ -1252,6 +1269,18 @@ PrefabInstance:
       value: One-Two
       objectReference: {fileID: 0}
     - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
+      propertyPath: upgrades.Array.data[5].title
+      value: Bomb Thrower
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
+      propertyPath: upgrades.Array.data[6].title
+      value: Wrecking Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
+      propertyPath: upgrades.Array.data[0].desciption
+      value: Launches a rocket that explodes on impact
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
       propertyPath: upgrades.Array.data[1].desciption
       value: Fires fast-moving bullets with a large amount of ammo
       objectReference: {fileID: 0}
@@ -1261,7 +1290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
       propertyPath: upgrades.Array.data[3].desciption
-      value: A beam of pure light
+      value: Fires a beam of light that pierces through enemies
       objectReference: {fileID: 0}
     - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
       propertyPath: upgrades.Array.data[3].weaponType
@@ -1269,11 +1298,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
       propertyPath: upgrades.Array.data[4].desciption
-      value: Fires two shots in a quick burst
+      value: Shoots twice in a quick burst
       objectReference: {fileID: 0}
     - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
       propertyPath: upgrades.Array.data[4].weaponType
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
+      propertyPath: upgrades.Array.data[5].desciption
+      value: Throws a bomb that explodes after a delay
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
+      propertyPath: upgrades.Array.data[5].weaponType
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
+      propertyPath: upgrades.Array.data[6].desciption
+      value: Fires a huge projectile that plows through enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
+      propertyPath: upgrades.Array.data[6].weaponType
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
       propertyPath: upgrades.Array.data[3].weaponPrefab
@@ -1283,6 +1328,14 @@ PrefabInstance:
       propertyPath: upgrades.Array.data[4].weaponPrefab
       value: 
       objectReference: {fileID: 8515489949393860826, guid: 1659125a6a7a90349a0231e80d6dcdd1, type: 3}
+    - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
+      propertyPath: upgrades.Array.data[5].weaponPrefab
+      value: 
+      objectReference: {fileID: 8515489949393860826, guid: e41c10d2d215aa74ab5554ca5e5ab42b, type: 3}
+    - target: {fileID: 5982319645443668343, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
+      propertyPath: upgrades.Array.data[6].weaponPrefab
+      value: 
+      objectReference: {fileID: 8515489949393860826, guid: 42064650efabfa542b57e4fbc34eeb24, type: 3}
     - target: {fileID: 7133115552230462614, guid: ba24e2f1ef2a1da4e89d991ede77adf6, type: 3}
       propertyPath: m_Camera
       value: 

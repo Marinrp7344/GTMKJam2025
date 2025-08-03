@@ -196,7 +196,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponName: weapon
-  icon: {fileID: 0}
+  icon: {fileID: 3371457753791698260, guid: 584062305186b8847bf7b0069af1a40a, type: 3}
   sound: {fileID: 8300000, guid: 10e872f0e7f19394ba5da276d756107a, type: 3}
   maxBeats: 5
   availableBeats: 0

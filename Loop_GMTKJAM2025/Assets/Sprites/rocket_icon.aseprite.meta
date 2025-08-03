@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d3d2593675d55b04ea24d5c82c0fa9eb
+guid: 9f2c2b40bb717d842bd3c74e555d7a58
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -77,7 +77,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
-    mosaicPadding: 6
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -90,14 +90,14 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
-    mosaicPadding: 6
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638897808217661910
+  platformSettingsDirtyTick: 638897809503889867
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -122,7 +122,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: autogun_icon
+  - name: rocket_icon
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -132,9 +132,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 14
-      height: 4
-    spriteID: f519fd2661d02234e8edeea6edcac592
+      width: 16
+      height: 9
+    spriteID: afa50f1684735984589351ed71d2a9d6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,7 +144,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData:
-  - name: autogun_icon
+  - name: rocket_icon_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -152,32 +152,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 3
-      y: 0
+      x: 4
+      y: 1
       width: 16
       height: 16
-    spriteID: 0ff6efbfc2144e5449491714158b6997
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: pixel_outlined
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 6
-      y: 6
-      width: 3
-      height: 3
-    spriteID: 326920c5e39cf3f4789fd82ca6df2026
+    spriteID: c60ea4265f074a24fad051813881332e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -188,21 +167,21 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: 1658471243
-    name: autogun_icon
+    guid: 497694010
+    name: rocket_icon
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: autogun_icon
+    - name: rocket_icon
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 3
-        y: 6
-        width: 9
-        height: 3
-      spriteId: f519fd2661d02234e8edeea6edcac592
+        x: 0
+        y: 3
+        width: 16
+        height: 9
+      spriteId: afa50f1684735984589351ed71d2a9d6
     linkedCells: []
     parentIndex: -1
   platformSettings:

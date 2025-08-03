@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d3d2593675d55b04ea24d5c82c0fa9eb
+guid: 9e2489effe6be2b47b0565a37d2999d4
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -77,7 +77,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
-    mosaicPadding: 6
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -90,14 +90,14 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
-    mosaicPadding: 6
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638897808217661910
+  platformSettingsDirtyTick: 638897808439241399
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -122,7 +122,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: autogun_icon
+  - name: bigboy_icon
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -132,9 +132,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 14
-      height: 4
-    spriteID: f519fd2661d02234e8edeea6edcac592
+      width: 10
+      height: 10
+    spriteID: c1b6f41bf584ece4b822a79d6108b4e4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,7 +144,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
   spriteSheetImportData:
-  - name: autogun_icon
+  - name: bigboy_icon_0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -152,32 +152,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 3
-      y: 0
+      x: 1
+      y: 1
       width: 16
       height: 16
-    spriteID: 0ff6efbfc2144e5449491714158b6997
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 0, y: 0}
-  - name: pixel_outlined
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 6
-      y: 6
-      width: 3
-      height: 3
-    spriteID: 326920c5e39cf3f4789fd82ca6df2026
+    spriteID: eeea9d84b2fc46d42b9d4022cecb55a0
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -188,21 +167,21 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   asepriteLayers:
   - layerIndex: 0
-    guid: 1658471243
-    name: autogun_icon
+    guid: 1896259370
+    name: bigboy_icon
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: autogun_icon
+    - name: bigboy_icon
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 3
-        y: 6
-        width: 9
-        height: 3
-      spriteId: f519fd2661d02234e8edeea6edcac592
+        y: 3
+        width: 10
+        height: 10
+      spriteId: c1b6f41bf584ece4b822a79d6108b4e4
     linkedCells: []
     parentIndex: -1
   platformSettings:

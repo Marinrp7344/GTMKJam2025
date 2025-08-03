@@ -210,7 +210,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   weaponName: One-Two
-  icon: {fileID: 1065637552156602326, guid: d3d2593675d55b04ea24d5c82c0fa9eb, type: 3}
+  icon: {fileID: -2072273206272510246, guid: a1e72c231e1f878408d00bfd3d1399e5, type: 3}
   sound: {fileID: 8300000, guid: c218873dd74c91d45a92bbc2522604cd, type: 3}
   maxBeats: 8
   availableBeats: 0
