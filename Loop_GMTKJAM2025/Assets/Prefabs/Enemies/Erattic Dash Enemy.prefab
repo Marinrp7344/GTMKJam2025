@@ -266,11 +266,11 @@ MonoBehaviour:
   firingBeats:
   - measure: 0
     quarter: 0
-    eighth: 2
+    eighth: 3
     sixteenth: 0
   - measure: 0
     quarter: 0
-    eighth: 7
+    eighth: 8
     sixteenth: 0
   precision: 2
   Activate:
