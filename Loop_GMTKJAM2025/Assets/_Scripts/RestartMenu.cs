@@ -18,6 +18,6 @@ public class RestartMenu : MonoBehaviour
 
     public void GoToMenu()
     {
-        SceneManager.LoadScene(menuScene);
+        SceneManager.LoadScene(0);
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     public static Menu Instance;
@@ -61,6 +62,11 @@ public class Menu : MonoBehaviour
             fullMenu.SetActive(true);
             BeatMakerManager.Singleton.gameObject.SetActive(false);
         }
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }

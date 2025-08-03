@@ -17,6 +17,18 @@ PrefabInstance:
       value: Bullet_Large
       objectReference: {fileID: 0}
     - target: {fileID: 6241591286228226517, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241591286228226517, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241591286228226517, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241591286228226517, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.34
       objectReference: {fileID: 0}

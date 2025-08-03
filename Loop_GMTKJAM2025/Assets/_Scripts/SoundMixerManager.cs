@@ -7,10 +7,23 @@ public class SoundMixerManager : MonoBehaviour
 
     private void Start()
     {
-        // Load saved values or default to full volume
-        float master = PlayerPrefs.GetFloat("master", 1f);
-        float soundFX = PlayerPrefs.GetFloat("soundFX", 1f);
-        float music = PlayerPrefs.GetFloat("music", 1f);
+        float master = 0f;
+        float soundFX = 0f;
+        float music = 0f;
+        if (PlayerPrefs.HasKey("master"))
+        {
+            // Load saved values or default to full volume
+             master = PlayerPrefs.GetFloat("master", 1f);
+             soundFX = PlayerPrefs.GetFloat("soundFX", 1f);
+             music = PlayerPrefs.GetFloat("music", 1f);
+        }
+        else
+        {
+            // Load saved values or default to full volume
+            master = PlayerPrefs.GetFloat("master", .5f);
+            soundFX = PlayerPrefs.GetFloat("soundFX", .5f);
+            music = PlayerPrefs.GetFloat("music", .5f);
+        }
 
         SetMasterVolume(master);
         SetSoundFXVolume(soundFX);
