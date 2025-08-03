@@ -226,9 +226,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   composer: {fileID: 5092278009964987292}
   firingBeats:
-  - measure: 1
-    quarter: 1
+  - measure: 0
+    quarter: 0
     eighth: 1
+    sixteenth: 0
+  - measure: 0
+    quarter: 0
+    eighth: 6
     sixteenth: 0
   precision: 2
   Activate:
@@ -260,9 +264,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   composer: {fileID: 5092278009964987292}
   firingBeats:
-  - measure: 1
-    quarter: 2
-    eighth: 3
+  - measure: 0
+    quarter: 0
+    eighth: 2
+    sixteenth: 0
+  - measure: 0
+    quarter: 0
+    eighth: 7
     sixteenth: 0
   precision: 2
   Activate:

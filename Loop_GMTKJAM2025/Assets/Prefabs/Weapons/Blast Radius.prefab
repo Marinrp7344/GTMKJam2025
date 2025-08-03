@@ -138,4 +138,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disappearTime: 0.1
-  explosionSound: {fileID: 0}

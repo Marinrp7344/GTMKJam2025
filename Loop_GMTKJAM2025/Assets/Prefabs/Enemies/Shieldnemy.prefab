@@ -419,6 +419,10 @@ MonoBehaviour:
     quarter: 3
     eighth: 0
     sixteenth: 0
+  - measure: 0
+    quarter: 4
+    eighth: 0
+    sixteenth: 0
   precision: 1
   Activate:
     m_PersistentCalls:

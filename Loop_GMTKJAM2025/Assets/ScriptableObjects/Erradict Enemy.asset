@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weight: 10
   cost: 25
-  EnemyPrefab: {fileID: 2627918511614043440, guid: b63cc191eba3a1d46a6e6dde472ea152, type: 3}
+  EnemyPrefab: {fileID: 2627918511614043440, guid: 6d1939dce669aac43879b01df4b35594, type: 3}
