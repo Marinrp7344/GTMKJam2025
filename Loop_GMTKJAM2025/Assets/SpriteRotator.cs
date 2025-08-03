@@ -18,7 +18,7 @@ public class SpriteRotator : MonoBehaviour
     private void RotateSprite()
     {
         Vector2 direction = rb.linearVelocity.normalized;
-        float rotationDirection = Mathf.Atan2(direction.x,direction.y) * Mathf.Rad2Deg;
-        rotationObj.transform.localRotation = Quaternion.Euler(0, 0, rotationDirection-180);
+        float rotationDirection = Mathf.Atan2(direction.y,direction.x) * Mathf.Rad2Deg;
+        rotationObj.transform.localRotation = Quaternion.Euler(0, 0, rotationDirection-90);
     }
 }

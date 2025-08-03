@@ -28,6 +28,7 @@ public class Health : MonoBehaviour
     {
         if(entityType == EntityType.Player)
         {
+            PlayerInformationUI.Instance.UpdateHighScore();
             RestartMenu.Instance.gameObject.SetActive(true);
         }
         death.Invoke();
