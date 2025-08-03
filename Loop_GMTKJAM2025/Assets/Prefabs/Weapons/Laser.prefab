@@ -223,7 +223,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   damage: 10
-  fadeDuration: 0.1
+  currentAlpha: 1
+  decayRate: 10
+  startFadingLaser: 0
 --- !u!120 &4192909983430558586
 LineRenderer:
   serializedVersion: 2
@@ -280,7 +282,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0.13622923
-        value: 0.33552742
+        value: 0.32927132
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -316,7 +318,7 @@ LineRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
+      m_Mode: 1
       m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2

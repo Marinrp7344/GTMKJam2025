@@ -6,8 +6,12 @@ public class UpdgradeMenu : MonoBehaviour
     [SerializeField] private List<Upgrade> upgrades;
     [SerializeField] private List<UpgradeSlot> upgradeSlots;
     public bool updateSlots;
+
+    public Movement player;
     private void Start()
     {
+        player.canMove = false;
+        player.transform.position = Vector2.zero;
         ShowNewUpgrades();
         Instance = this;
     }
@@ -15,6 +19,8 @@ public class UpdgradeMenu : MonoBehaviour
 
     public void StartNewRound()
     {
+        player.canMove = false;
+        player.transform.position = Vector2.zero;
         gameObject.SetActive(true);
         ShowNewUpgrades();
     }

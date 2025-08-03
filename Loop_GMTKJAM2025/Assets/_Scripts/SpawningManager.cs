@@ -40,6 +40,7 @@ public class SpawningManager : MonoBehaviour
     [SerializeField] private int amountofEnemiesPerSpawn;
 
     public UnityEvent stageClear;
+    public float areaToSpawn;
 
     private void Awake()
     {
@@ -165,15 +166,15 @@ public class SpawningManager : MonoBehaviour
     */
     public Vector2 ChooseSpawnLocation()
     {
-        float randomXLocation = Random.Range(-horizontalCenterDistance, horizontalCenterDistance);
+        float randomXLocation = Random.Range(-horizontalCenterDistance * areaToSpawn, horizontalCenterDistance * areaToSpawn);
         float randomYLocation = 0;
-        if(randomXLocation >= NSHorizontalCenterDistance && randomXLocation <= horizontalCenterDistance)
+        if(randomXLocation >= NSHorizontalCenterDistance * areaToSpawn && randomXLocation <= horizontalCenterDistance * areaToSpawn)
         {
-            randomYLocation = Random.Range(-verticalCenterDistance, verticalCenterDistance);
+            randomYLocation = Random.Range(-verticalCenterDistance * areaToSpawn, verticalCenterDistance * areaToSpawn);
         }
-        else if(randomXLocation < -NSHorizontalCenterDistance && randomXLocation >= - horizontalCenterDistance)
+        else if(randomXLocation < -NSHorizontalCenterDistance * areaToSpawn && randomXLocation >= - horizontalCenterDistance * areaToSpawn)
         {
-            randomYLocation = Random.Range(-verticalCenterDistance, verticalCenterDistance);
+            randomYLocation = Random.Range(-verticalCenterDistance * areaToSpawn, verticalCenterDistance * areaToSpawn);
         }
         else
         {
@@ -182,10 +183,10 @@ public class SpawningManager : MonoBehaviour
             switch(upOrDownLocation)
             {
                 case 0:
-                    randomYLocation = Random.Range(NSVerticalCenterDistance, verticalCenterDistance);
+                    randomYLocation = Random.Range(NSVerticalCenterDistance * areaToSpawn, verticalCenterDistance * areaToSpawn);
                     break;
                 case 1:
-                    randomYLocation = Random.Range(-verticalCenterDistance, -NSVerticalCenterDistance);
+                    randomYLocation = Random.Range(-verticalCenterDistance * areaToSpawn, -NSVerticalCenterDistance * areaToSpawn);
                     break;
             }
             

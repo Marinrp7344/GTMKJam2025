@@ -5,6 +5,7 @@ public class WeaponWheelUI : MonoBehaviour
 {
     public static WeaponWheelUI Instance;
     public Transform player;
+    public Movement playerMove;
     public List<WeaponSlotUI> weaponSlots;
     public WeaponSlotUI selectedSlot;
     public WeaponSlotUI heldSlot;
@@ -26,6 +27,7 @@ public class WeaponWheelUI : MonoBehaviour
     {
         gameObject.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerMove = player.gameObject.GetComponent<Movement>();
         composer = PlayerComponents.Instance.playerComposer;
         physicalWeaponWheel = PlayerComponents.Instance.wheel.transform;
 
@@ -34,6 +36,7 @@ public class WeaponWheelUI : MonoBehaviour
 
     public void StartGame()
     {
+        playerMove.canMove = true;
         gameObject.SetActive(false);
         BeatMakerManager.Singleton.ClearBeatMakerMenu();
         trashWeaponSlot.ClearSlot();

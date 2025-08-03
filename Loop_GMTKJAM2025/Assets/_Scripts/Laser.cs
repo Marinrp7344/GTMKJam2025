@@ -10,14 +10,63 @@ public class Laser : MonoBehaviour
     public LayerMask wall;
     public LayerMask enemy;
     public int damage;
-    public float fadeDuration = 0.1f; 
-    private Coroutine fadeRoutine;
+    public float currentAlpha = 1f;
+    public float decayRate;
+    public bool startFadingLaser;
     private void Awake()
     {
         laserTransform = GetComponent<Transform>();
     }
 
-  
+    public void FixedUpdate()
+    {
+        if(startFadingLaser)
+        {
+            if (currentAlpha > 0)
+            {
+                currentAlpha -= decayRate * Time.deltaTime;
+                SetAlpha();
+            }
+            else
+            {
+                currentAlpha = 0;
+                SetAlpha();
+                line.enabled = false;
+            }
+
+            
+        }
+    }
+
+    public void SetAlpha()
+    {
+
+        Gradient lineGradient = line.colorGradient;
+        GradientColorKey[] colorKeys = lineGradient.colorKeys;
+        GradientAlphaKey[] alphaKeys = lineGradient.alphaKeys;
+
+
+        for (int i = 0; i < alphaKeys.Length; i++)
+        {
+            alphaKeys[i].alpha = currentAlpha;
+        }
+
+        Gradient newLinegradient = new Gradient();
+        newLinegradient.SetKeys(colorKeys, alphaKeys);
+        line.colorGradient = newLinegradient;
+        /*
+        Color startColor = line.startColor;
+        Color endColor = line.endColor;
+
+        startColor.a = currentAlpha;
+        endColor.a = currentAlpha;
+
+        line.startColor = startColor;
+        line.endColor = endColor;
+        */
+
+    }
+
 
     public void ShootLaser()
     {
@@ -46,11 +95,17 @@ public class Laser : MonoBehaviour
             }
         }
 
+        line.enabled = true;
         Vector3 endPos = origin + direction * laserLength;
         line.positionCount = 2;
         line.SetPosition(0, origin);
         line.SetPosition(1, endPos);
+
+        startFadingLaser = true;
+        currentAlpha = 1;
+        SetAlpha();
         
     }
+
 
 }

@@ -7,13 +7,21 @@ public class Movement : MonoBehaviour
     [SerializeField] private float yDirection;
     private Rigidbody2D playerRB;
     public Menu menu;
+    public bool canMove;
     private void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
     }
     private void FixedUpdate()
     {
-        Move();
+        if (canMove)
+        {
+            Move();
+        }
+        else
+        {
+            playerRB.linearVelocity = new Vector2(0,0);
+        }
     }
 
 
