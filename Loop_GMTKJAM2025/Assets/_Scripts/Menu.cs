@@ -19,10 +19,13 @@ public class Menu : MonoBehaviour
         if(onMainMenu)
         {
             fullMenu.SetActive(false);
+            BeatMakerManager.Singleton.gameObject.SetActive(true);
+
         }
         else
         {
             onMainMenu = true;
+            
             mainMenu.SetActive(true);
             soundMenu.SetActive(false);
             gameplayMenu.SetActive(false);
@@ -49,12 +52,14 @@ public class Menu : MonoBehaviour
     {
         if (fullMenu.activeSelf)
         {
+            
             Debug.Log("Pressed");
             Exit();
         }
         else
         {
             fullMenu.SetActive(true);
+            BeatMakerManager.Singleton.gameObject.SetActive(false);
         }
     }
 

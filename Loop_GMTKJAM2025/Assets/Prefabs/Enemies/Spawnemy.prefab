@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3540466922796468732}
   - component: {fileID: 8736622337811539629}
   - component: {fileID: 7413436231389149168}
+  - component: {fileID: 7474264599759858071}
   m_Layer: 7
   m_Name: Spawnemy
   m_TagString: Enemy
@@ -238,6 +239,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 4300627964147189450, guid: 90bd6501555046141baaf9023f9e83f5, type: 3}
+--- !u!114 &7474264599759858071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6338229444455927089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c44e2418643a9d4bab3012409f2784b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashing: 0
+  dashSpeed: 0
+  direction: 0
+  dash: 0
+  enemyRB: {fileID: 3540466922796468732}
+  wheelController: {fileID: 0}
+  player: {fileID: 0}
+  damage: 0
+  tiltAmount: 0
+  enemySpeed: 50
+  canMove: 1
 --- !u!1 &9005542510944732815
 GameObject:
   m_ObjectHideFlags: 0
