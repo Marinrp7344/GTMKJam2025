@@ -186,7 +186,7 @@ MonoBehaviour:
   weaponName: weapon
   icon: {fileID: 0}
   sound: {fileID: 0}
-  maxBeats: 0
+  maxBeats: 5
   availableBeats: 0
 --- !u!114 &-5910764541809034165
 MonoBehaviour:
@@ -202,11 +202,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   shootingPoint: {fileID: 6620408439735168103}
-  bulletType: {fileID: 4517094820462903936, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
+  bulletType: {fileID: 4517094820462903936, guid: 4f6926c02888f444988a1f5f68bbf61d, type: 3}
   spread: 0
   bulletSpeed: 15
   bulletsPerShot: 1
   damagePerBullet: 3
   distanceTilBulletDisappear: 0
+  isBlastGun: 1
   xDirection: 0
   yDirection: 0

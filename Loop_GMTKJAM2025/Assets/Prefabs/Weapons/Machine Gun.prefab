@@ -220,5 +220,6 @@ MonoBehaviour:
   bulletsPerShot: 1
   damagePerBullet: 1
   distanceTilBulletDisappear: 0
+  isBlastGun: 0
   xDirection: 0
   yDirection: 0

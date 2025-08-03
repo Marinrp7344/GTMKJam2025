@@ -63,6 +63,9 @@ MonoBehaviour:
   dashEnemyChances: 77.2
   spawnerEnemyChances: 100
   amountofEnemiesPerSpawn: 0
+  stageClear:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &2082155996840983032
 BoxCollider2D:
   m_ObjectHideFlags: 0

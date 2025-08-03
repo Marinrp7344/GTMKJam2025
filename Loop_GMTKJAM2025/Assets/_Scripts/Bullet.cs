@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour
     public Vector2 startingPosition;
 
     public UnityEvent destroyed;
+    public bool isBlastBullet;
+    public GameObject blastRadius;
 
     private void Update()
     {
@@ -37,18 +39,38 @@ public class Bullet : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            Health enemyHealth = collision.gameObject.GetComponent<Health>();
-            enemyHealth.TakeDamage(damage);
-            PlayerStats.Instance.IncreaseScore(enemyHealth.scoreWorth);
-            destroyed.Invoke();
-            Destroy(gameObject);
+            if (!isBlastBullet)
+            {
+                Health enemyHealth = collision.gameObject.GetComponent<Health>();
+                enemyHealth.TakeDamage(damage);
+                PlayerStats.Instance.IncreaseScore(enemyHealth.scoreWorth);
+                destroyed.Invoke();
+                Destroy(gameObject);
+            }
+            else
+            {
+                Instantiate(blastRadius, transform.position, Quaternion.identity);
+                destroyed.Invoke();
+                Destroy(gameObject);
+            }
+
         }
-        else if(collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
-            destroyed.Invoke();
-            Destroy(gameObject);
+            if (!isBlastBullet)
+            {
+
+                destroyed.Invoke();
+                Destroy(gameObject);
+            }
+            else
+            {
+                Instantiate(blastRadius, transform.position, Quaternion.identity);
+                destroyed.Invoke();
+                Destroy(gameObject);
+            }
         }
     }
 }

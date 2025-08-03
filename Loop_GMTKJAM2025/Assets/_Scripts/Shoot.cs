@@ -14,6 +14,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private int bulletsPerShot;
     [SerializeField] private int damagePerBullet;
     [SerializeField] private int distanceTilBulletDisappear;
+    [SerializeField] private bool isBlastGun;
 
     [Header("Gun Debug")]
     [SerializeField] private float xDirection;
@@ -34,6 +35,14 @@ public class Shoot : MonoBehaviour
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         bulletScript.damage = damagePerBullet;
         bulletScript.distanceToDisappear = distanceTilBulletDisappear;
+        if (!isBlastGun)
+        {
+            bulletScript.isBlastBullet = false;
+        }
+        else 
+        {
+            bulletScript.isBlastBullet = true;
+        }
         bulletScript.ShootDirection(CalculateBulletDirection(), bulletSpeed);
     }
 
