@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   credits: 100
-  budgetMultiplier: 1.2
+  budgetMultiplier: 1.3
   wavesPerStage: 4
   allEnemies:
   - {fileID: 11400000, guid: c4a2720a33de74e458ec24e4f970cb97, type: 2}

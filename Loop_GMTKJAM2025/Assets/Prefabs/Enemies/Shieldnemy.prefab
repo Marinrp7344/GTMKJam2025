@@ -412,7 +412,11 @@ MonoBehaviour:
   composer: {fileID: 5869119133390954955}
   firingBeats:
   - measure: 0
-    quarter: 1
+    quarter: 2
+    eighth: 0
+    sixteenth: 0
+  - measure: 0
+    quarter: 3
     eighth: 0
     sixteenth: 0
   precision: 1
