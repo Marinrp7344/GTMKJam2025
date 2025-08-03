@@ -8,7 +8,7 @@ public class Shoot : MonoBehaviour
 
     [Header("Gun Editable Fields")]
     [SerializeField] private GameObject bulletType;
-    [Range(0, 45)]
+    [Range(0, 90)]
     [SerializeField] private float spread;
     [SerializeField] private float bulletSpeed;
     [SerializeField] private int bulletsPerShot;

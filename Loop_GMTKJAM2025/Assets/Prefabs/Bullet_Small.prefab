@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4517094820462903936, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
       propertyPath: m_Name
-      value: Bullet_Small Variant
+      value: Bullet_Small
       objectReference: {fileID: 0}
     - target: {fileID: 6241591286228226517, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
       propertyPath: m_LocalPosition.x

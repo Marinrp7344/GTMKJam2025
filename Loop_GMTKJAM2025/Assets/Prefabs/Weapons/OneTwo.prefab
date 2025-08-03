@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: -8889409912860207763}
   - component: {fileID: -5910764541809034165}
   - component: {fileID: 4114498609524216617}
+  - component: {fileID: -5405487889974744734}
   m_Layer: 0
   m_Name: OneTwo
   m_TagString: Untagged
@@ -196,9 +197,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: -8889409912860207763}
-        m_TargetAssemblyTypeName: PlayerWeapon, Assembly-CSharp
-        m_MethodName: PlayFiringSound
+      - m_Target: {fileID: -5405487889974744734}
+        m_TargetAssemblyTypeName: OneTwo, Assembly-CSharp
+        m_MethodName: PrepareSecondShot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -227,9 +228,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   shootingPoint: {fileID: 6620408439735168103}
-  bulletType: {fileID: 4517094820462903936, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
+  bulletType: {fileID: 5008757595287267550, guid: 424721a2b48b18a47a44ff63c83b7ee8, type: 3}
   spread: 3
-  bulletSpeed: 30
+  bulletSpeed: 60
   bulletsPerShot: 1
   damagePerBullet: 1
   distanceTilBulletDisappear: 0
@@ -266,3 +267,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-5405487889974744734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515489949393860826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b147484c7b6666e40803c6ab4dc2ceab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayDuration:
+    quarter: 0
+    eighth: 0
+    sixteenth: 1
+  secondShotDelay: {fileID: 4114498609524216617}
