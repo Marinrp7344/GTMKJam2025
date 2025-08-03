@@ -12,9 +12,13 @@ public class MusicManager : MonoBehaviour
 {
     [SerializeField] List<SongData> playlist = new List<SongData>();
 
+    [SerializeField] uint stagesPerSong = 3;
+
+    uint stagesClearedSinceLastSongChange = 0;
+
     private void Start()
     {
-        SpawningManager.Instance.stageClear.AddListener(StartRandomSong);
+        SpawningManager.Instance.stageClear.AddListener(ProcessStageClear);
         Invoke(nameof(StartRandomSong), 3);
     }
 
@@ -32,6 +36,16 @@ public class MusicManager : MonoBehaviour
     void StartRandomSong()
     {
         StartSong(PickRandomSong());
+    }
+
+    void ProcessStageClear()
+    {
+        stagesClearedSinceLastSongChange++;
+        if (stagesClearedSinceLastSongChange >= stagesPerSong)
+        {
+            stagesClearedSinceLastSongChange = 0;
+            StartRandomSong();
+        }
     }
 
 }
