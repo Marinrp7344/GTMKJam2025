@@ -42,6 +42,7 @@ public class Laser : MonoBehaviour
             {
                 Health enemyHealth = hit.collider.gameObject.GetComponent<Health>();
                 enemyHealth.TakeDamage(damage);
+                PlayerStats.Instance.IncreaseScore(enemyHealth.scoreWorth);
             }
         }
 
