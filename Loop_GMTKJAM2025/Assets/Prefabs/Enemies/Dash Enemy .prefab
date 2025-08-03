@@ -279,11 +279,11 @@ MonoBehaviour:
   firingBeats:
   - measure: 0
     quarter: 0
-    eighth: 2
+    eighth: 3
     sixteenth: 0
   - measure: 0
     quarter: 0
-    eighth: 6
+    eighth: 7
     sixteenth: 0
   precision: 2
   Activate:
@@ -317,11 +317,11 @@ MonoBehaviour:
   firingBeats:
   - measure: 0
     quarter: 0
-    eighth: 3
+    eighth: 4
     sixteenth: 0
   - measure: 0
     quarter: 0
-    eighth: 7
+    eighth: 8
     sixteenth: 0
   precision: 2
   Activate:
