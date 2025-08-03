@@ -108,7 +108,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.18396229, b: 0.7594455, a: 1}
+  m_Color: {r: 1, g: 0.8666954, b: 0.18431371, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -219,6 +219,7 @@ MonoBehaviour:
   bulletSpeed: 30
   bulletsPerShot: 1
   damagePerBullet: 1
-  distanceTilBulletDisappear: 10
+  distanceTilBulletDisappear: 0
+  isBlastGun: 0
   xDirection: 0
   yDirection: 0

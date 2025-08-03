@@ -9,12 +9,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2138430975470125803, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
-      propertyPath: isCannon
+      propertyPath: isMine
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2138430975470125803, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
+      propertyPath: beatDelay
+      value: 
+      objectReference: {fileID: 8436145421014879777}
+    - target: {fileID: 2138430975470125803, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
+      propertyPath: blastRadius
+      value: 
+      objectReference: {fileID: 2003292374936013024, guid: 8bfb9a318435c2d4d8a1d74b1fbc54f4, type: 3}
     - target: {fileID: 4517094820462903936, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
       propertyPath: m_Name
-      value: Bullet_Large
+      value: Gernade
       objectReference: {fileID: 0}
     - target: {fileID: 6241591286228226517, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
       propertyPath: m_LocalPosition.x
@@ -65,8 +73,8 @@ PrefabInstance:
       value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6274470937159634489, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6274470937159634489, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -83,5 +91,55 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4517094820462903936, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8436145421014879777}
   m_SourcePrefab: {fileID: 100100000, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
+--- !u!1 &5008757595287267550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4517094820462903936, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
+  m_PrefabInstance: {fileID: 8875855653077379678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8436145421014879777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008757595287267550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a2b664509345f43947a07de061286d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay:
+    quarter: 2
+    eighth: 0
+    sixteenth: 0
+  delayComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7386013429217568949}
+        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
+        m_MethodName: CreateExplosion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7386013429217568949 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2138430975470125803, guid: 86faaf0bd9e460144a2b274064a9d220, type: 3}
+  m_PrefabInstance: {fileID: 8875855653077379678}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008757595287267550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9ab8f753048d545a02843c5fdf2a32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

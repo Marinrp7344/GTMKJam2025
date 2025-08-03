@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 public class Bullet : MonoBehaviour
 {
@@ -11,7 +12,25 @@ public class Bullet : MonoBehaviour
 
     public UnityEvent destroyed;
     public bool isBlastBullet;
+    public bool isMine;
+    public bool isCannon;
     public GameObject blastRadius;
+    public BeatDelay beatDelay;
+    private void Start()
+    {
+        if(isMine)
+        {
+            beatDelay.StartDelay(new BeatBasedDuration(2,0,0));
+        }
+    }
+
+    public void CreateExplosion()
+    {
+        Destroy(gameObject);
+        Instantiate(blastRadius, transform.position, Quaternion.identity);
+        
+    }
+
 
     private void Update()
     {
@@ -41,36 +60,65 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            if (!isBlastBullet)
+            if (!isMine)
             {
-                Health enemyHealth = collision.gameObject.GetComponent<Health>();
-                enemyHealth.TakeDamage(damage);
-                PlayerStats.Instance.IncreaseScore(enemyHealth.scoreWorth);
-                destroyed.Invoke();
-                Destroy(gameObject);
-            }
-            else
-            {
-                Instantiate(blastRadius, transform.position, Quaternion.identity);
-                destroyed.Invoke();
-                Destroy(gameObject);
+                if (!isBlastBullet && !isCannon)
+                {
+                    Health enemyHealth = collision.gameObject.GetComponent<Health>();
+                    enemyHealth.TakeDamage(damage);
+                    PlayerStats.Instance.IncreaseScore(enemyHealth.scoreWorth);
+                    destroyed.Invoke();
+                    Destroy(gameObject);
+                }
+                else if(isBlastBullet && !isCannon)
+                {
+                    Instantiate(blastRadius, transform.position, Quaternion.identity);
+                    destroyed.Invoke();
+                    Destroy(gameObject);
+                }
+                else if(!isBlastBullet && isCannon)
+                {
+                    Health enemyHealth = collision.gameObject.GetComponent<Health>();
+                    enemyHealth.TakeDamage(damage);
+                    PlayerStats.Instance.IncreaseScore(enemyHealth.scoreWorth);
+                }
             }
 
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
-            if (!isBlastBullet)
+            if (!isMine)
             {
+                if (!isBlastBullet)
+                {
+                    destroyed.Invoke();
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    Instantiate(blastRadius, transform.position, Quaternion.identity);
+                    destroyed.Invoke();
+                    Destroy(gameObject);
+                }
+            }
+        }
+    }
 
-                destroyed.Invoke();
-                Destroy(gameObject);
-            }
-            else
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            if (isCannon)
             {
-                Instantiate(blastRadius, transform.position, Quaternion.identity);
-                destroyed.Invoke();
-                Destroy(gameObject);
+                Health enemyHealth = collision.gameObject.GetComponent<Health>();
+                enemyHealth.TakeDamage(damage);
+                PlayerStats.Instance.IncreaseScore(enemyHealth.scoreWorth);
             }
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        {
+            destroyed.Invoke();
+            Destroy(gameObject);
         }
     }
 }

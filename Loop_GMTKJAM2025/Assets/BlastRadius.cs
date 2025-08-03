@@ -15,12 +15,14 @@ public class BlastRadius : MonoBehaviour
         Destroy(gameObject);
     }
 
+ 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             Health enemyHealth = collision.gameObject.GetComponent<Health>();
             enemyHealth.TakeDamage(10);
+            PlayerStats.Instance.IncreaseScore(enemyHealth.scoreWorth);
         }
 
     }
