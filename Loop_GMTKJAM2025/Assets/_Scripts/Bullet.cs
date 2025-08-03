@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     public bool startedBullet;
     public Vector2 startingPosition;
 
-    public UnityEvent impact;
+    public UnityEvent destroyed;
 
     private void Update()
     {
@@ -17,6 +17,7 @@ public class Bullet : MonoBehaviour
         {
             if (DistanceFromStart() > distanceToDisappear)
             {
+                destroyed.Invoke();
                 Destroy(gameObject);
             }
         }
@@ -41,12 +42,12 @@ public class Bullet : MonoBehaviour
             Health enemyHealth = collision.gameObject.GetComponent<Health>();
             enemyHealth.TakeDamage(damage);
             PlayerStats.Instance.IncreaseScore(enemyHealth.scoreWorth);
-            impact.Invoke();
+            destroyed.Invoke();
             Destroy(gameObject);
         }
         else if(collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
-            impact.Invoke();
+            destroyed.Invoke();
             Destroy(gameObject);
         }
     }

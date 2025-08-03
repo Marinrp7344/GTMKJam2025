@@ -181,7 +181,7 @@ MonoBehaviour:
   distanceToDisappear: 0
   startedBullet: 0
   startingPosition: {x: 0, y: 0}
-  impact:
+  destroyed:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1967932269206534146}
